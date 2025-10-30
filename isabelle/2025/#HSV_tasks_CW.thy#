@@ -44,13 +44,19 @@ fun cost_opt_NOT :: "circuit \<Rightarrow> nat" where
 
 text \<open> opt_NOT has complexity O(n) where n is the input circuit's area. \<close>
 
+thm opt_NOT.induct
+
+
+
 lemma cost_opt_NOT_linear_simp: "cost_opt_NOT c \<le> 2 * area c + 1"
   apply (induction c  rule: opt_NOT.induct)
-            apply auto
+  apply auto
   done
 
 theorem opt_NOT_linear: "\<exists> a b ::nat. cost_opt_NOT c \<le> a * area c + b"
   by (intro exI[of _ 2] exI[of _ 1]) (rule cost_opt_NOT_linear_simp)
+
+
  
 
 text \<open> Another optimisation, introduced in the 2021 coursework. This

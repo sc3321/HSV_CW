@@ -1,0 +1,34 @@
+
+For 2 numbers:
+
+    def:
+        a === b (mod 11)
+
+        This means a%11 = b%11.
+        This also means that (a-b) is a multiple of 11.
+
+            Proof: let a%11 = x = b%11.
+                   let a = p + x, so by definition a-x = p is a multiple of 11.
+                   Similarly, let b = q + x so by definition, b - x = q is a multiple of 11 as well.
+
+                   Therefore: a - b = (p + x) - (q + x) = p - q.
+                   p and q are both multiples of 11 so p - q = 11(p/11 - q/11) which is a multiple of 11.
+
+
+    10 === -1 (mod 11) because: 10 % 11 = 1
+                                0 % 11 = 1. (Remember 0 is also part of the 11 times table).
+
+    Due to this equivalency, we can raise both sides to the power of k:
+        
+        10^k === (-1)^k (mod 11)
+
+
+    For any palindrome therefore:
+        
+        If we want to see [d1, d2, d3, d4 ... d^n] % 11 == 0?
+        We would do d1 * 10^0 + d2 * 10^1 ... dn * 10^n-1 and then do % 11 on this value. BUT because 10^k === (-1)^k we can make this substituion without any problems. Now it becomes:
+
+
+        d1 * (-1)^0 + d2 * (-1)^1 ... dn * (-1)^n-1 and doing % 11 on this value is an equivalent to the above.
+
+    Now all we have to do is add up the alternating sum of the digits and see if it equals 0.
