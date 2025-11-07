@@ -290,6 +290,7 @@ proof -
     by presburger 
 qed
 
+end
 
 section \<open> Task 3: 3SAT reduction. \<close>
 
