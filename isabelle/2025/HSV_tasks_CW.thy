@@ -390,15 +390,69 @@ where
   "symbols q \<equiv> \<Union> (set (map symbols_clause q))"
 
 
+text \<open>Every clause produced by \<open>reduce_clause\<close> has length at most 3.\<close>
+lemma reduce_clause_3SAT:
+  "let (_, cs) = reduce_clause x c in (\<forall>d\<in>set cs. length d \<le> 3)"
+  by (induction x c rule: reduce_clause.induct)
+     (auto simp: Let_def split: prod.splits)
+
 text \<open> The reduce function really does return queries in 3SAT form. \<close>
 theorem is_3SAT_reduce:
-  "is_3SAT (reduce x q)" 
-  oops
+  "is_3SAT (reduce x q)"
+  unfolding is_3SAT_def
+proof (induction q arbitrary: x)
+  case Nil
+  then show ?case by simp
+next
+  case (Cons c q)
+  obtain x' cs where RC[simp]: "reduce_clause x c = (x', cs)"
+    by (cases "reduce_clause x c") auto
+  have Hcs: "\<forall>d\<in>set cs. length d \<le> 3"
+    using reduce_clause_3SAT[of x c] by simp
+  have Hq: "\<forall>d\<in>set (reduce x' q). length d \<le> 3"
+    using Cons.IH
+    by blast
+  show ?case
+    using Hcs Hq
+    by auto
+qed
+
+
+lemma reduce_clause_nonempty:
+  "let (_, cs) = reduce_clause x c in cs \<noteq> []"
+  by (induction x c rule: reduce_clause.induct)
+     (auto simp: Let_def split: prod.splits)
 
 
 text \<open> The reduce function never decreases the number of clauses in a query. \<close>
 theorem "length q \<le> length (reduce x q)"
-  oops
+proof (induction q arbitrary: x)
+  case Nil
+  show ?case by simp
+next
+  case (Cons c q)
+  obtain x' cs where RC[simp]: "reduce_clause x c = (x', cs)"
+    by (cases "reduce_clause x c") auto
+  from reduce_clause_nonempty[of x c] have "cs \<noteq> []" by simp
+  hence cs_ge1: "1 \<le> length cs" by (cases cs) auto
+
+  have IH: "length q \<le> length (reduce x' q)" by (rule Cons.IH)
+
+  have len: "length (reduce x (c # q)) = length cs + length (reduce x' q)"
+    by simp
+
+  (* Suc(length q) \<le> length cs + length (reduce x' q) *)
+  have step1: "Suc (length q) \<le> Suc (length (reduce x' q))"
+    using IH by simp
+  have step2: "Suc (length (reduce x' q)) \<le> length cs + length (reduce x' q)"
+    using cs_ge1 try
+    by auto 
+  have bound: "Suc (length q) \<le> length cs + length (reduce x' q)"
+    using step1 step2 by (rule le_trans)
+
+  show ?case
+    using bound len by simp
+qed
 
 definition "satisfiable q \<equiv> \<exists>\<rho>. evaluate q \<rho>"
 
