@@ -44,19 +44,13 @@ fun cost_opt_NOT :: "circuit \<Rightarrow> nat" where
 
 text \<open> opt_NOT has complexity O(n) where n is the input circuit's area. \<close>
 
-thm opt_NOT.induct
-
-
-
 lemma cost_opt_NOT_linear_simp: "cost_opt_NOT c \<le> 2 * area c + 1"
   apply (induction c  rule: opt_NOT.induct)
-  apply auto
+            apply auto
   done
 
 theorem opt_NOT_linear: "\<exists> a b ::nat. cost_opt_NOT c \<le> a * area c + b"
   by (intro exI[of _ 2] exI[of _ 1]) (rule cost_opt_NOT_linear_simp)
-
-
  
 
 text \<open> Another optimisation, introduced in the 2021 coursework. This
@@ -125,14 +119,14 @@ next
   case (snoc d ds)
   have "int (sum10 (ds @ [d])) = int (d * 10 ^ length ds + sum10 ds)"
     by (simp add: sum10_snoc)
-  also have "\<dots> = int d * int (10 ^ length ds) + int (sum10 ds)"
+  also have "\<dots> = int d * (10 ^ length ds) + int (sum10 ds)"
     by simp
   also have "\<dots> = int d * (10 ^ length ds) + (\<Sum>i<length ds. int (ds ! i) * 10 ^ i)"
     using snoc.IH by simp
   also have "\<dots> = (\<Sum>i<length (ds @ [d]). int ((ds @ [d]) ! i) * 10 ^ i)"
   proof -
-    have "(\<Sum>i<length ds. int (ds ! i) * 10 ^ i) + int d * 10 ^ length ds =
-          (\<Sum>i<length (ds @ [d]). int ((ds @ [d]) ! i) * 10 ^ i)"
+    have "(\<Sum>i<length ds. int (ds ! i) * 10 ^ i) + int d * 10 ^ length ds
+          = (\<Sum>i<length (ds @ [d]). int ((ds @ [d]) ! i) * 10 ^ i)"
       by (simp add: nth_append sum.lessThan_Suc_shift)
     then show ?thesis by simp
   qed
@@ -148,7 +142,7 @@ proof -
   also have "\<dots> = (((-1::int) mod 11) ^ i) mod 11"
     by simp
   also have "\<dots> = ((-1::int) ^ i) mod 11"
-    by (simp only: power_mod[symmetric])
+    by (simp only: power_mod) 
   finally show ?thesis .
 qed
 
@@ -160,8 +154,7 @@ proof -
   hence "int (sum10 ds) mod 11
         = (\<Sum>i<length ds. ((int (ds ! i) * 10 ^ i) :: int) mod 11) mod 11"
     by (simp add: mod_sum_eq)
-
-  also have "... = (\<Sum>i<length ds. (int (ds ! i) * (-1) ^ i) mod 11) mod 11"
+  also have "\<dots> = (\<Sum>i<length ds. (int (ds ! i) * (-1) ^ i) mod 11) mod 11"
   proof -
     have term_eq:
       "((int (ds ! i) * 10 ^ i) :: int) mod 11
@@ -170,10 +163,10 @@ proof -
       have "((int (ds ! i) * 10 ^ i) :: int) mod 11
             = (((int (ds ! i) mod 11) * (10 ^ i mod 11)) mod 11)"
         by (simp add: mod_mult_eq)
-      also have "... = (((int (ds ! i) mod 11) * ((-1) ^ i mod 11)) mod 11)"
+      also have "\<dots> = (((int (ds ! i) mod 11) * ((-1) ^ i mod 11)) mod 11)"
         by (simp add: power10_mod11)
-      also have "... = ((int (ds ! i) * (-1) ^ i) mod 11)"
-        by (simp only: mod_mult_eq) 
+      also have "\<dots> = ((int (ds ! i) * (-1) ^ i) mod 11)"
+        by (simp only: mod_mult_eq)
       finally show ?thesis .
     qed
     have "(\<Sum>i<length ds. ((int (ds ! i) * 10 ^ i) :: int) mod 11)
@@ -181,8 +174,7 @@ proof -
       by (intro sum.cong[OF refl]) (simp add: term_eq)
     thus ?thesis by simp
   qed
-
-  also have "... = (\<Sum>i<length ds. int (ds ! i) * (-1) ^ i) mod 11"
+  also have "\<dots> = (\<Sum>i<length ds. int (ds ! i) * (-1) ^ i) mod 11"
     by (simp add: mod_sum_eq)
   finally show ?thesis .
 qed
@@ -194,29 +186,111 @@ theorem dvd11:
   assumes "ds = rev ds"
   shows "11 dvd (sum10 ds)"
 proof -
-  have "int (sum10 ds) mod 11 = (\<Sum>i<length ds. int (ds ! i) * (-1) ^ i) mod 11"
-    by (rule sum10_mod11_alt)
-  
-  also have "\<dots> = 0 mod 11"
+    obtain k where n_eq: "length ds = 2 * k"
+    using assms(1) by (auto elim!: evenE)
+
+  let ?f = "\<lambda>i. int (ds ! i) * ((-1::int) ^ i)"
+
+  (* Split the sum over {0..<2k} into two halves and reindex the second half
+     via i \<mapsto> 2k - 1 - i to pair terms i and (2k-1-i). *)
+    have pair_sum:
+    "(\<Sum>i<2*k. ?f i) = (\<Sum>i<k. (?f i + ?f (2*k - 1 - i)))"
   proof -
-    let ?S = "\<Sum>i<length ds. int (ds ! i) * (-1) ^ i"
-    let ?n = "length ds"
-    
-    have "?S = (\<Sum>i<length ds. int (rev ds ! i) * (-1) ^ i)"
-      by (simp add: assms(2))
-    also have "\<dots> = (\<Sum>i<length ds. int (ds ! (?n - 1 - i)) * (-1) ^ i)"
-      by (simp add: rev_nth)
-    also have "\<dots> = (\<Sum>i<length ds. int (ds ! i) * (-1) ^ (?n - 1 - i))"
-      by (subst sum.reindex_bij_witness[of _ "\<lambda>i. ?n - 1 - i" "\<lambda>i. ?n - 1 - i"]) auto
-    also have "\<dots> = (-1) ^ (?n - 1) * ?S"
-      by (simp add: sum_distrib_left power_add power_neg_one_iff)
-    finally have "?S = -?S" using assms(1)
-      by (metis even_nat_iff even_power minus_one_eq_neg_one_power)
-    thus ??
+    have "(\<Sum>i<2*k. ?f i) = (\<Sum>i\<in>{..<k} \<union> {k..<2*k}. ?f i)"
+      by (simp add: ivl_disj_un_one(2))
+    also have "\<dots> = (\<Sum>i<k. ?f i) + (\<Sum>i=k..<2*k. ?f i)"
+      by (subst sum.union_disjoint) (auto simp: ivl_disj_int)
+    also have "(\<Sum>i=k..<2*k. ?f i) = (\<Sum>i<k. ?f (2*k - 1 - i))"
+      by (rule sum.reindex_bij_witness[where i="\<lambda>j. 2*k - 1 - j" and j="\<lambda>j. 2*k - 1 - j"]) auto
+    finally show ?thesis by (simp add: sum.distrib)
   qed
-  
-  finally show ?thesis by (simp add: dvd_eq_mod_eq_0)
+
+    (* For palindromes: ds!i = ds!(n-1-i). Use the standard lemma rev_nth. *)
+  have pal_index:
+    "i < k \<Longrightarrow> ds ! i = ds ! (2*k - 1 - i)" for i
+  proof -
+    assume "i < k"
+    have "rev ds ! i = ds ! i"
+      using assms(2) by simp
+    also have "rev ds ! i = ds ! (length ds - 1 - i)"
+      using \<open>i < k\<close> by (simp add: rev_nth n_eq)
+    finally show "ds ! i = ds ! (2*k - 1 - i)"
+      by (simp add: n_eq)
+  qed
+
+  let ?n = "length ds"
+  have n_even: "even ?n" by (simp add: n_eq)
+
+  have pow_pair:
+    "i < ?n \<Longrightarrow> (-1::int) ^ (?n - 1 - i) = (-1) ^ (?n - 1) * (-1) ^ i" for i
+  proof -
+    assume Hi: "i < ?n"
+    have "(-1::int) ^ (?n - 1) = (-1) ^ ((?n - 1 - i) + i)"
+      using Hi by simp
+    also have "... = (-1::int) ^ (?n - 1 - i) * (-1) ^ i"
+      by (simp add: power_add)
+    finally show ?thesis by (simp add: mult.commute)
+  qed
+
+
+
+  (* For even n>0 we have (-1)^(n-1) = -1; n=0 is trivial anyway *)
+  have pow_n1: "?n > 0 \<Longrightarrow> (-1::int) ^ (?n - 1) = -1"
+    using n_eq by (cases "k") simp_all
+
+  let ?f = "\<lambda>i. int (ds ! i) * ((-1::int) ^ i)"
+
+  (* Palindrome \<rightarrow> digits match; pow_pair \<rightarrow> mirrored term equals (-1)^(n-1)*f i = - f i *)
+  have flip_sign: "i < ?n \<Longrightarrow> ?f (?n - 1 - i) = - ?f i" for i
+  proof -
+    assume Hi: "i < ?n"
+    have dse: "ds ! (?n - 1 - i) = ds ! i"
+      by (metis Hi assms(2) diff_Suc_eq_diff_pred rev_nth)
+    have "?f (?n - 1 - i)
+          = int (ds ! (?n - 1 - i)) * ((-1::int) ^ (?n - 1 - i))" by simp
+    also have "... = int (ds ! i) * ((-1::int) ^ (?n - 1) * (-1) ^ i)"
+      using Hi dse pow_pair by presburger
+    also have "... = ((-1::int) ^ (?n - 1)) * (int (ds ! i) * (-1) ^ i)"
+      by (simp add: ac_simps)
+    also have "... = - ?f i"
+      by (metis Hi less_nat_zero_code mult_1 mult_minus_left not_gr_zero pow_n1) 
+    finally show ?thesis
+      by (metis \<open>(- 1) ^ (length ds - 1) * (int (ds ! i) * (- 1) ^ i) = - (int (ds ! i) * (- 1) ^ i)\<close>
+          \<open>int (ds ! (length ds - 1 - i)) * (- 1) ^ (length ds - 1 - i) = int (ds ! i) * ((- 1) ^ (length ds - 1) * (- 1) ^ i)\<close>
+          ab_semigroup_mult_class.mult_ac(1) mult.commute) 
+  qed
+
+
+
+  (* Reindex by i \<mapsto> n-1-i (an involution) to get S = -S *)
+  have sum_reindex:
+      "(\<Sum>i<?n. ?f i) = (\<Sum>i<?n. ?f (?n - 1 - i))"
+  by (metis (no_types, lifting) diff_Suc_eq_diff_pred sum.cong sum.nat_diff_reindex) 
+
+  have alt_sum_zero:
+    "(\<Sum>i<?n. ?f i) = 0"
+  proof -
+    have "(\<Sum>i<?n. ?f (?n - 1 - i)) = (\<Sum>i<?n. - ?f i)"
+      by (meson flip_sign lessThan_iff sum.cong) 
+    with sum_reindex show ?thesis
+    by (simp add: sum_negf) 
+  qed
+
+
+
+  have "int (sum10 ds) mod 11
+        = (\<Sum>i<length ds. int (ds ! i) * (-1::int) ^ i) mod 11"
+    by (rule sum10_mod11_alt)
+  also have "\<dots> = 0" by (simp add: alt_sum_zero)
+  finally have "(int (sum10 ds)) mod 11 = 0" .
+
+  hence "of_nat 11 dvd int (sum10 ds)"
+    by auto 
+  thus "11 dvd sum10 ds"
+    by presburger 
 qed
+
+end
 
 section \<open> Task 3: 3SAT reduction. \<close>
 
