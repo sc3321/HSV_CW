@@ -456,11 +456,91 @@ qed
 
 definition "satisfiable q \<equiv> \<exists>\<rho>. evaluate q \<rho>"
 
+lemma clause_split_implies:
+  assumes A: "evaluate_clause \<rho> [(x, True), l1, l2]"
+      and B: "evaluate_clause \<rho> ((x, False) # rest)"
+  shows "evaluate_clause \<rho> (l1 # l2 # rest)"
+proof (cases "\<rho> x")
+  case True
+  from B have "evaluate_literal \<rho> (x, False) \<or> (\<exists>l\<in>set rest. evaluate_literal \<rho> l)"
+    unfolding evaluate_clause_def by auto
+  with True have "\<exists>l\<in>set rest. evaluate_literal \<rho> l" by simp
+  thus ?thesis unfolding evaluate_clause_def by auto
+next
+  case False
+  from A have "evaluate_literal \<rho> (x, True) \<or> evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2"
+    unfolding evaluate_clause_def by auto
+  with False have "evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2" by simp
+  thus ?thesis unfolding evaluate_clause_def by auto
+qed
+
+lemma reduce_clause_implies_original:
+  fixes x x' :: symbol
+  fixes c :: clause
+  fixes cs :: query
+  assumes RC: "reduce_clause x c = (x', cs)"
+  shows "\<forall>\<rho>. (\<forall>d\<in>set cs. evaluate_clause \<rho> d) \<longrightarrow> evaluate_clause \<rho> c"
+using RC
+proof (induction x c arbitrary: x' cs rule: reduce_clause.induct)
+  case (1 x l1 l2 l3 l4 c)
+  then obtain x1 cs1 where STEP:
+      "reduce_clause (x + 1) ((x, False) # l3 # l4 # c) = (x1, cs1)"
+    and CS: "cs = [[(x, True), l1, l2]] @ cs1"
+    and X': "x' = x1"
+    by (simp add: Let_def split: prod.splits)
+
+  (* Extract the IH from the current case without naming it as 1.IH *)
+  have IH:
+    "\<And>x' cs \<rho>. reduce_clause (x + 1) ((x, False) # l3 # l4 # c) = (x', cs) \<Longrightarrow>
+               (\<forall>d\<in>set cs. evaluate_clause \<rho> d) \<Longrightarrow>
+               evaluate_clause \<rho> ((x, False) # l3 # l4 # c)"
+    using 1 by auto
+
+  show ?case
+  proof (intro allI impI)
+    fix \<rho>
+    assume H: "\<forall>d\<in>set cs. evaluate_clause \<rho> d"
+    from H CS have Hhd: "evaluate_clause \<rho> [(x, True), l1, l2]" by auto
+    from H CS have Hcs1: "\<forall>d\<in>set cs1. evaluate_clause \<rho> d" by auto
+    from IH[OF STEP, of \<rho>] Hcs1
+    have Hrec: "evaluate_clause \<rho> ((x, False) # l3 # l4 # c)" by auto
+    from clause_split_implies[OF Hhd Hrec]
+    show "evaluate_clause \<rho> (l1 # l2 # l3 # l4 # c)" by simp
+  qed
+qed (auto)
+
+lemma evaluate_reduce_implies:
+  "evaluate (reduce x q) \<rho> \<Longrightarrow> evaluate q \<rho>"
+proof (induction q arbitrary: x)
+  case Nil
+  then show ?case by simp
+next
+  case (Cons c q)
+  obtain x' cs where RC[simp]: "reduce_clause x c = (x', cs)"
+    by (cases "reduce_clause x c") auto
+  from Cons.prems have All:
+    "\<forall>d\<in>set (cs @ reduce x' q). evaluate_clause \<rho> d"
+    unfolding evaluate_def by simp
+  hence Hcs: "\<forall>d\<in>set cs. evaluate_clause \<rho> d" by auto
+  hence Ctrue:
+    "evaluate_clause \<rho> c"
+    using reduce_clause_implies_original[of x c x' cs] by simp
+  from All have Htail: "\<forall>d\<in>set (reduce x' q). evaluate_clause \<rho> d" by auto
+  hence IH: "evaluate q \<rho>" using Cons.IH by (simp add: evaluate_def)
+  show ?case
+    using Ctrue IH unfolding evaluate_def by simp
+qed
+
 text \<open> If reduce x q is satisfiable, then so is q. \<close>
 theorem sat_reduce1:
   assumes "satisfiable (reduce x q)"
   shows "satisfiable q"
-  sorry
+  proof -
+    obtain \<rho> where R: "evaluate (reduce x q) \<rho>"
+      using assms unfolding satisfiable_def by auto
+    hence "evaluate q \<rho>" by (rule evaluate_reduce_implies)
+    thus ?thesis unfolding satisfiable_def by blast
+qed
 
 text \<open> If q is satisfiable, and all the symbols in q are below x, 
   then reduce x q is also satisfiable. \<close>
