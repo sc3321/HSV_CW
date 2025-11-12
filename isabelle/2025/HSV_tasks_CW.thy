@@ -542,12 +542,56 @@ theorem sat_reduce1:
     thus ?thesis unfolding satisfiable_def by blast
 qed
 
+
+
+
 text \<open> If q is satisfiable, and all the symbols in q are below x, 
   then reduce x q is also satisfiable. \<close>
 theorem sat_reduce2:
   assumes "satisfiable q" and "x \<triangleright> q"
   shows "satisfiable (reduce x q)"
-  sorry
+proof -
+  from assms(1) obtain \<rho> where Eval: "evaluate q \<rho>"
+    unfolding satisfiable_def by auto
+  define \<rho>' where "\<rho>' y = (if y < x then \<rho> y else False)" for y
+
+  have step: "\<forall>c \<in> set q. evaluate_clause \<rho>' c"
+  proof
+    fix c assume "c \<in> set q"
+    with Eval have "evaluate_clause \<rho> c"
+      unfolding evaluate_def by auto
+    moreover from assms(2) \<open>c \<in> set q\<close> have "\<forall>(y,_)\<in>set c. y < x"
+      unfolding all_below_def by auto
+    ultimately show "evaluate_clause \<rho>' c"
+      unfolding evaluate_clause_def \<rho>'_def
+      by force
+  qed
+ 
+  hence "evaluate (reduce x q) \<rho>'"
+    unfolding evaluate_def
+  proof (induction q arbitrary: x)
+    case Nil
+    then show ?case by simp
+  next
+    case (Cons c q)
+    obtain x' cs where RC: "reduce_clause x c = (x', cs)"
+      by (cases "reduce_clause x c") auto
+    from Cons.prems have "evaluate_clause \<rho>' c" "evaluate q \<rho>'"
+      unfolding evaluate_def by auto
+    moreover from Cons.IH[of x'] this(2)
+    have "evaluate (reduce x' q) \<rho>'"
+      using evaluate_def by blast
+moreover have "\<forall>d\<in>set cs. evaluate_clause \<rho>' d"
+  using RC \<open>evaluate_clause \<rho>' c\<close>
+  by (induction x c arbitrary: x' cs rule: reduce_clause.induct)
+     (auto simp: Let_def evaluate_clause_def split: prod.splits)
+
+    ultimately show ?case
+      using RC by (auto simp: evaluate_def)
+  qed
+
+  thus ?thesis unfolding satisfiable_def by blast
+qed
 
 text \<open> If all symbols in q are below x, then q and its reduction at x are equisatisfiable. \<close>
 corollary sat_reduce:
