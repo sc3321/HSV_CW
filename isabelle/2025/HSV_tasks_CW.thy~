@@ -456,11 +456,138 @@ qed
 
 definition "satisfiable q \<equiv> \<exists>\<rho>. evaluate q \<rho>"
 
+lemma clause_split_implies:
+  assumes A: "evaluate_clause \<rho> [(x, True), l1, l2]"
+      and B: "evaluate_clause \<rho> ((x, False) # rest)"
+  shows "evaluate_clause \<rho> (l1 # l2 # rest)"
+proof (cases "\<rho> x")
+  case True
+  from B have "evaluate_literal \<rho> (x, False) \<or> (\<exists>l\<in>set rest. evaluate_literal \<rho> l)"
+    unfolding evaluate_clause_def by auto
+  with True have "\<exists>l\<in>set rest. evaluate_literal \<rho> l" by simp
+  thus ?thesis unfolding evaluate_clause_def by auto
+next
+  case False
+  from A have "evaluate_literal \<rho> (x, True) \<or> evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2"
+    unfolding evaluate_clause_def by auto
+  with False have "evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2" by simp
+  thus ?thesis unfolding evaluate_clause_def by auto
+qed
+
+lemma reduce_clause_implies_original:
+  fixes x x' :: symbol
+  fixes c :: clause
+  fixes cs :: query
+  assumes RC: "reduce_clause x c = (x', cs)"
+  shows "\<forall>\<rho>. (\<forall>d\<in>set cs. evaluate_clause \<rho> d) \<longrightarrow> evaluate_clause \<rho> c"
+using RC
+proof (induction x c arbitrary: x' cs rule: reduce_clause.induct)
+  case (1 x l1 l2 l3 l4 c)
+  then obtain x1 cs1 where STEP:
+      "reduce_clause (x + 1) ((x, False) # l3 # l4 # c) = (x1, cs1)"
+    and CS: "cs = [[(x, True), l1, l2]] @ cs1"
+    and X': "x' = x1"
+    by (simp add: Let_def split: prod.splits)
+
+  (* Extract the IH from the current case without naming it as 1.IH *)
+  have IH:
+    "\<And>x' cs \<rho>. reduce_clause (x + 1) ((x, False) # l3 # l4 # c) = (x', cs) \<Longrightarrow>
+               (\<forall>d\<in>set cs. evaluate_clause \<rho> d) \<Longrightarrow>
+               evaluate_clause \<rho> ((x, False) # l3 # l4 # c)"
+    using 1 by auto
+
+  show ?case
+  proof (intro allI impI)
+    fix \<rho>
+    assume H: "\<forall>d\<in>set cs. evaluate_clause \<rho> d"
+    from H CS have Hhd: "evaluate_clause \<rho> [(x, True), l1, l2]" by auto
+    from H CS have Hcs1: "\<forall>d\<in>set cs1. evaluate_clause \<rho> d" by auto
+    from IH[OF STEP, of \<rho>] Hcs1
+    have Hrec: "evaluate_clause \<rho> ((x, False) # l3 # l4 # c)" by auto
+    from clause_split_implies[OF Hhd Hrec]
+    show "evaluate_clause \<rho> (l1 # l2 # l3 # l4 # c)" by simp
+  qed
+qed (auto)
+
+lemma evaluate_reduce_implies:
+  "evaluate (reduce x q) \<rho> \<Longrightarrow> evaluate q \<rho>"
+proof (induction q arbitrary: x)
+  case Nil
+  then show ?case by simp
+next
+  case (Cons c q)
+  obtain x' cs where RC[simp]: "reduce_clause x c = (x', cs)"
+    by (cases "reduce_clause x c") auto
+  from Cons.prems have All:
+    "\<forall>d\<in>set (cs @ reduce x' q). evaluate_clause \<rho> d"
+    unfolding evaluate_def by simp
+  hence Hcs: "\<forall>d\<in>set cs. evaluate_clause \<rho> d" by auto
+  hence Ctrue:
+    "evaluate_clause \<rho> c"
+    using reduce_clause_implies_original[of x c x' cs] by simp
+  from All have Htail: "\<forall>d\<in>set (reduce x' q). evaluate_clause \<rho> d" by auto
+  hence IH: "evaluate q \<rho>" using Cons.IH by (simp add: evaluate_def)
+  show ?case
+    using Ctrue IH unfolding evaluate_def by simp
+qed
+
 text \<open> If reduce x q is satisfiable, then so is q. \<close>
 theorem sat_reduce1:
   assumes "satisfiable (reduce x q)"
   shows "satisfiable q"
+  proof -
+    obtain \<rho> where R: "evaluate (reduce x q) \<rho>"
+      using assms unfolding satisfiable_def by auto
+    hence "evaluate q \<rho>" by (rule evaluate_reduce_implies)
+    thus ?thesis unfolding satisfiable_def by blast
+qed
+
+
+text \<open> If a valuation satisfies a clause and all symbols are below x, 
+  then we can modify it to satisfy the reduced clause while preserving symbols below x. \<close>
+lemma reduce_clause_sat_extend:
+  assumes "reduce_clause x c = (x', cs)"
+      and "evaluate_clause \<rho> c"
+      and "\<forall>y\<in>symbols_clause c. y < x"
+  shows "\<exists>\<rho>'. (\<forall>y. y < x \<longrightarrow> \<rho>' y = \<rho> y) \<and> (\<forall>d\<in>set cs. evaluate_clause \<rho>' d)"
   sorry
+
+text \<open> The reduction preserves satisfiability when all symbols are below the starting index. \<close>
+lemma reduce_preserves_sat:
+  assumes "x \<triangleright> q" "evaluate q \<rho>"
+  shows "\<exists>\<rho>'. evaluate (reduce x q) \<rho>'"
+  sorry
+
+
+text \<open> Fresh symbols introduced by reduction don't affect satisfaction of original clauses. \<close>
+lemma fresh_symbols_preserve_satisfaction:
+  assumes "\<forall>y\<in>symbols_clause c. y < x"
+      and "\<forall>y. y < x \<longrightarrow> \<rho> y = \<rho>' y"
+  shows "evaluate_clause \<rho> c = evaluate_clause \<rho>' c"
+  unfolding evaluate_clause_def
+  using assms
+  by (metis (full_types) evaluate_literal.elims(2) evaluate_literal.simps in_set_conv_nth length_map nth_map symbol_of_literal.simps
+      symbols_clause_def) 
+
+text \<open> Reduction only introduces symbols greater than or equal to the starting index. \<close>
+lemma reduction_symbols_bound:
+  "reduce_clause x c = (x', cs) \<Longrightarrow> x \<le> x'"
+  by (induction x c arbitrary: x' cs rule: reduce_clause.induct)
+     (auto split: prod.splits)
+
+text \<open> All symbols in reduced clauses are below the returned bound. \<close>
+lemma reduced_clauses_symbols_bound:
+  assumes "reduce_clause x c = (x', cs)"
+      and "\<forall>y\<in>symbols_clause c. y < x"
+  shows "\<forall>d\<in>set cs. \<forall>y\<in>symbols_clause d. y < x'"
+  using assms
+  apply (induction x c arbitrary: x' cs rule: reduce_clause.induct)
+  apply (auto simp: Let_def symbols_clause_def split: prod.splits dest: reduction_symbols_bound)
+  apply (meson Suc_le_eq reduction_symbols_bound)
+    apply (meson le_trans less_or_eq_imp_le linorder_le_less_linear not_less_eq_eq reduction_symbols_bound)
+   apply (meson less_Suc_eq order_less_le_trans reduction_symbols_bound)
+  by fastforce
+
 
 text \<open> If q is satisfiable, and all the symbols in q are below x, 
   then reduce x q is also satisfiable. \<close>
