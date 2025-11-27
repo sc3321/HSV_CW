@@ -229,30 +229,6 @@ method doublesort_from_right(A: array<int>)
   doublesort_to(A, A.Length);
 }
 
-////// TASK 4: COMBINED DOUBLE SORT IMPLEMENTATION/////
-
-method doublesort_both_ends(A: array<int>)
-  modifies A
-  ensures sorted(A)
-{
-  if A.Length <= 1 {
-    //single element is already sorted
-    return;
-  }
-
-  var n := A.Length;
-
-  sort_from_position(A, 1);
- 
-  if A[n - 1] < A[0] {
-    A[0], A[n - 1] := A[n - 1], A[0];
-  }
-
-  doublesort_to(A, n - 1);
-
-  assert sorted(A);
-}
-
 
 
 //// TASK 1: SORT PAIR IMPLEMENTATION/////
