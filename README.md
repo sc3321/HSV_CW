@@ -10,11 +10,11 @@ This is the homepage of the above-named module, which is offered to MSc and 4th-
 
 * All coursework is due at 15:00 on Friday 12 December 2025 (the last day of Autumn term).
 
-* The Isabelle coursework for 2025 is now available.
+* The Isabelle coursework for 2025 is [now available](isabelle/2025).
 
-* The Dafny coursework for 2025 is now available.
+* The Dafny coursework for 2025 is [now available](dafny/2025).
 
-* The SymbiYosys coursework for 2025 is not yet available.
+* The SymbiYosys coursework for 2025 is [now available](yosys/2025).
 
 ## Summary of past coursework questions
 
@@ -51,3 +51,5 @@ Click on the links below to access the coursework questions (with model answers)
 - [Isabelle 2025](isabelle/2025): estimating computational complexity of `opt-NOT` and `factorise`; proving that even-length palindromes are divisible by 11; reducing SAT queries to 3SAT form.
 
 - [Dafny 2025](dafny/2025): doublesort.
+
+- [SymbiYosys 2025](yosys/2025): verifying a divider.
