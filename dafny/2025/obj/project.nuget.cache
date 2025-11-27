@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "t3IuRgMbYJo=",
+  "dgSpecHash": "KCIDiPEnA/A=",
   "success": true,
   "projectFilePath": "/Users/stevenimo/Library/CloudStorage/OneDrive-ImperialCollegeLondon/EIE Yr4/Hardware and Software Ver/Coursework 1/HSV_CW/dafny/2025/tasks_2025.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,8 @@
     "/Users/stevenimo/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/stevenimo/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/Users/stevenimo/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
-    "/Users/stevenimo/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
+    "/Users/stevenimo/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512",
+    "/Users/stevenimo/.nuget/packages/microsoft.netcore.app.host.osx-x64/8.0.21/microsoft.netcore.app.host.osx-x64.8.0.21.nupkg.sha512"
   ],
   "logs": []
 }

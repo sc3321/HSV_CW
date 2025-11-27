@@ -12,6 +12,189 @@ using System.Collections;
 // Command Line Options: tasks_2025.dfy
 // tasks_2025.dfy
 
+predicate sorted(A: array<int>)
+  reads A
+  decreases {A}, A
+{
+  forall m: int, n: int {:trigger A[n], A[m]} :: 
+    0 <= m < n < A.Length ==>
+      A[m] <= A[n]
+}
+
+predicate is_sorted_in_range(arr: array<int>, start: int, end: int)
+  requires 0 <= start <= end <= arr.Length
+  reads arr
+  decreases {arr}, arr, start, end
+{
+  forall i: int, j: int {:trigger arr[j], arr[i]} :: 
+    start <= i < j < end ==>
+      arr[i] <= arr[j]
+}
+
+function minimum(a: int, b: int): int
+  decreases a, b
+{
+  if a < b then
+    a
+  else
+    b
+}
+
+function minimum_in_range(arr: array<int>, start: int, end: int): int
+  requires 0 <= start < end <= arr.Length
+  reads arr
+  ensures forall i: int {:trigger arr[i]} :: start <= i < end ==> minimum_in_range(arr, start, end) <= arr[i]
+  ensures exists i: int {:trigger arr[i]} :: start <= i < end && minimum_in_range(arr, start, end) == arr[i]
+  decreases end - start
+{
+  if start == end - 1 then
+    arr[start]
+  else
+    minimum(arr[start], minimum_in_range(arr, start + 1, end))
+}
+
+lemma /*{:_inductionTrigger minimum_in_range(arr, start, end)}*/ /*{:_inductionTrigger is_sorted_in_range(arr, start, end)}*/ /*{:_induction arr, start, end}*/ first_element_is_minimum_when_sorted(arr: array<int>, start: int, end: int)
+  requires 0 <= start < end <= arr.Length
+  requires is_sorted_in_range(arr, start, end)
+  ensures arr[start] == minimum_in_range(arr, start, end)
+  decreases end - start
+{
+  if start < end - 1 {
+    first_element_is_minimum_when_sorted(arr, start + 1, end);
+  }
+}
+
+method sort_from_position(arr: array<int>, position: int)
+  requires 0 <= position <= arr.Length
+  modifies arr
+  ensures forall i: int {:trigger old(arr[i])} {:trigger arr[i]} :: 0 <= i < position ==> arr[i] == old(arr[i])
+  ensures is_sorted_in_range(arr, position, arr.Length)
+  ensures multiset(arr[..]) == multiset(old(arr[..]))
+  ensures position < arr.Length ==> minimum_in_range(arr, position, arr.Length) == old(minimum_in_range(arr, position, arr.Length))
+  decreases arr.Length - position
+{
+  if position + 1 < arr.Length {
+    ghost var original_min := minimum_in_range(arr, position, arr.Length);
+    ghost var original_tail_min := minimum_in_range(arr, position + 1, arr.Length);
+    ghost var original_value := arr[position];
+    sort_from_position(arr, position + 1);
+    assert arr[position] == original_value;
+    assert is_sorted_in_range(arr, position + 1, arr.Length);
+    assert minimum_in_range(arr, position + 1, arr.Length) == original_tail_min;
+    first_element_is_minimum_when_sorted(arr, position + 1, arr.Length);
+    assert arr[position + 1] == original_tail_min;
+    if arr[position + 1] < arr[position] {
+      arr[position], arr[position + 1] := arr[position + 1], arr[position];
+    }
+    assert arr[position] <= arr[position + 1];
+    assert arr[position] == original_min;
+    assert arr[position + 1] >= original_value;
+    assert arr[position + 1] >= original_tail_min;
+    assert forall i: int {:trigger arr[i]} :: position + 2 <= i < arr.Length ==> arr[i] >= original_tail_min;
+    assert forall i: int {:trigger arr[i]} :: position + 1 <= i < arr.Length ==> arr[i] >= original_min;
+    ghost var updated_tail_min := minimum_in_range(arr, position + 1, arr.Length);
+    assert updated_tail_min >= original_min;
+    assert arr[position] <= updated_tail_min;
+    sort_from_position(arr, position + 1);
+    assert arr[position] == original_min;
+    assert is_sorted_in_range(arr, position + 1, arr.Length);
+    assert minimum_in_range(arr, position + 1, arr.Length) == updated_tail_min;
+    first_element_is_minimum_when_sorted(arr, position + 1, arr.Length);
+    assert arr[position + 1] == updated_tail_min;
+    assert arr[position] <= arr[position + 1];
+    assert is_sorted_in_range(arr, position, arr.Length);
+    assert minimum_in_range(arr, position, arr.Length) == original_min;
+  }
+}
+
+method doublesort(A: array<int>)
+  modifies A
+  ensures sorted(A)
+  decreases A
+{
+  sort_from_position(A, 0);
+}
+
+predicate sorted_prefix(A: array<int>, hi: int)
+  requires 0 <= hi <= A.Length
+  reads A
+  decreases {A}, A, hi
+{
+  forall m: int, n: int {:trigger A[n], A[m]} :: 
+    0 <= m < n < hi ==>
+      A[m] <= A[n]
+}
+
+function maximum_in_prefix(A: array<int>, hi: int): int
+  requires 0 < hi <= A.Length
+  reads A
+  ensures forall k: int {:trigger A[k]} :: 0 <= k < hi ==> maximum_in_prefix(A, hi) >= A[k]
+  ensures exists k: int {:trigger A[k]} :: 0 <= k < hi && maximum_in_prefix(A, hi) == A[k]
+  decreases hi
+{
+  if hi == 1 then
+    A[0]
+  else if A[hi - 1] > maximum_in_prefix(A, hi - 1) then
+    A[hi - 1]
+  else
+    maximum_in_prefix(A, hi - 1)
+}
+
+lemma /*{:_inductionTrigger maximum_in_prefix(A, hi)}*/ /*{:_inductionTrigger sorted_prefix(A, hi)}*/ /*{:_induction A, hi}*/ last_is_maximum_when_sorted(A: array<int>, hi: int)
+  requires 0 < hi <= A.Length
+  requires sorted_prefix(A, hi)
+  ensures A[hi - 1] == maximum_in_prefix(A, hi)
+  decreases hi
+{
+  if hi > 1 {
+    last_is_maximum_when_sorted(A, hi - 1);
+  }
+}
+
+method doublesort_to(A: array<int>, hi: int)
+  requires 0 <= hi <= A.Length
+  modifies A
+  ensures sorted_prefix(A, hi)
+  ensures forall k: int {:trigger old(A[k])} {:trigger A[k]} :: hi <= k < A.Length ==> A[k] == old(A[k])
+  ensures multiset(A[..]) == multiset(old(A[..]))
+  ensures hi > 0 ==> maximum_in_prefix(A, hi) == old(maximum_in_prefix(A, hi))
+  decreases hi
+{
+  if hi > 1 {
+    ghost var old_max := maximum_in_prefix(A, hi);
+    ghost var old_prefix_max := maximum_in_prefix(A, hi - 1);
+    ghost var old_last := A[hi - 1];
+    doublesort_to(A, hi - 1);
+    assert sorted_prefix(A, hi - 1);
+    assert A[hi - 1] == old_last;
+    assert maximum_in_prefix(A, hi - 1) == old_prefix_max;
+    last_is_maximum_when_sorted(A, hi - 1);
+    assert A[hi - 2] == old_prefix_max;
+    if A[hi - 1] < A[hi - 2] {
+      A[hi - 2], A[hi - 1] := A[hi - 1], A[hi - 2];
+    }
+    assert A[hi - 2] <= A[hi - 1];
+    assert A[hi - 1] == old_max;
+    ghost var new_prefix_max := maximum_in_prefix(A, hi - 1);
+    assert new_prefix_max <= old_max;
+    doublesort_to(A, hi - 1);
+    assert sorted_prefix(A, hi - 1);
+    assert maximum_in_prefix(A, hi - 1) == new_prefix_max;
+    last_is_maximum_when_sorted(A, hi - 1);
+    assert A[hi - 2] == new_prefix_max;
+    assert A[hi - 2] <= A[hi - 1];
+    assert sorted_prefix(A, hi);
+  }
+}
+
+method doublesort_from_right(A: array<int>)
+  modifies A
+  ensures sorted(A)
+  decreases A
+{
+  doublesort_to(A, A.Length);
+}
+
 method sort_pair(A: array<int>, i: int, j: int)
   requires 0 <= i < A.Length
   requires 0 <= j < A.Length
@@ -26,6 +209,22 @@ method sort_pair(A: array<int>, i: int, j: int)
   }
   assert A[i] <= A[j];
   assert forall k: int {:trigger old(A[k])} {:trigger A[k]} :: 0 <= k < A.Length && k != i && k != j ==> A[k] == old(A[k]);
+}
+
+method reverse_doublesort(A: array<int>)
+  modifies A
+  ensures sorted(A)
+  decreases A
+{
+  doublesort(A);
+}
+
+method Main(_noArgsParameter: seq<seq<char>>)
+{
+  var A: array<int> := new int[7] [4, 0, 1, 9, 7, 1, 2];
+  print ""Before: "", A[0], A[1], A[2], A[3], A[4], A[5], A[6], ""\n"";
+  doublesort(A);
+  print ""After:  "", A[0], A[1], A[2], A[3], A[4], A[5], A[6], ""\n"";
 }
 ")]
 
@@ -5697,11 +5896,117 @@ internal static class FuncExtensions {
   public static Func<U, UResult> DowncastClone<T, TResult, U, UResult>(this Func<T, TResult> F, Func<U, T> ArgConv, Func<TResult, UResult> ResConv) {
     return arg => ResConv(F(ArgConv(arg)));
   }
+  public static Func<U1, U2, UResult> DowncastClone<T1, T2, TResult, U1, U2, UResult>(this Func<T1, T2, TResult> F, Func<U1, T1> ArgConv1, Func<U2, T2> ArgConv2, Func<TResult, UResult> ResConv) {
+    return (arg1, arg2) => ResConv(F(ArgConv1(arg1), ArgConv2(arg2)));
+  }
+  public static Func<U1, U2, U3, UResult> DowncastClone<T1, T2, T3, TResult, U1, U2, U3, UResult>(this Func<T1, T2, T3, TResult> F, Func<U1, T1> ArgConv1, Func<U2, T2> ArgConv2, Func<U3, T3> ArgConv3, Func<TResult, UResult> ResConv) {
+    return (arg1, arg2, arg3) => ResConv(F(ArgConv1(arg1), ArgConv2(arg2), ArgConv3(arg3)));
+  }
 }
 // end of class FuncExtensions
 namespace _module {
 
   public partial class __default {
+    public static bool sorted(BigInteger[] A) {
+      return Dafny.Helpers.Id<Func<BigInteger[], bool>>((_0_A) => Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange(BigInteger.Zero, new BigInteger((_0_A).Length)), true, (((_forall_var_0) => {
+        BigInteger _1_m = (BigInteger)_forall_var_0;
+        return Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange((_1_m) + (BigInteger.One), new BigInteger((_0_A).Length)), true, (((_forall_var_1) => {
+          BigInteger _2_n = (BigInteger)_forall_var_1;
+          return !((((_1_m).Sign != -1) && ((_1_m) < (_2_n))) && ((_2_n) < (new BigInteger((_0_A).Length)))) || (((_0_A)[(int)(_1_m)]) <= ((_0_A)[(int)(_2_n)]));
+        })));
+      }))))(A);
+    }
+    public static bool is__sorted__in__range(BigInteger[] arr, BigInteger start, BigInteger end)
+    {
+      return Dafny.Helpers.Id<Func<BigInteger, BigInteger, BigInteger[], bool>>((_0_start, _1_end, _2_arr) => Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange(_0_start, _1_end), true, (((_forall_var_0) => {
+        BigInteger _3_i = (BigInteger)_forall_var_0;
+        return Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange((_3_i) + (BigInteger.One), _1_end), true, (((_forall_var_1) => {
+          BigInteger _4_j = (BigInteger)_forall_var_1;
+          return !((((_0_start) <= (_3_i)) && ((_3_i) < (_4_j))) && ((_4_j) < (_1_end))) || (((_2_arr)[(int)(_3_i)]) <= ((_2_arr)[(int)(_4_j)]));
+        })));
+      }))))(start, end, arr);
+    }
+    public static BigInteger minimum(BigInteger a, BigInteger b)
+    {
+      if ((a) < (b)) {
+        return a;
+      } else {
+        return b;
+      }
+    }
+    public static BigInteger minimum__in__range(BigInteger[] arr, BigInteger start, BigInteger end)
+    {
+      if ((start) == ((end) - (BigInteger.One))) {
+        return (arr)[(int)(start)];
+      } else {
+        return __default.minimum((arr)[(int)(start)], __default.minimum__in__range(arr, (start) + (BigInteger.One), end));
+      }
+    }
+    public static void sort__from__position(BigInteger[] arr, BigInteger position)
+    {
+      if (((position) + (BigInteger.One)) < (new BigInteger((arr).Length))) {
+        __default.sort__from__position(arr, (position) + (BigInteger.One));
+        if (((arr)[(int)((position) + (BigInteger.One))]) < ((arr)[(int)(position)])) {
+          BigInteger _index0 = (position) + (BigInteger.One);
+          BigInteger _rhs0 = (arr)[(int)((position) + (BigInteger.One))];
+          BigInteger _rhs1 = (arr)[(int)(position)];
+          BigInteger[] _lhs0 = arr;
+          BigInteger _lhs1 = position;
+          BigInteger[] _lhs2 = arr;
+          BigInteger _lhs3 = (position) + (BigInteger.One);
+          _lhs0[(int)(_lhs1)] = _rhs0;
+          _lhs2[(int)(_lhs3)] = _rhs1;
+        }
+        __default.sort__from__position(arr, (position) + (BigInteger.One));
+      }
+    }
+    public static void doublesort(BigInteger[] A)
+    {
+      __default.sort__from__position(A, BigInteger.Zero);
+    }
+    public static bool sorted__prefix(BigInteger[] A, BigInteger hi)
+    {
+      return Dafny.Helpers.Id<Func<BigInteger, BigInteger[], bool>>((_0_hi, _1_A) => Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange(BigInteger.Zero, _0_hi), true, (((_forall_var_0) => {
+        BigInteger _2_m = (BigInteger)_forall_var_0;
+        return Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange((_2_m) + (BigInteger.One), _0_hi), true, (((_forall_var_1) => {
+          BigInteger _3_n = (BigInteger)_forall_var_1;
+          return !((((_2_m).Sign != -1) && ((_2_m) < (_3_n))) && ((_3_n) < (_0_hi))) || (((_1_A)[(int)(_2_m)]) <= ((_1_A)[(int)(_3_n)]));
+        })));
+      }))))(hi, A);
+    }
+    public static BigInteger maximum__in__prefix(BigInteger[] A, BigInteger hi)
+    {
+      if ((hi) == (BigInteger.One)) {
+        return (A)[(int)(BigInteger.Zero)];
+      } else if (((A)[(int)((hi) - (BigInteger.One))]) > (__default.maximum__in__prefix(A, (hi) - (BigInteger.One)))) {
+        return (A)[(int)((hi) - (BigInteger.One))];
+      } else {
+        return __default.maximum__in__prefix(A, (hi) - (BigInteger.One));
+      }
+    }
+    public static void doublesort__to(BigInteger[] A, BigInteger hi)
+    {
+      if ((hi) > (BigInteger.One)) {
+        __default.doublesort__to(A, (hi) - (BigInteger.One));
+        if (((A)[(int)((hi) - (BigInteger.One))]) < ((A)[(int)((hi) - (new BigInteger(2)))])) {
+          BigInteger _index0 = (hi) - (new BigInteger(2));
+          BigInteger _index1 = (hi) - (BigInteger.One);
+          BigInteger _rhs0 = (A)[(int)((hi) - (BigInteger.One))];
+          BigInteger _rhs1 = (A)[(int)((hi) - (new BigInteger(2)))];
+          BigInteger[] _lhs0 = A;
+          BigInteger _lhs1 = (hi) - (new BigInteger(2));
+          BigInteger[] _lhs2 = A;
+          BigInteger _lhs3 = (hi) - (BigInteger.One);
+          _lhs0[(int)(_lhs1)] = _rhs0;
+          _lhs2[(int)(_lhs3)] = _rhs1;
+        }
+        __default.doublesort__to(A, (hi) - (BigInteger.One));
+      }
+    }
+    public static void doublesort__from__right(BigInteger[] A)
+    {
+      __default.doublesort__to(A, new BigInteger((A).Length));
+    }
     public static void sort__pair(BigInteger[] A, BigInteger i, BigInteger j)
     {
       if (((A)[(int)(j)]) < ((A)[(int)(i)])) {
@@ -5715,5 +6020,46 @@ namespace _module {
         _lhs2[(int)(_lhs3)] = _rhs1;
       }
     }
+    public static void reverse__doublesort(BigInteger[] A)
+    {
+      __default.doublesort(A);
+    }
+    public static void _Main(Dafny.ISequence<Dafny.ISequence<Dafny.Rune>> __noArgsParameter)
+    {
+      BigInteger[] _0_A;
+      BigInteger[] _nw0 = new BigInteger[Dafny.Helpers.ToIntChecked(new BigInteger(7), "array size exceeds memory limit")];
+      _nw0[(int)((int)(BigInteger.Zero))] = new BigInteger(4);
+      _nw0[(int)((int)(BigInteger.One))] = BigInteger.Zero;
+      _nw0[(int)((int)(new BigInteger(2)))] = BigInteger.One;
+      _nw0[(int)((int)(new BigInteger(3)))] = new BigInteger(9);
+      _nw0[(int)((int)(new BigInteger(4)))] = new BigInteger(7);
+      _nw0[(int)((int)(new BigInteger(5)))] = BigInteger.One;
+      _nw0[(int)((int)(new BigInteger(6)))] = new BigInteger(2);
+      _0_A = _nw0;
+      Dafny.Helpers.Print((Dafny.Sequence<Dafny.Rune>.UnicodeFromString("Before: ")).ToVerbatimString(false));
+      Dafny.Helpers.Print(((_0_A)[(int)(BigInteger.Zero)]));
+      Dafny.Helpers.Print(((_0_A)[(int)(BigInteger.One)]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(2))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(3))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(4))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(5))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(6))]));
+      Dafny.Helpers.Print((Dafny.Sequence<Dafny.Rune>.UnicodeFromString("\n")).ToVerbatimString(false));
+      __default.doublesort(_0_A);
+      Dafny.Helpers.Print((Dafny.Sequence<Dafny.Rune>.UnicodeFromString("After:  ")).ToVerbatimString(false));
+      Dafny.Helpers.Print(((_0_A)[(int)(BigInteger.Zero)]));
+      Dafny.Helpers.Print(((_0_A)[(int)(BigInteger.One)]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(2))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(3))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(4))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(5))]));
+      Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(6))]));
+      Dafny.Helpers.Print((Dafny.Sequence<Dafny.Rune>.UnicodeFromString("\n")).ToVerbatimString(false));
+    }
   }
 } // end of namespace _module
+class __CallToMain {
+  public static void Main(string[] args) {
+    Dafny.Helpers.WithHaltHandling(() => _module.__default._Main(Dafny.Sequence<Dafny.ISequence<Dafny.Rune>>.UnicodeFromMainArguments(args)));
+  }
+}

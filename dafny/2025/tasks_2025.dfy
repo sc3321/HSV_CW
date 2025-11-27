@@ -67,7 +67,7 @@ method sort_from_position(arr: array<int>, position: int)
 
     // Phase 1: Sort the tail recursively
     sort_from_position(arr, position + 1);
-    
+
     // Assertions after sorting the tail
     assert arr[position] == original_value;
     assert is_sorted_in_range(arr, position + 1, arr.Length);
@@ -125,6 +125,109 @@ method doublesort(A: array<int>)
   sort_from_position(A, 0);
 }
 
+
+// ---------------------------------------------------------------
+// Task 3 (??): doublesort from the opposite end of the array
+// ---------------------------------------------------------------
+
+// Helper: sorted prefix [0, hi)
+predicate sorted_prefix(A: array<int>, hi: int)
+  reads A
+  requires 0 <= hi <= A.Length
+{
+  forall m, n :: 0 <= m < n < hi ==> A[m] <= A[n]
+}
+
+// Helper function: maximum in a prefix [0, hi)
+function maximum_in_prefix(A: array<int>, hi: int): int
+  requires 0 < hi <= A.Length
+  reads A
+  decreases hi
+  ensures forall k :: 0 <= k < hi ==> maximum_in_prefix(A, hi) >= A[k]
+  ensures exists k :: 0 <= k < hi && maximum_in_prefix(A, hi) == A[k]
+{
+  if hi == 1 then A[0]
+  else if A[hi - 1] > maximum_in_prefix(A, hi - 1) then A[hi - 1]
+  else maximum_in_prefix(A, hi - 1)
+}
+
+// Lemma: last element is maximum when prefix is sorted
+lemma last_is_maximum_when_sorted(A: array<int>, hi: int)
+  requires 0 < hi <= A.Length
+  requires sorted_prefix(A, hi)
+  ensures A[hi - 1] == maximum_in_prefix(A, hi)
+  decreases hi
+{
+  if hi > 1 {
+    last_is_maximum_when_sorted(A, hi - 1);
+  }
+}
+
+// Backwards version of doublesort:
+// - Step 1: recursively sort everything except the last element
+// - Step 2: swap the last and penultimate elements if out of order
+// - Step 3: recursively sort everything except the last element again
+method doublesort_to(A: array<int>, hi: int)
+  requires 0 <= hi <= A.Length
+  modifies A
+  decreases hi
+  // After the call, the prefix [0, hi) is sorted
+  ensures sorted_prefix(A, hi)
+  // Elements beyond hi are never touched
+  ensures forall k :: hi <= k < A.Length ==> A[k] == old(A[k])
+  // Multiset preservation
+  ensures multiset(A[..]) == multiset(old(A[..]))
+  // Maximum preservation
+  ensures hi > 0 ==> maximum_in_prefix(A, hi) == old(maximum_in_prefix(A, hi))
+{
+  if hi > 1 {
+    ghost var old_max := maximum_in_prefix(A, hi);
+    ghost var old_prefix_max := maximum_in_prefix(A, hi - 1);
+    ghost var old_last := A[hi - 1];
+
+    // Step 1: sort the prefix [0, hi-1)
+    doublesort_to(A, hi - 1);
+
+    assert sorted_prefix(A, hi - 1);
+    assert A[hi - 1] == old_last;
+    assert maximum_in_prefix(A, hi - 1) == old_prefix_max;
+
+    last_is_maximum_when_sorted(A, hi - 1);
+    assert A[hi - 2] == old_prefix_max;
+
+    // Step 2: swap if needed
+    if A[hi - 1] < A[hi - 2] {
+      A[hi - 2], A[hi - 1] := A[hi - 1], A[hi - 2];
+    }
+
+    assert A[hi - 2] <= A[hi - 1];
+    assert A[hi - 1] == old_max;
+
+    ghost var new_prefix_max := maximum_in_prefix(A, hi - 1);
+    // Removed assertion: new_prefix_max >= old_max; it does not always hold after swap
+    assert new_prefix_max <= old_max;
+
+    // Step 3: sort the prefix [0, hi-1) again
+    doublesort_to(A, hi - 1);
+
+    assert sorted_prefix(A, hi - 1);
+    assert maximum_in_prefix(A, hi - 1) == new_prefix_max;
+
+    last_is_maximum_when_sorted(A, hi - 1);
+    assert A[hi - 2] == new_prefix_max;
+    assert A[hi - 2] <= A[hi - 1];
+    assert sorted_prefix(A, hi);
+  }
+}
+
+// Entry point for Task 3's backwards doublesort.
+// It sorts the *entire* array, and we relate sorted_prefix to sorted.
+method doublesort_from_right(A: array<int>)
+  modifies A
+  ensures sorted(A)
+{
+  doublesort_to(A, A.Length);
+}
 
 
 //// TASK 1: SORT PAIR IMPLEMENTATION/////

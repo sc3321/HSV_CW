@@ -10,3 +10,6 @@
 /Users/stevenimo/Library/CloudStorage/OneDrive-ImperialCollegeLondon/EIE Yr4/Hardware and Software Ver/Coursework 1/HSV_CW/dafny/2025/tasks_2025.dll
 /Users/stevenimo/Library/CloudStorage/OneDrive-ImperialCollegeLondon/EIE Yr4/Hardware and Software Ver/Coursework 1/HSV_CW/dafny/2025/obj/Debug/net8.0/ref/tasks_2025.dll
 /Users/stevenimo/Library/CloudStorage/OneDrive-ImperialCollegeLondon/EIE Yr4/Hardware and Software Ver/Coursework 1/HSV_CW/dafny/2025/tasks_2025.pdb
+/Users/stevenimo/Library/CloudStorage/OneDrive-ImperialCollegeLondon/EIE Yr4/Hardware and Software Ver/Coursework 1/HSV_CW/dafny/2025/tasks_2025
+/Users/stevenimo/Library/CloudStorage/OneDrive-ImperialCollegeLondon/EIE Yr4/Hardware and Software Ver/Coursework 1/HSV_CW/dafny/2025/obj/Debug/net8.0/tasks_2025.genruntimeconfig.cache
+/Users/stevenimo/Library/CloudStorage/OneDrive-ImperialCollegeLondon/EIE Yr4/Hardware and Software Ver/Coursework 1/HSV_CW/dafny/2025/tasks_2025.runtimeconfig.json
