@@ -195,6 +195,52 @@ method doublesort_from_right(A: array<int>)
   doublesort_to(A, A.Length);
 }
 
+predicate sorted_range(A: array<int>, lo: int, hi: int)
+  requires 0 <= lo <= hi <= A.Length
+  reads A
+  decreases {A}, A, lo, hi
+{
+  forall m: int, n: int {:trigger A[n], A[m]} :: 
+    lo <= m < n < hi ==>
+      A[m] <= A[n]
+}
+
+method doublesort_both(A: array<int>, lo: int, hi: int)
+  requires 0 <= lo <= hi < A.Length
+  modifies A
+  ensures sorted_range(A, lo, hi + 1)
+  ensures forall k: int {:trigger old(A[k])} {:trigger A[k]} :: 0 <= k < A.Length && (k < lo || k > hi) ==> A[k] == old(A[k])
+  ensures forall k: int {:trigger A[k]} :: lo <= k <= hi ==> exists j: int {:trigger old(A[j])} :: lo <= j <= hi && A[k] == old(A[j])
+  decreases hi - lo
+{
+  if hi <= lo {
+    return;
+  }
+  if lo + 1 <= hi - 1 {
+    doublesort_both(A, lo + 1, hi - 1);
+  }
+  var changed := false;
+  if A[hi] < A[lo] {
+    A[lo], A[hi] := A[hi], A[lo];
+    changed := true;
+  }
+  if lo + 1 <= hi && A[lo + 1] < A[lo] {
+    A[lo], A[lo + 1] := A[lo + 1], A[lo];
+    changed := true;
+  }
+  if hi - 1 >= lo && A[hi - 1] > A[hi] {
+    A[hi - 1], A[hi] := A[hi], A[hi - 1];
+    changed := true;
+  }
+  if lo + 1 <= hi {
+    assert A[lo] <= A[lo + 1];
+    assert A[hi - 1] <= A[hi];
+  }
+  if lo + 1 <= hi - 1 {
+    doublesort_both(A, lo + 1, hi - 1);
+  }
+}
+
 method sort_pair(A: array<int>, i: int, j: int)
   requires 0 <= i < A.Length
   requires 0 <= j < A.Length
@@ -6006,6 +6052,65 @@ namespace _module {
     public static void doublesort__from__right(BigInteger[] A)
     {
       __default.doublesort__to(A, new BigInteger((A).Length));
+    }
+    public static bool sorted__range(BigInteger[] A, BigInteger lo, BigInteger hi)
+    {
+      return Dafny.Helpers.Id<Func<BigInteger, BigInteger, BigInteger[], bool>>((_0_lo, _1_hi, _2_A) => Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange(_0_lo, _1_hi), true, (((_forall_var_0) => {
+        BigInteger _3_m = (BigInteger)_forall_var_0;
+        return Dafny.Helpers.Quantifier<BigInteger>(Dafny.Helpers.IntegerRange((_3_m) + (BigInteger.One), _1_hi), true, (((_forall_var_1) => {
+          BigInteger _4_n = (BigInteger)_forall_var_1;
+          return !((((_0_lo) <= (_3_m)) && ((_3_m) < (_4_n))) && ((_4_n) < (_1_hi))) || (((_2_A)[(int)(_3_m)]) <= ((_2_A)[(int)(_4_n)]));
+        })));
+      }))))(lo, hi, A);
+    }
+    public static void doublesort__both(BigInteger[] A, BigInteger lo, BigInteger hi)
+    {
+      if ((hi) <= (lo)) {
+        return ;
+      }
+      if (((lo) + (BigInteger.One)) <= ((hi) - (BigInteger.One))) {
+        __default.doublesort__both(A, (lo) + (BigInteger.One), (hi) - (BigInteger.One));
+      }
+      bool _0_changed;
+      _0_changed = false;
+      if (((A)[(int)(hi)]) < ((A)[(int)(lo)])) {
+        BigInteger _rhs0 = (A)[(int)(hi)];
+        BigInteger _rhs1 = (A)[(int)(lo)];
+        BigInteger[] _lhs0 = A;
+        BigInteger _lhs1 = lo;
+        BigInteger[] _lhs2 = A;
+        BigInteger _lhs3 = hi;
+        _lhs0[(int)(_lhs1)] = _rhs0;
+        _lhs2[(int)(_lhs3)] = _rhs1;
+        _0_changed = true;
+      }
+      if ((((lo) + (BigInteger.One)) <= (hi)) && (((A)[(int)((lo) + (BigInteger.One))]) < ((A)[(int)(lo)]))) {
+        BigInteger _index0 = (lo) + (BigInteger.One);
+        BigInteger _rhs2 = (A)[(int)((lo) + (BigInteger.One))];
+        BigInteger _rhs3 = (A)[(int)(lo)];
+        BigInteger[] _lhs4 = A;
+        BigInteger _lhs5 = lo;
+        BigInteger[] _lhs6 = A;
+        BigInteger _lhs7 = (lo) + (BigInteger.One);
+        _lhs4[(int)(_lhs5)] = _rhs2;
+        _lhs6[(int)(_lhs7)] = _rhs3;
+        _0_changed = true;
+      }
+      if ((((hi) - (BigInteger.One)) >= (lo)) && (((A)[(int)((hi) - (BigInteger.One))]) > ((A)[(int)(hi)]))) {
+        BigInteger _index1 = (hi) - (BigInteger.One);
+        BigInteger _rhs4 = (A)[(int)(hi)];
+        BigInteger _rhs5 = (A)[(int)((hi) - (BigInteger.One))];
+        BigInteger[] _lhs8 = A;
+        BigInteger _lhs9 = (hi) - (BigInteger.One);
+        BigInteger[] _lhs10 = A;
+        BigInteger _lhs11 = hi;
+        _lhs8[(int)(_lhs9)] = _rhs4;
+        _lhs10[(int)(_lhs11)] = _rhs5;
+        _0_changed = true;
+      }
+      if (((lo) + (BigInteger.One)) <= ((hi) - (BigInteger.One))) {
+        __default.doublesort__both(A, (lo) + (BigInteger.One), (hi) - (BigInteger.One));
+      }
     }
     public static void sort__pair(BigInteger[] A, BigInteger i, BigInteger j)
     {

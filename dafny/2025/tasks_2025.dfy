@@ -90,7 +90,7 @@ method sort_from_position(arr: array<int>, position: int)
     assert arr[position + 1] >= original_value;
     assert arr[position + 1] >= original_tail_min;
 
-    // Ensure elements beyond position + 1 remain unchanged and sorted
+    // Ensure elements beyond position + 1 remain unflag and sorted
     assert forall i :: position + 2 <= i < arr.Length ==> arr[i] >= original_tail_min;
     assert forall i :: position + 1 <= i < arr.Length ==> arr[i] >= original_min;
 
@@ -229,7 +229,63 @@ method doublesort_from_right(A: array<int>)
   doublesort_to(A, A.Length);
 }
 
+predicate sorted_range(A:array<int>, lo:int, hi:int)
+  reads A
+  requires 0 <= lo <= hi <= A.Length
+{
+  forall m,n :: lo <= m < n < hi ==> A[m] <= A[n]
+}
 
+//-------------------------------
+// Task 4: doublesort that preserves elements
+//-------------------------------
+
+method doublesort_both(A:array<int>, lo:int, hi:int)
+  modifies A
+  requires 0 <= lo <= hi < A.Length
+  ensures sorted_range(A, lo, hi + 1)
+  ensures forall k :: 0 <= k < A.Length && (k < lo || k > hi) ==> A[k] == old(A[k])
+  ensures forall k :: lo <= k <= hi ==> exists j :: lo <= j <= hi && A[k] == old(A[j])
+  decreases hi - lo
+{
+  if hi <= lo { return; }
+
+  // --- STEP 1: Sort Middle ---
+  if lo + 1 <= hi - 1 {
+    doublesort_both(A, lo + 1, hi - 1);
+  }
+
+  // --- STEP 2: Sort Logic ---
+  var flag := false;
+
+  // Swap Ends
+  if A[hi] < A[lo] {
+    A[lo], A[hi] := A[hi], A[lo];
+    flag := true;
+  }
+
+  // Swap Left + 1
+  if lo + 1 <= hi && A[lo+1] < A[lo] {
+    A[lo], A[lo+1] := A[lo+1], A[lo];
+    flag := true;
+  }
+
+  // Swap Right - 1
+  if hi - 1 >= lo && A[hi-1] > A[hi] {
+    A[hi-1], A[hi] := A[hi], A[hi-1];
+    flag := true;
+  }
+
+  if lo + 1 <= hi {
+    assert A[lo] <= A[lo+1];
+    assert A[hi-1] <= A[hi];
+  }
+
+  // --- STEP 3: Sort Middle Again ---
+  if lo + 1 <= hi - 1 {
+    doublesort_both(A, lo + 1, hi - 1);
+  }
+}
 
 //// TASK 1: SORT PAIR IMPLEMENTATION/////
 
