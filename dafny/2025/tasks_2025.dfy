@@ -39,17 +39,6 @@ function minimum_in_range(arr: array<int>, start: int, end: int): int
   else minimum(arr[start], minimum_in_range(arr, start + 1, end))
 }
 
-// Proves that in a sorted range, the first element is the minimum
-lemma first_element_is_minimum_when_sorted(arr: array<int>, start: int, end: int)
-  requires 0 <= start < end <= arr.Length
-  requires is_sorted_in_range(arr, start, end)
-  ensures arr[start] == minimum_in_range(arr, start, end)
-  decreases end - start
-{
-  if start < end - 1 {
-    first_element_is_minimum_when_sorted(arr, start + 1, end);
-  }
-}
 
 // Sorts array starting from given position using double-sort algorithm
 method sort_from_position(arr: array<int>, position: int)
@@ -67,7 +56,7 @@ method sort_from_position(arr: array<int>, position: int)
     ghost var original_tail_min := minimum_in_range(arr, position + 1, arr.Length);
     ghost var original_value := arr[position];
 
-    // Phase 1: Sort the tail recursively
+    // Step 1: Sort the tail recursively
     sort_from_position(arr, position + 1);
 
     // Assertions after sorting the tail
@@ -76,10 +65,9 @@ method sort_from_position(arr: array<int>, position: int)
     assert minimum_in_range(arr, position + 1, arr.Length) == original_tail_min;
 
     // Ensure the first element is the minimum when sorted
-    first_element_is_minimum_when_sorted(arr, position + 1, arr.Length);
     assert arr[position + 1] == original_tail_min;
 
-    // Phase 2: Swap if the current element is larger than the next
+    // Step 2: Swap if the current element is larger than the next
     if arr[position + 1] < arr[position] {
       arr[position], arr[position + 1] := arr[position + 1], arr[position];
     }
@@ -101,7 +89,7 @@ method sort_from_position(arr: array<int>, position: int)
     assert updated_tail_min >= original_min;
     assert arr[position] <= updated_tail_min;
 
-    // Phase 3: Sort the tail again to restore full sorting
+    // Step 3: Sort the tail again to restore full sorting
     sort_from_position(arr, position + 1);
 
     // Final assertions to ensure correctness
@@ -109,7 +97,6 @@ method sort_from_position(arr: array<int>, position: int)
     assert is_sorted_in_range(arr, position + 1, arr.Length);
     assert minimum_in_range(arr, position + 1, arr.Length) == updated_tail_min;
 
-    first_element_is_minimum_when_sorted(arr, position + 1, arr.Length);
     assert arr[position + 1] == updated_tail_min;
     assert arr[position] <= arr[position + 1];
 
@@ -153,16 +140,6 @@ function maximum_in_prefix(A: array<int>, hi: int): int
   else maximum_in_prefix(A, hi - 1)
 }
 
-lemma last_is_maximum_when_sorted(A: array<int>, hi: int)
-  requires 0 < hi <= A.Length
-  requires sorted_prefix(A, hi)
-  ensures A[hi - 1] == maximum_in_prefix(A, hi)
-  decreases hi
-{
-  if hi > 1 {
-    last_is_maximum_when_sorted(A, hi - 1);
-  }
-}
 
 // Backwards version of doublesort:
 // - Step 1: recursively sort everything except the last element
@@ -189,7 +166,6 @@ method doublesort_to(A: array<int>, hi: int)
     assert A[hi - 1] == old_last;
     assert maximum_in_prefix(A, hi - 1) == old_prefix_max;
 
-    last_is_maximum_when_sorted(A, hi - 1);
     assert A[hi - 2] == old_prefix_max;
 
     // Step 2: swap if needed
@@ -209,7 +185,6 @@ method doublesort_to(A: array<int>, hi: int)
     assert sorted_prefix(A, hi - 1);
     assert maximum_in_prefix(A, hi - 1) == new_prefix_max;
 
-    last_is_maximum_when_sorted(A, hi - 1);
     assert A[hi - 2] == new_prefix_max;
     assert A[hi - 2] <= A[hi - 1];
     assert sorted_prefix(A, hi);
@@ -246,12 +221,12 @@ method doublesort_both(A:array<int>, lo:int, hi:int)
 {
   if hi <= lo { return; }
 
-  // --- STEP 1: Sort Middle ---
+  // --- Step 1: Sort Middle ---
   if lo + 1 <= hi - 1 {
     doublesort_both(A, lo + 1, hi - 1);
   }
 
-  // --- STEP 2: Sort Logic ---
+  // --- Step 2: Sort Logic ---
   var flag := false;
 
   // Swap Ends
@@ -277,7 +252,7 @@ method doublesort_both(A:array<int>, lo:int, hi:int)
     assert A[hi-1] <= A[hi];
   }
 
-  // --- STEP 3: Sort Middle Again ---
+  // --- Step 3: Sort Middle Again ---
   if lo + 1 <= hi - 1 {
     doublesort_both(A, lo + 1, hi - 1);
   }
