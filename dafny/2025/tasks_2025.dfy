@@ -9,7 +9,9 @@ predicate sorted(A:array<int>)
   forall m,n :: 0 <= m < n < A.Length ==> A[m] <= A[n]
 }
 
-/////TASK 2: DOUBLE SORT IMPLEMENTATION/////
+// ---------------------------------------------------------------
+// Task 2: doublesort starting from a given position
+// ---------------------------------------------------------------
 
 // Checks if array segment is in non-decreasing order
 predicate is_sorted_in_range(arr: array<int>, start: int, end: int)
@@ -127,7 +129,7 @@ method doublesort(A: array<int>)
 
 
 // ---------------------------------------------------------------
-// Task 3 (??): doublesort from the opposite end of the array
+// Task 3: doublesort from the opposite end of the array
 // ---------------------------------------------------------------
 
 // Helper: sorted prefix [0, hi)
@@ -151,7 +153,6 @@ function maximum_in_prefix(A: array<int>, hi: int): int
   else maximum_in_prefix(A, hi - 1)
 }
 
-// Lemma: last element is maximum when prefix is sorted
 lemma last_is_maximum_when_sorted(A: array<int>, hi: int)
   requires 0 < hi <= A.Length
   requires sorted_prefix(A, hi)
@@ -171,13 +172,9 @@ method doublesort_to(A: array<int>, hi: int)
   requires 0 <= hi <= A.Length
   modifies A
   decreases hi
-  // After the call, the prefix [0, hi) is sorted
   ensures sorted_prefix(A, hi)
-  // Elements beyond hi are never touched
   ensures forall k :: hi <= k < A.Length ==> A[k] == old(A[k])
-  // Multiset preservation
   ensures multiset(A[..]) == multiset(old(A[..]))
-  // Maximum preservation
   ensures hi > 0 ==> maximum_in_prefix(A, hi) == old(maximum_in_prefix(A, hi))
 {
   if hi > 1 {
@@ -204,7 +201,6 @@ method doublesort_to(A: array<int>, hi: int)
     assert A[hi - 1] == old_max;
 
     ghost var new_prefix_max := maximum_in_prefix(A, hi - 1);
-    // Removed assertion: new_prefix_max >= old_max; it does not always hold after swap
     assert new_prefix_max <= old_max;
 
     // Step 3: sort the prefix [0, hi-1) again
@@ -236,9 +232,9 @@ predicate sorted_range(A:array<int>, lo:int, hi:int)
   forall m,n :: lo <= m < n < hi ==> A[m] <= A[n]
 }
 
-//-------------------------------
+//-----------------------------------------------
 // Task 4: doublesort that preserves elements
-//-------------------------------
+//-----------------------------------------------
 
 method doublesort_both(A:array<int>, lo:int, hi:int)
   modifies A
@@ -287,7 +283,18 @@ method doublesort_both(A:array<int>, lo:int, hi:int)
   }
 }
 
-//// TASK 1: SORT PAIR IMPLEMENTATION/////
+// Entry point for Task 4's doublesort that preserves elements outside range
+method doublesort_preserve(A:array<int>)
+  modifies A
+  requires A.Length > 0
+  ensures sorted(A)
+{
+  doublesort_both(A, 0, A.Length - 1);
+}
+
+//---------------------------------------------------------------
+// Task 1: sort a pair of elements
+//---------------------------------------------------------------
 
 method sort_pair(A: array<int>, i: int, j:int)
   requires 0 <= i < A.Length
