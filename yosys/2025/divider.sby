@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 100
+
+[engines]
+smtbmc
+
+[script]
+verific -formal divider.sv
+prep -top divider
+
+[files]
+divider.sv
