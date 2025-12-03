@@ -20,30 +20,36 @@ Found 0 SCCs.
 4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
 
 5. Executing ASYNC2SYNC pass.
-Replacing divider.$auto$verificsva.cc:1837:import$302 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3140:Not$297, Q=$auto$verificsva.cc:1835:import$300
-Replacing divider.$auto$verificsva.cc:1837:import$349 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$344, Q=$auto$verificsva.cc:1835:import$347
-Replacing divider.$auto$verificsva.cc:1837:import$408 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$403, Q=$auto$verificsva.cc:1835:import$406
-Replacing divider.$auto$verificsva.cc:1837:import$441 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$436, Q=$auto$verificsva.cc:1835:import$439
-Replacing divider.$auto$verificsva.cc:1838:import$303 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3144:ReduceOr$295, Q=$auto$verificsva.cc:1836:import$301
-Replacing divider.$auto$verificsva.cc:1838:import$350 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$342, Q=$auto$verificsva.cc:1836:import$348
-Replacing divider.$auto$verificsva.cc:1838:import$409 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$401, Q=$auto$verificsva.cc:1836:import$407
-Replacing divider.$auto$verificsva.cc:1838:import$442 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$438, Q=$auto$verificsva.cc:1836:import$440
-Replacing divider.$auto$verificsva.cc:365:getAccept$370 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$268, Q=$auto$verificsva.cc:296:getAccept$359
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$288 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3187:And$268, Q=$auto$verificsva.cc:670:getFirstAcceptReject$276
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$289 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$276, Q=$auto$verificsva.cc:670:getFirstAcceptReject$277
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$290 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$277, Q=$auto$verificsva.cc:670:getFirstAcceptReject$278
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$291 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$278, Q=$auto$verificsva.cc:670:getFirstAcceptReject$279
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$292 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$279, Q=$auto$verificsva.cc:670:getFirstAcceptReject$280
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$293 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$280, Q=$auto$verificsva.cc:670:getFirstAcceptReject$281
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$336 ($adff): ARST=\rst, D=$auto$verificsva.cc:296:getAccept$359, Q=$auto$verificsva.cc:670:getFirstAcceptReject$324
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$337 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$324, Q=$auto$verificsva.cc:670:getFirstAcceptReject$325
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$338 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$325, Q=$auto$verificsva.cc:670:getFirstAcceptReject$326
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$339 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$326, Q=$auto$verificsva.cc:670:getFirstAcceptReject$327
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$340 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$327, Q=$auto$verificsva.cc:670:getFirstAcceptReject$328
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$396 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$379, Q=$auto$verificsva.cc:670:getFirstAcceptReject$374
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$397 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$383, Q=$auto$verificsva.cc:670:getFirstAcceptReject$375
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$398 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$387, Q=$auto$verificsva.cc:670:getFirstAcceptReject$376
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$399 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$391, Q=$auto$verificsva.cc:670:getFirstAcceptReject$377
+Replacing divider.$auto$verificsva.cc:1837:import$317 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$312, Q=$auto$verificsva.cc:1835:import$315
+Replacing divider.$auto$verificsva.cc:1837:import$350 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$345, Q=$auto$verificsva.cc:1835:import$348
+Replacing divider.$auto$verificsva.cc:1837:import$397 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3140:Not$392, Q=$auto$verificsva.cc:1835:import$395
+Replacing divider.$auto$verificsva.cc:1837:import$444 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$439, Q=$auto$verificsva.cc:1835:import$442
+Replacing divider.$auto$verificsva.cc:1837:import$503 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$498, Q=$auto$verificsva.cc:1835:import$501
+Replacing divider.$auto$verificsva.cc:1837:import$536 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$531, Q=$auto$verificsva.cc:1835:import$534
+Replacing divider.$auto$verificsva.cc:1838:import$318 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$314, Q=$auto$verificsva.cc:1836:import$316
+Replacing divider.$auto$verificsva.cc:1838:import$351 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$347, Q=$auto$verificsva.cc:1836:import$349
+Replacing divider.$auto$verificsva.cc:1838:import$398 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3144:ReduceOr$390, Q=$auto$verificsva.cc:1836:import$396
+Replacing divider.$auto$verificsva.cc:1838:import$445 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$437, Q=$auto$verificsva.cc:1836:import$443
+Replacing divider.$auto$verificsva.cc:1838:import$504 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$496, Q=$auto$verificsva.cc:1836:import$502
+Replacing divider.$auto$verificsva.cc:1838:import$537 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$533, Q=$auto$verificsva.cc:1836:import$535
+Replacing divider.$auto$verificsva.cc:365:getAccept$305 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$300, Q=$auto$verificsva.cc:296:getAccept$294
+Replacing divider.$auto$verificsva.cc:365:getAccept$338 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$333, Q=$auto$verificsva.cc:296:getAccept$327
+Replacing divider.$auto$verificsva.cc:365:getAccept$465 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$363, Q=$auto$verificsva.cc:296:getAccept$454
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$383 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3187:And$363, Q=$auto$verificsva.cc:670:getFirstAcceptReject$371
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$384 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$371, Q=$auto$verificsva.cc:670:getFirstAcceptReject$372
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$385 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$372, Q=$auto$verificsva.cc:670:getFirstAcceptReject$373
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$386 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$373, Q=$auto$verificsva.cc:670:getFirstAcceptReject$374
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$387 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$374, Q=$auto$verificsva.cc:670:getFirstAcceptReject$375
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$388 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$375, Q=$auto$verificsva.cc:670:getFirstAcceptReject$376
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$431 ($adff): ARST=\rst, D=$auto$verificsva.cc:296:getAccept$454, Q=$auto$verificsva.cc:670:getFirstAcceptReject$419
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$432 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$419, Q=$auto$verificsva.cc:670:getFirstAcceptReject$420
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$433 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$420, Q=$auto$verificsva.cc:670:getFirstAcceptReject$421
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$434 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$421, Q=$auto$verificsva.cc:670:getFirstAcceptReject$422
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$435 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$422, Q=$auto$verificsva.cc:670:getFirstAcceptReject$423
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$491 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$474, Q=$auto$verificsva.cc:670:getFirstAcceptReject$469
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$492 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$478, Q=$auto$verificsva.cc:670:getFirstAcceptReject$470
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$493 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$482, Q=$auto$verificsva.cc:670:getFirstAcceptReject$471
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$494 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$486, Q=$auto$verificsva.cc:670:getFirstAcceptReject$472
 
 6. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
@@ -76,8 +82,8 @@ Removed a total of 0 cells.
 
 11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
-Removed 5 unused cells and 5 unused wires.
-<suppressed ~6 debug messages>
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
 
 11.5. Finished fast OPT passes.
 
@@ -89,6 +95,6 @@ Removed 0 unused cells and 6 unused wires.
 13. Executing RTLIL backend.
 Output filename: ../model/design_prep.il
 
-End of script. Logfile hash: f84a0fd40b, CPU: user 0.02s system 0.01s, MEM: 17.55 MB peak
+End of script. Logfile hash: e29c3515f5, CPU: user 0.02s system 0.01s, MEM: 17.53 MB peak
 Yosys 0.59 (git sha1 5df4c20be, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
-Time spent: 42% 4x opt_clean (0 sec), 10% 1x opt_expr (0 sec), ...
+Time spent: 44% 4x opt_clean (0 sec), 9% 1x opt_expr (0 sec), ...

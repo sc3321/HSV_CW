@@ -24,9 +24,29 @@
             ],
             "cells": [
                 {
-                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_257",
+                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_286",
                   "attributes": {
-                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_257",
+                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_286",
+                    "src": "divider.sv:129.1-129.28"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_319",
+                  "attributes": {
+                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_319",
+                    "src": "divider.sv:120.1-120.29"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_352",
+                  "attributes": {
+                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_352",
                     "src": "divider.sv:111.1-111.34"
                   },
                   "parameters": {
@@ -34,9 +54,9 @@
                   }
                 },
                 {
-                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_304",
+                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_399",
                   "attributes": {
-                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_304",
+                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_399",
                     "src": "divider.sv:102.1-102.36"
                   },
                   "parameters": {
@@ -44,9 +64,9 @@
                   }
                 },
                 {
-                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_351",
+                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_446",
                   "attributes": {
-                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_351",
+                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_446",
                     "src": "divider.sv:93.1-93.26"
                   },
                   "parameters": {
@@ -54,13 +74,318 @@
                   }
                 },
                 {
-                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_410",
+                  "name": "_witness_.assert_auto_verificsva_cc_1748_import_505",
                   "attributes": {
-                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_410",
+                    "hdlname": "_witness_ assert_auto_verificsva_cc_1748_import_505",
                     "src": "divider.sv:84.1-84.40"
                   },
                   "parameters": {
 
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$verific$i24$divider.sv:53$128",
+                  "attributes": {
+                    "src": "divider.sv:43.7-53.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i25$divider.sv:53$129",
+                  "attributes": {
+                    "src": "divider.sv:43.7-53.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i39$divider.sv:63$136",
+                  "attributes": {
+                    "src": "divider.sv:55.7-63.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i40$divider.sv:63$137",
+                  "attributes": {
+                    "src": "divider.sv:55.7-63.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i41$divider.sv:63$138",
+                  "attributes": {
+                    "src": "divider.sv:55.7-63.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i48$divider.sv:68$145",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i50$divider.sv:68$147",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i51$divider.sv:68$148",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i52$divider.sv:68$149",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i56$divider.sv:68$153",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i57$divider.sv:68$154",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i58$divider.sv:68$155",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i59$divider.sv:68$156",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$mux_26$divider.sv:53$130",
+                  "attributes": {
+                    "src": "divider.sv:43.7-53.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$verific$mux_27$divider.sv:53$131",
+                  "attributes": {
+                    "src": "divider.sv:43.7-53.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$verific$mux_28$divider.sv:53$132",
+                  "attributes": {
+                    "src": "divider.sv:43.7-53.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000110"
+                  }
+                },
+                {
+                  "name": "$verific$mux_37$divider.sv:63$135",
+                  "attributes": {
+                    "src": "divider.sv:55.7-63.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$verific$mux_45$divider.sv:67$143",
+                  "attributes": {
+                    "src": "divider.sv:64.7-67.33"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$mux_46$divider.sv:67$144",
+                  "attributes": {
+                    "src": "divider.sv:64.7-67.33"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000110"
+                  }
+                },
+                {
+                  "name": "$verific$mux_48$divider.sv:68$146",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$verific$mux_52$divider.sv:68$150",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$verific$mux_53$divider.sv:68$151",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$verific$mux_54$divider.sv:68$152",
+                  "attributes": {
+                    "src": "divider.sv:40.14-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000110"
+                  }
+                },
+                {
+                  "name": "$verific$mux_59$divider.sv:68$157",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$verific$mux_60$divider.sv:68$158",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$verific$mux_61$divider.sv:68$159",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$verific$mux_62$divider.sv:68$160",
+                  "attributes": {
+                    "src": "divider.sv:32.5-68.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000110"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eqx",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$verific$i152$divider.sv:117$269",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 }
             ]
@@ -86,7 +411,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$i108$divider.sv:107$184",
+                  "name": "$verific$i108$divider.sv:107$195",
                   "attributes": {
                     "src": "divider.sv:107.16-107.26"
                   },
@@ -99,7 +424,7 @@
                   }
                 },
                 {
-                  "name": "$verific$i110$divider.sv:107$185",
+                  "name": "$verific$i110$divider.sv:107$196",
                   "attributes": {
                     "src": "divider.sv:107.16-107.47"
                   },
@@ -134,7 +459,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$i100$divider.sv:99$178",
+                  "name": "$verific$i100$divider.sv:99$189",
                   "attributes": {
                     "src": "divider.sv:99.37-99.53"
                   },
@@ -147,7 +472,46 @@
                   }
                 },
                 {
-                  "name": "$verific$i79$divider.sv:81$165",
+                  "name": "$verific$i154$divider.sv:117$272",
+                  "attributes": {
+                    "src": "divider.sv:117.5-117.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i168$divider.sv:126$278",
+                  "attributes": {
+                    "src": "divider.sv:126.5-126.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i169$divider.sv:127$279",
+                  "attributes": {
+                    "src": "divider.sv:127.9-127.22"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i79$divider.sv:81$176",
                   "attributes": {
                     "src": "divider.sv:81.5-81.28"
                   },
@@ -160,7 +524,7 @@
                   }
                 },
                 {
-                  "name": "$verific$i81$divider.sv:81$167",
+                  "name": "$verific$i81$divider.sv:81$178",
                   "attributes": {
                     "src": "divider.sv:81.33-81.49"
                   },
@@ -190,7 +554,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$equal_14$divider.sv:43$113",
+                  "name": "$verific$equal_14$divider.sv:43$124",
                   "attributes": {
                     "src": "divider.sv:43.11-43.26"
                   },
@@ -218,7 +582,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$not_equal_77$divider.sv:81$164",
+                  "name": "$verific$not_equal_77$divider.sv:81$175",
                   "attributes": {
                     "src": "divider.sv:81.12-81.27"
                   },
@@ -251,7 +615,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$add_143$divider.sv:108$248",
+                  "name": "$verific$add_143$divider.sv:108$259",
                   "attributes": {
                     "src": "divider.sv:108.46-108.73"
                   },
@@ -264,7 +628,7 @@
                   }
                 },
                 {
-                  "name": "$verific$add_35$divider.sv:62$123",
+                  "name": "$verific$add_35$divider.sv:62$134",
                   "attributes": {
                     "src": "divider.sv:62.16-62.23"
                   },
@@ -299,7 +663,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$LessThan_41$divider.sv:64$128",
+                  "name": "$verific$LessThan_41$divider.sv:64$139",
                   "attributes": {
                     "src": "divider.sv:64.11-64.29"
                   },
@@ -334,7 +698,7 @@
             ],
             "cells": [
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$286",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$309",
                   "attributes": {
 
                   },
@@ -347,7 +711,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$333",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$342",
                   "attributes": {
 
                   },
@@ -360,7 +724,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$378",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$381",
                   "attributes": {
 
                   },
@@ -373,7 +737,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$380",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$428",
                   "attributes": {
 
                   },
@@ -386,7 +750,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$382",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$473",
                   "attributes": {
 
                   },
@@ -399,7 +763,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$384",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$475",
                   "attributes": {
 
                   },
@@ -412,7 +776,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$386",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$477",
                   "attributes": {
 
                   },
@@ -425,7 +789,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$388",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$479",
                   "attributes": {
 
                   },
@@ -438,7 +802,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$390",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$481",
                   "attributes": {
 
                   },
@@ -451,7 +815,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$392",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$483",
                   "attributes": {
 
                   },
@@ -464,7 +828,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$394",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$485",
                   "attributes": {
 
                   },
@@ -477,7 +841,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:633:make_cond_eq$462",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$487",
                   "attributes": {
 
                   },
@@ -490,7 +854,33 @@
                   }
                 },
                 {
-                  "name": "$verific$equal_144$divider.sv:108$249",
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$489",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:633:make_cond_eq$557",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$equal_144$divider.sv:108$260",
                   "attributes": {
                     "src": "divider.sv:108.37-108.75"
                   },
@@ -503,7 +893,20 @@
                   }
                 },
                 {
-                  "name": "$verific$equal_29$divider.sv:55$122",
+                  "name": "$verific$equal_159$divider.sv:118$273",
+                  "attributes": {
+                    "src": "divider.sv:118.9-118.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000101",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000101",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$equal_29$divider.sv:55$133",
                   "attributes": {
                     "src": "divider.sv:55.11-55.19"
                   },
@@ -512,6 +915,19 @@
                     "A_WIDTH": "00000000000000000000000000000011",
                     "B_SIGNED": "00000000000000000000000000000000",
                     "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i152$divider.sv:117$271",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 }
@@ -538,7 +954,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$mult_142$divider.sv:108$246",
+                  "name": "$verific$mult_142$divider.sv:108$257",
                   "attributes": {
                     "src": "divider.sv:108.46-108.67"
                   },
@@ -573,7 +989,7 @@
             ],
             "cells": [
                 {
-                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$473",
+                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$568",
                   "attributes": {
 
                   },
@@ -583,7 +999,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$475",
+                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$570",
                   "attributes": {
 
                   },
@@ -593,7 +1009,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$477",
+                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$572",
                   "attributes": {
 
                   },
@@ -603,7 +1019,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$479",
+                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$574",
                   "attributes": {
 
                   },
@@ -613,7 +1029,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$481",
+                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$576",
                   "attributes": {
 
                   },
@@ -623,7 +1039,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$483",
+                  "name": "$auto$verific.cc:1392:merge_past_ffs_clock$578",
                   "attributes": {
 
                   },
@@ -633,7 +1049,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1837:import$470",
+                  "name": "$auto$verificsva.cc:1837:import$565",
                   "attributes": {
 
                   },
@@ -643,7 +1059,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1838:import$471",
+                  "name": "$auto$verificsva.cc:1838:import$566",
                   "attributes": {
 
                   },
@@ -653,7 +1069,7 @@
                   }
                 },
                 {
-                  "name": "$verific$acc_reg$divider.sv:69$157",
+                  "name": "$verific$acc_reg$divider.sv:69$168",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -663,7 +1079,7 @@
                   }
                 },
                 {
-                  "name": "$verific$busy_reg$divider.sv:69$150",
+                  "name": "$verific$busy_reg$divider.sv:69$161",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -673,7 +1089,7 @@
                   }
                 },
                 {
-                  "name": "$verific$ctr_reg$divider.sv:69$156",
+                  "name": "$verific$ctr_reg$divider.sv:69$167",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -683,7 +1099,7 @@
                   }
                 },
                 {
-                  "name": "$verific$dbz_reg$divider.sv:69$153",
+                  "name": "$verific$dbz_reg$divider.sv:69$164",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -693,7 +1109,7 @@
                   }
                 },
                 {
-                  "name": "$verific$den_latched_reg$divider.sv:69$155",
+                  "name": "$verific$den_latched_reg$divider.sv:69$166",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -703,7 +1119,7 @@
                   }
                 },
                 {
-                  "name": "$verific$done_reg$divider.sv:69$151",
+                  "name": "$verific$done_reg$divider.sv:69$162",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -713,7 +1129,17 @@
                   }
                 },
                 {
-                  "name": "$verific$quo_reg$divider.sv:69$154",
+                  "name": "$verific$i152$divider.sv:117$270",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$quo_reg$divider.sv:69$165",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -723,7 +1149,7 @@
                   }
                 },
                 {
-                  "name": "$verific$valid_reg$divider.sv:69$152",
+                  "name": "$verific$valid_reg$divider.sv:69$163",
                   "attributes": {
                     "src": "divider.sv:31.10-69.6"
                   },
@@ -760,7 +1186,7 @@
             ],
             "cells": [
                 {
-                  "name": "$auto$verificsva.cc:1837:import$302",
+                  "name": "$auto$verificsva.cc:1837:import$317",
                   "attributes": {
 
                   },
@@ -772,7 +1198,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1837:import$349",
+                  "name": "$auto$verificsva.cc:1837:import$350",
                   "attributes": {
 
                   },
@@ -784,7 +1210,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1837:import$408",
+                  "name": "$auto$verificsva.cc:1837:import$397",
                   "attributes": {
 
                   },
@@ -796,7 +1222,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1837:import$441",
+                  "name": "$auto$verificsva.cc:1837:import$444",
                   "attributes": {
 
                   },
@@ -808,7 +1234,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1838:import$303",
+                  "name": "$auto$verificsva.cc:1837:import$503",
                   "attributes": {
 
                   },
@@ -820,7 +1246,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1838:import$350",
+                  "name": "$auto$verificsva.cc:1837:import$536",
                   "attributes": {
 
                   },
@@ -832,7 +1258,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1838:import$409",
+                  "name": "$auto$verificsva.cc:1838:import$318",
                   "attributes": {
 
                   },
@@ -844,7 +1270,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1838:import$442",
+                  "name": "$auto$verificsva.cc:1838:import$351",
                   "attributes": {
 
                   },
@@ -856,7 +1282,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:365:getAccept$370",
+                  "name": "$auto$verificsva.cc:1838:import$398",
                   "attributes": {
 
                   },
@@ -868,7 +1294,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$288",
+                  "name": "$auto$verificsva.cc:1838:import$445",
                   "attributes": {
 
                   },
@@ -880,7 +1306,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$289",
+                  "name": "$auto$verificsva.cc:1838:import$504",
                   "attributes": {
 
                   },
@@ -892,7 +1318,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$290",
+                  "name": "$auto$verificsva.cc:1838:import$537",
                   "attributes": {
 
                   },
@@ -904,7 +1330,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$291",
+                  "name": "$auto$verificsva.cc:365:getAccept$305",
                   "attributes": {
 
                   },
@@ -916,7 +1342,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$292",
+                  "name": "$auto$verificsva.cc:365:getAccept$338",
                   "attributes": {
 
                   },
@@ -928,7 +1354,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$293",
+                  "name": "$auto$verificsva.cc:365:getAccept$465",
                   "attributes": {
 
                   },
@@ -940,7 +1366,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$336",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$383",
                   "attributes": {
 
                   },
@@ -952,7 +1378,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$337",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$384",
                   "attributes": {
 
                   },
@@ -964,7 +1390,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$338",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$385",
                   "attributes": {
 
                   },
@@ -976,7 +1402,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$339",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$386",
                   "attributes": {
 
                   },
@@ -988,7 +1414,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$340",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$387",
                   "attributes": {
 
                   },
@@ -1000,7 +1426,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$396",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$388",
                   "attributes": {
 
                   },
@@ -1012,7 +1438,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$397",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$431",
                   "attributes": {
 
                   },
@@ -1024,7 +1450,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$398",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$432",
                   "attributes": {
 
                   },
@@ -1036,7 +1462,79 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$399",
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$433",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000001",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$434",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000001",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$435",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000001",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$491",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000001",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$492",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000001",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$493",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000001",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "00000000000000000000000000000001",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:713:getFirstAcceptReject$494",
                   "attributes": {
 
                   },
@@ -1065,9 +1563,9 @@
             ],
             "cells": [
                 {
-                  "name": "_witness_.assume_auto_verificsva_cc_1748_import_443",
+                  "name": "_witness_.assume_auto_verificsva_cc_1748_import_538",
                   "attributes": {
-                    "hdlname": "_witness_ assume_auto_verificsva_cc_1748_import_443",
+                    "hdlname": "_witness_ assume_auto_verificsva_cc_1748_import_538",
                     "src": "divider.sv:75.1-75.32"
                   },
                   "parameters": {
@@ -1097,7 +1595,7 @@
             ],
             "cells": [
                 {
-                  "name": "$verific$sub_42$divider.sv:65$129",
+                  "name": "$verific$sub_42$divider.sv:65$140",
                   "attributes": {
                     "src": "divider.sv:65.24-65.41"
                   },
@@ -1127,7 +1625,7 @@
             ],
             "cells": [
                 {
-                  "name": "$auto$verificsva.cc:1824:import$296",
+                  "name": "$auto$verificsva.cc:1824:import$311",
                   "attributes": {
 
                   },
@@ -1138,7 +1636,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1824:import$343",
+                  "name": "$auto$verificsva.cc:1824:import$344",
                   "attributes": {
 
                   },
@@ -1149,7 +1647,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1824:import$402",
+                  "name": "$auto$verificsva.cc:1824:import$391",
                   "attributes": {
 
                   },
@@ -1160,7 +1658,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1824:import$435",
+                  "name": "$auto$verificsva.cc:1824:import$438",
                   "attributes": {
 
                   },
@@ -1171,7 +1669,7 @@
                   }
                 },
                 {
-                  "name": "$auto$verificsva.cc:1824:import$464",
+                  "name": "$auto$verificsva.cc:1824:import$497",
                   "attributes": {
 
                   },
@@ -1182,7 +1680,29 @@
                   }
                 },
                 {
-                  "name": "$verific$i73$divider.sv:75$159",
+                  "name": "$auto$verificsva.cc:1824:import$530",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$auto$verificsva.cc:1824:import$559",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$verific$i73$divider.sv:75$170",
                   "attributes": {
                     "src": "divider.sv:75.27-75.30"
                   },
@@ -1193,7 +1713,7 @@
                   }
                 },
                 {
-                  "name": "$verific$i80$divider.sv:81$166",
+                  "name": "$verific$i80$divider.sv:81$177",
                   "attributes": {
                     "src": "divider.sv:81.42-81.48"
                   },
@@ -1204,7 +1724,7 @@
                   }
                 },
                 {
-                  "name": "$verific$i99$divider.sv:99$177",
+                  "name": "$verific$i99$divider.sv:99$188",
                   "attributes": {
                     "src": "divider.sv:99.38-99.43"
                   },
@@ -1212,276 +1732,6 @@
                     "A_SIGNED": "00000000000000000000000000000000",
                     "A_WIDTH": "00000000000000000000000000000001",
                     "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                }
-            ]
-          },
-          {
-            "type": "$mux",
-            "ports": [
-                {
-                  "name": "A",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "B",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "S",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "Y",
-                  "direction": "",
-                  "range": [0, 0]
-                }
-            ],
-            "cells": [
-                {
-                  "name": "$verific$i24$divider.sv:53$117",
-                  "attributes": {
-                    "src": "divider.sv:43.7-53.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i25$divider.sv:53$118",
-                  "attributes": {
-                    "src": "divider.sv:43.7-53.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i39$divider.sv:63$125",
-                  "attributes": {
-                    "src": "divider.sv:55.7-63.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i40$divider.sv:63$126",
-                  "attributes": {
-                    "src": "divider.sv:55.7-63.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i41$divider.sv:63$127",
-                  "attributes": {
-                    "src": "divider.sv:55.7-63.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i48$divider.sv:68$134",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i50$divider.sv:68$136",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i51$divider.sv:68$137",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i52$divider.sv:68$138",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i56$divider.sv:68$142",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i57$divider.sv:68$143",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i58$divider.sv:68$144",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$i59$divider.sv:68$145",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$mux_26$divider.sv:53$119",
-                  "attributes": {
-                    "src": "divider.sv:43.7-53.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$verific$mux_27$divider.sv:53$120",
-                  "attributes": {
-                    "src": "divider.sv:43.7-53.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$verific$mux_28$divider.sv:53$121",
-                  "attributes": {
-                    "src": "divider.sv:43.7-53.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000110"
-                  }
-                },
-                {
-                  "name": "$verific$mux_37$divider.sv:63$124",
-                  "attributes": {
-                    "src": "divider.sv:55.7-63.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000011"
-                  }
-                },
-                {
-                  "name": "$verific$mux_45$divider.sv:67$132",
-                  "attributes": {
-                    "src": "divider.sv:64.7-67.33"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$verific$mux_46$divider.sv:67$133",
-                  "attributes": {
-                    "src": "divider.sv:64.7-67.33"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000110"
-                  }
-                },
-                {
-                  "name": "$verific$mux_48$divider.sv:68$135",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000011"
-                  }
-                },
-                {
-                  "name": "$verific$mux_52$divider.sv:68$139",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$verific$mux_53$divider.sv:68$140",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$verific$mux_54$divider.sv:68$141",
-                  "attributes": {
-                    "src": "divider.sv:40.14-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000110"
-                  }
-                },
-                {
-                  "name": "$verific$mux_59$divider.sv:68$146",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$verific$mux_60$divider.sv:68$147",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$verific$mux_61$divider.sv:68$148",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000011"
-                  }
-                },
-                {
-                  "name": "$verific$mux_62$divider.sv:68$149",
-                  "attributes": {
-                    "src": "divider.sv:32.5-68.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000110"
                   }
                 }
             ]
@@ -1502,7 +1752,7 @@
             ],
             "cells": [
                 {
-                  "name": "$auto$verificsva.cc:738:getFirstAcceptReject$400",
+                  "name": "$auto$verificsva.cc:738:getFirstAcceptReject$495",
                   "attributes": {
 
                   },

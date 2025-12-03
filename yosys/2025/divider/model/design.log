@@ -66,7 +66,7 @@ Cleaned up 0 empty switches.
 
 2.2.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module divider.
-<suppressed ~41 debug messages>
+<suppressed ~57 debug messages>
 
 2.3. Executing FUTURE pass.
 
@@ -75,7 +75,7 @@ Optimizing module divider.
 
 2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
-Removed 0 unused cells and 129 unused wires.
+Removed 0 unused cells and 163 unused wires.
 <suppressed ~10 debug messages>
 
 2.6. Executing CHECK pass (checking for obvious problems).
@@ -144,15 +144,16 @@ Optimizing module divider.
 2.7.14. Finished fast OPT passes. (There is nothing left to do.)
 
 2.8. Executing WREDUCE pass (reducing word size of cells).
-Removed top 2 bits (of 3) from port B of cell divider.$verific$add_35$divider.sv:62$123 ($add).
-Removed top 1 bits (of 6) from port A of cell divider.$verific$LessThan_41$divider.sv:64$128 ($le).
-Removed top 1 bits (of 6) from port B of cell divider.$verific$sub_42$divider.sv:65$129 ($sub).
-Removed top 1 bits (of 6) from port Y of cell divider.$verific$sub_42$divider.sv:65$129 ($sub).
-Removed top 1 bits (of 6) from port A of cell divider.$verific$sub_42$divider.sv:65$129 ($sub).
-Removed top 4 bits (of 5) from mux cell divider.$verific$mux_45$divider.sv:67$132 ($mux).
-Removed top 5 bits (of 10) from port Y of cell divider.$verific$mult_142$divider.sv:108$246 ($mul).
-Removed top 1 bits (of 6) from wire divider.$verific$n109$91.
-Removed top 5 bits (of 10) from wire divider.$verific$n301$104.
+Removed top 2 bits (of 3) from port B of cell divider.$verific$add_35$divider.sv:62$134 ($add).
+Removed top 1 bits (of 6) from port A of cell divider.$verific$LessThan_41$divider.sv:64$139 ($le).
+Removed top 1 bits (of 6) from port B of cell divider.$verific$sub_42$divider.sv:65$140 ($sub).
+Removed top 1 bits (of 6) from port Y of cell divider.$verific$sub_42$divider.sv:65$140 ($sub).
+Removed top 1 bits (of 6) from port A of cell divider.$verific$sub_42$divider.sv:65$140 ($sub).
+Removed top 4 bits (of 5) from mux cell divider.$verific$mux_45$divider.sv:67$143 ($mux).
+Removed top 5 bits (of 10) from port Y of cell divider.$verific$mult_142$divider.sv:108$257 ($mul).
+Removed top 1 bits (of 2) from port B of cell divider.$verific$i152$divider.sv:117$271 ($eq).
+Removed top 1 bits (of 6) from wire divider.$verific$n109$102.
+Removed top 5 bits (of 10) from wire divider.$verific$n301$115.
 
 2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
@@ -181,25 +182,26 @@ Finding unused cells or wires in module \divider..
 
         +----------Local Count, excluding submodules.
         | 
-      108 wires
-      233 wire bits
+      125 wires
+      250 wire bits
        14 public wires
        41 public wire bits
        11 ports
        27 port bits
-      107 cells
+      126 cells
         2   $add
-       24   $adff
-        3   $and
-        4   $assert
+       30   $adff
+        6   $and
+        6   $assert
         1   $assume
-       16   $dff
-       14   $eq
+       17   $dff
+       18   $eq
+        1   $eqx
         1   $le
         1   $logic_not
         1   $mul
        27   $mux
-        8   $not
+       10   $not
         2   $or
         1   $reduce_bool
         1   $reduce_or
@@ -225,6 +227,6 @@ Module divider directly or indirectly contains formal properties -> setting "kee
 5. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: 0f5d7983fc, CPU: user 0.02s system 0.02s, MEM: 24.11 MB peak
+End of script. Logfile hash: 9708aad3a7, CPU: user 0.02s system 0.02s, MEM: 24.31 MB peak
 Yosys 0.59 (git sha1 5df4c20be, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
-Time spent: 27% 2x hierarchy (0 sec), 17% 5x opt_clean (0 sec), ...
+Time spent: 28% 2x hierarchy (0 sec), 19% 1x verific (0 sec), ...

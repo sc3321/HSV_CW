@@ -2,420 +2,490 @@
 ; yosys-smt2-module divider
 (declare-sort |divider_s| 0)
 (declare-fun |divider_is| (|divider_s|) Bool)
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$486"], "smtname": 0, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#0| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$486
-; yosys-smt2-register $auto$async2sync.cc:234:execute$486 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$486| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#0| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$488"], "smtname": 1, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#1| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$488
-; yosys-smt2-register $auto$async2sync.cc:234:execute$488 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$488| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#1| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$490"], "smtname": 2, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#2| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$490
-; yosys-smt2-register $auto$async2sync.cc:234:execute$490 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$490| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#2| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$492"], "smtname": 3, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#3| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$492
-; yosys-smt2-register $auto$async2sync.cc:234:execute$492 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$492| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#3| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$494"], "smtname": 4, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#4| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$494
-; yosys-smt2-register $auto$async2sync.cc:234:execute$494 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$494| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#4| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$496"], "smtname": 5, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#5| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$496
-; yosys-smt2-register $auto$async2sync.cc:234:execute$496 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$496| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#5| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$498"], "smtname": 6, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#6| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$498
-; yosys-smt2-register $auto$async2sync.cc:234:execute$498 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$498| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#6| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$500"], "smtname": 7, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#7| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$500
-; yosys-smt2-register $auto$async2sync.cc:234:execute$500 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$500| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#7| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$502"], "smtname": 8, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#8| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$502
-; yosys-smt2-register $auto$async2sync.cc:234:execute$502 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$502| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#8| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$504"], "smtname": 9, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#9| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$504
-; yosys-smt2-register $auto$async2sync.cc:234:execute$504 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$504| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#9| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$506"], "smtname": 10, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#10| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$506
-; yosys-smt2-register $auto$async2sync.cc:234:execute$506 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$506| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#10| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$508"], "smtname": 11, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#11| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$508
-; yosys-smt2-register $auto$async2sync.cc:234:execute$508 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$508| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#11| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$510"], "smtname": 12, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#12| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$510
-; yosys-smt2-register $auto$async2sync.cc:234:execute$510 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$510| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#12| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$512"], "smtname": 13, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#13| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$512
-; yosys-smt2-register $auto$async2sync.cc:234:execute$512 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$512| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#13| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$514"], "smtname": 14, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#14| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$514
-; yosys-smt2-register $auto$async2sync.cc:234:execute$514 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$514| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#14| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$516"], "smtname": 15, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#15| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$516
-; yosys-smt2-register $auto$async2sync.cc:234:execute$516 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$516| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#15| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$518"], "smtname": 16, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#16| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$518
-; yosys-smt2-register $auto$async2sync.cc:234:execute$518 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$518| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#16| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$520"], "smtname": 17, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#17| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$520
-; yosys-smt2-register $auto$async2sync.cc:234:execute$520 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$520| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#17| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$522"], "smtname": 18, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#18| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$522
-; yosys-smt2-register $auto$async2sync.cc:234:execute$522 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$522| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#18| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$524"], "smtname": 19, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#19| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$524
-; yosys-smt2-register $auto$async2sync.cc:234:execute$524 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$524| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#19| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$526"], "smtname": 20, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#20| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$526
-; yosys-smt2-register $auto$async2sync.cc:234:execute$526 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$526| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#20| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$528"], "smtname": 21, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#21| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$528
-; yosys-smt2-register $auto$async2sync.cc:234:execute$528 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$528| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#21| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$530"], "smtname": 22, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#22| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$530
-; yosys-smt2-register $auto$async2sync.cc:234:execute$530 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$530| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#22| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$532"], "smtname": 23, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#23| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$532
-; yosys-smt2-register $auto$async2sync.cc:234:execute$532 1
-(define-fun |divider_n $auto$async2sync.cc:234:execute$532| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#23| state)) #b1))
-; yosys-smt2-anyinit divider#24 5 $auto$verific.cc:1392:merge_past_ffs_clock$473
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_473"], "smtname": 24, "smtoffset": 0, "type": "init", "width": 5}
-(declare-fun |divider#24| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_473
-; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_473 5
-; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_473 5
-(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_473| ((state |divider_s|)) (_ BitVec 5) (|divider#24| state))
-; yosys-smt2-anyinit divider#25 5 $auto$verific.cc:1392:merge_past_ffs_clock$475
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_475"], "smtname": 25, "smtoffset": 0, "type": "init", "width": 5}
-(declare-fun |divider#25| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_475
-; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_475 5
-; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_475 5
-(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_475| ((state |divider_s|)) (_ BitVec 5) (|divider#25| state))
-; yosys-smt2-anyinit divider#26 5 $auto$verific.cc:1392:merge_past_ffs_clock$477
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_477"], "smtname": 26, "smtoffset": 0, "type": "init", "width": 5}
-(declare-fun |divider#26| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_477
-; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_477 5
-; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_477 5
-(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_477| ((state |divider_s|)) (_ BitVec 5) (|divider#26| state))
-; yosys-smt2-anyinit divider#27 5 $auto$verific.cc:1392:merge_past_ffs_clock$479
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_479"], "smtname": 27, "smtoffset": 0, "type": "init", "width": 5}
-(declare-fun |divider#27| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_479
-; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_479 5
-; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_479 5
-(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_479| ((state |divider_s|)) (_ BitVec 5) (|divider#27| state))
-; yosys-smt2-anyinit divider#28 5 $auto$verific.cc:1392:merge_past_ffs_clock$481
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_481"], "smtname": 28, "smtoffset": 0, "type": "init", "width": 5}
-(declare-fun |divider#28| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_481
-; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_481 5
-; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_481 5
-(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_481| ((state |divider_s|)) (_ BitVec 5) (|divider#28| state))
-; yosys-smt2-anyinit divider#29 5 $auto$verific.cc:1392:merge_past_ffs_clock$483
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_483"], "smtname": 29, "smtoffset": 0, "type": "init", "width": 5}
-(declare-fun |divider#29| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_483
-; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_483 5
-; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_483 5
-(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_483| ((state |divider_s|)) (_ BitVec 5) (|divider#29| state))
-; yosys-smt2-anyinit divider#30 6 divider.sv:31.10-69.6
-; yosys-smt2-witness {"offset": 0, "path": ["\\acc"], "smtname": 30, "smtoffset": 0, "type": "init", "width": 6}
-(declare-fun |divider#30| (|divider_s|) (_ BitVec 6)) ; \acc
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$581"], "smtname": 0, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#0| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$581
+; yosys-smt2-register $auto$async2sync.cc:234:execute$581 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$581| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#0| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$583"], "smtname": 1, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#1| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$583
+; yosys-smt2-register $auto$async2sync.cc:234:execute$583 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$583| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#1| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$585"], "smtname": 2, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#2| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$585
+; yosys-smt2-register $auto$async2sync.cc:234:execute$585 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$585| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#2| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$587"], "smtname": 3, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#3| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$587
+; yosys-smt2-register $auto$async2sync.cc:234:execute$587 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$587| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#3| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$589"], "smtname": 4, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#4| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$589
+; yosys-smt2-register $auto$async2sync.cc:234:execute$589 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$589| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#4| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$591"], "smtname": 5, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#5| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$591
+; yosys-smt2-register $auto$async2sync.cc:234:execute$591 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$591| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#5| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$593"], "smtname": 6, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#6| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$593
+; yosys-smt2-register $auto$async2sync.cc:234:execute$593 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$593| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#6| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$595"], "smtname": 7, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#7| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$595
+; yosys-smt2-register $auto$async2sync.cc:234:execute$595 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$595| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#7| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$597"], "smtname": 8, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#8| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$597
+; yosys-smt2-register $auto$async2sync.cc:234:execute$597 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$597| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#8| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$599"], "smtname": 9, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#9| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$599
+; yosys-smt2-register $auto$async2sync.cc:234:execute$599 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$599| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#9| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$601"], "smtname": 10, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#10| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$601
+; yosys-smt2-register $auto$async2sync.cc:234:execute$601 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$601| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#10| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$603"], "smtname": 11, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#11| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$603
+; yosys-smt2-register $auto$async2sync.cc:234:execute$603 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$603| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#11| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$605"], "smtname": 12, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#12| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$605
+; yosys-smt2-register $auto$async2sync.cc:234:execute$605 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$605| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#12| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$607"], "smtname": 13, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#13| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$607
+; yosys-smt2-register $auto$async2sync.cc:234:execute$607 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$607| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#13| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$609"], "smtname": 14, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#14| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$609
+; yosys-smt2-register $auto$async2sync.cc:234:execute$609 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$609| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#14| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$611"], "smtname": 15, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#15| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$611
+; yosys-smt2-register $auto$async2sync.cc:234:execute$611 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$611| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#15| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$613"], "smtname": 16, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#16| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$613
+; yosys-smt2-register $auto$async2sync.cc:234:execute$613 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$613| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#16| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$615"], "smtname": 17, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#17| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$615
+; yosys-smt2-register $auto$async2sync.cc:234:execute$615 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$615| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#17| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$617"], "smtname": 18, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#18| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$617
+; yosys-smt2-register $auto$async2sync.cc:234:execute$617 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$617| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#18| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$619"], "smtname": 19, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#19| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$619
+; yosys-smt2-register $auto$async2sync.cc:234:execute$619 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$619| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#19| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$621"], "smtname": 20, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#20| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$621
+; yosys-smt2-register $auto$async2sync.cc:234:execute$621 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$621| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#20| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$623"], "smtname": 21, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#21| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$623
+; yosys-smt2-register $auto$async2sync.cc:234:execute$623 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$623| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#21| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$625"], "smtname": 22, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#22| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$625
+; yosys-smt2-register $auto$async2sync.cc:234:execute$625 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$625| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#22| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$627"], "smtname": 23, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#23| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$627
+; yosys-smt2-register $auto$async2sync.cc:234:execute$627 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$627| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#23| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$629"], "smtname": 24, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#24| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$629
+; yosys-smt2-register $auto$async2sync.cc:234:execute$629 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$629| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#24| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$631"], "smtname": 25, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#25| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$631
+; yosys-smt2-register $auto$async2sync.cc:234:execute$631 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$631| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#25| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$633"], "smtname": 26, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#26| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$633
+; yosys-smt2-register $auto$async2sync.cc:234:execute$633 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$633| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#26| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$635"], "smtname": 27, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#27| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$635
+; yosys-smt2-register $auto$async2sync.cc:234:execute$635 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$635| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#27| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$637"], "smtname": 28, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#28| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$637
+; yosys-smt2-register $auto$async2sync.cc:234:execute$637 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$637| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#28| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$async2sync.cc:234:execute$639"], "smtname": 29, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#29| (|divider_s|) (_ BitVec 1)) ; $auto$async2sync.cc:234:execute$639
+; yosys-smt2-register $auto$async2sync.cc:234:execute$639 1
+(define-fun |divider_n $auto$async2sync.cc:234:execute$639| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#29| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$verific$i152$divider.sv:117$267"], "smtname": 30, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#30| (|divider_s|) (_ BitVec 1)) ; $verific$i152$divider.sv:117$267
+; yosys-smt2-register $verific$i152$divider.sv:117$267 1
+(define-fun |divider_n $verific$i152$divider.sv:117$267| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#30| state)) #b1))
+; yosys-smt2-anyinit divider#31 5 $auto$verific.cc:1392:merge_past_ffs_clock$568
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_568"], "smtname": 31, "smtoffset": 0, "type": "init", "width": 5}
+(declare-fun |divider#31| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_568
+; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_568 5
+; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_568 5
+(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_568| ((state |divider_s|)) (_ BitVec 5) (|divider#31| state))
+; yosys-smt2-anyinit divider#32 5 $auto$verific.cc:1392:merge_past_ffs_clock$570
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_570"], "smtname": 32, "smtoffset": 0, "type": "init", "width": 5}
+(declare-fun |divider#32| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_570
+; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_570 5
+; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_570 5
+(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_570| ((state |divider_s|)) (_ BitVec 5) (|divider#32| state))
+; yosys-smt2-anyinit divider#33 5 $auto$verific.cc:1392:merge_past_ffs_clock$572
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_572"], "smtname": 33, "smtoffset": 0, "type": "init", "width": 5}
+(declare-fun |divider#33| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_572
+; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_572 5
+; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_572 5
+(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_572| ((state |divider_s|)) (_ BitVec 5) (|divider#33| state))
+; yosys-smt2-anyinit divider#34 5 $auto$verific.cc:1392:merge_past_ffs_clock$574
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_574"], "smtname": 34, "smtoffset": 0, "type": "init", "width": 5}
+(declare-fun |divider#34| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_574
+; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_574 5
+; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_574 5
+(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_574| ((state |divider_s|)) (_ BitVec 5) (|divider#34| state))
+; yosys-smt2-anyinit divider#35 5 $auto$verific.cc:1392:merge_past_ffs_clock$576
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_576"], "smtname": 35, "smtoffset": 0, "type": "init", "width": 5}
+(declare-fun |divider#35| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_576
+; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_576 5
+; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_576 5
+(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_576| ((state |divider_s|)) (_ BitVec 5) (|divider#35| state))
+; yosys-smt2-anyinit divider#36 5 $auto$verific.cc:1392:merge_past_ffs_clock$578
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_verific_cc_1392_merge_past_ffs_clock_578"], "smtname": 36, "smtoffset": 0, "type": "init", "width": 5}
+(declare-fun |divider#36| (|divider_s|) (_ BitVec 5)) ; \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_578
+; yosys-smt2-register _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_578 5
+; yosys-smt2-wire _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_578 5
+(define-fun |divider_n _witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_578| ((state |divider_s|)) (_ BitVec 5) (|divider#36| state))
+; yosys-smt2-anyinit divider#37 6 divider.sv:31.10-69.6
+; yosys-smt2-witness {"offset": 0, "path": ["\\acc"], "smtname": 37, "smtoffset": 0, "type": "init", "width": 6}
+(declare-fun |divider#37| (|divider_s|) (_ BitVec 6)) ; \acc
 ; yosys-smt2-register acc 6
 ; yosys-smt2-wire acc 6
-(define-fun |divider_n acc| ((state |divider_s|)) (_ BitVec 6) (|divider#30| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\busy"], "smtname": 31, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#31| (|divider_s|) (_ BitVec 1)) ; \busy
+(define-fun |divider_n acc| ((state |divider_s|)) (_ BitVec 6) (|divider#37| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\busy"], "smtname": 38, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#38| (|divider_s|) (_ BitVec 1)) ; \busy
 ; yosys-smt2-output busy 1
 ; yosys-smt2-register busy 1
 ; yosys-smt2-wire busy 1
-(define-fun |divider_n busy| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#31| state)) #b1))
-(declare-fun |divider#32| (|divider_s|) Bool) ; \clk
+(define-fun |divider_n busy| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#38| state)) #b1))
+(declare-fun |divider#39| (|divider_s|) Bool) ; \clk
 ; yosys-smt2-input clk 1
 ; yosys-smt2-wire clk 1
 ; yosys-smt2-clock clk posedge
 ; yosys-smt2-witness {"offset": 0, "path": ["\\clk"], "smtname": "clk", "smtoffset": 0, "type": "posedge", "width": 1}
 ; yosys-smt2-witness {"offset": 0, "path": ["\\clk"], "smtname": "clk", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |divider_n clk| ((state |divider_s|)) Bool (|divider#32| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\ctr"], "smtname": 33, "smtoffset": 0, "type": "reg", "width": 3}
-(declare-fun |divider#33| (|divider_s|) (_ BitVec 3)) ; \ctr
+(define-fun |divider_n clk| ((state |divider_s|)) Bool (|divider#39| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\ctr"], "smtname": 40, "smtoffset": 0, "type": "reg", "width": 3}
+(declare-fun |divider#40| (|divider_s|) (_ BitVec 3)) ; \ctr
 ; yosys-smt2-register ctr 3
 ; yosys-smt2-wire ctr 3
-(define-fun |divider_n ctr| ((state |divider_s|)) (_ BitVec 3) (|divider#33| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\dbz"], "smtname": 34, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#34| (|divider_s|) (_ BitVec 1)) ; \dbz
+(define-fun |divider_n ctr| ((state |divider_s|)) (_ BitVec 3) (|divider#40| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\dbz"], "smtname": 41, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#41| (|divider_s|) (_ BitVec 1)) ; \dbz
 ; yosys-smt2-output dbz 1
 ; yosys-smt2-register dbz 1
 ; yosys-smt2-wire dbz 1
-(define-fun |divider_n dbz| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#34| state)) #b1))
-(declare-fun |divider#35| (|divider_s|) (_ BitVec 5)) ; \den
+(define-fun |divider_n dbz| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#41| state)) #b1))
+(declare-fun |divider#42| (|divider_s|) (_ BitVec 5)) ; \den
 ; yosys-smt2-input den 5
 ; yosys-smt2-wire den 5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\den"], "smtname": "den", "smtoffset": 0, "type": "input", "width": 5}
-(define-fun |divider_n den| ((state |divider_s|)) (_ BitVec 5) (|divider#35| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\den_latched"], "smtname": 36, "smtoffset": 0, "type": "reg", "width": 5}
-(declare-fun |divider#36| (|divider_s|) (_ BitVec 5)) ; \den_latched
+(define-fun |divider_n den| ((state |divider_s|)) (_ BitVec 5) (|divider#42| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\den_latched"], "smtname": 43, "smtoffset": 0, "type": "reg", "width": 5}
+(declare-fun |divider#43| (|divider_s|) (_ BitVec 5)) ; \den_latched
 ; yosys-smt2-register den_latched 5
 ; yosys-smt2-wire den_latched 5
-(define-fun |divider_n den_latched| ((state |divider_s|)) (_ BitVec 5) (|divider#36| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\done"], "smtname": 37, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#37| (|divider_s|) (_ BitVec 1)) ; \done
+(define-fun |divider_n den_latched| ((state |divider_s|)) (_ BitVec 5) (|divider#43| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\done"], "smtname": 44, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#44| (|divider_s|) (_ BitVec 1)) ; \done
 ; yosys-smt2-output done 1
 ; yosys-smt2-register done 1
 ; yosys-smt2-wire done 1
-(define-fun |divider_n done| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#37| state)) #b1))
-(declare-fun |divider#38| (|divider_s|) Bool) ; \go
+(define-fun |divider_n done| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#44| state)) #b1))
+(declare-fun |divider#45| (|divider_s|) Bool) ; \go
 ; yosys-smt2-input go 1
 ; yosys-smt2-wire go 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\go"], "smtname": "go", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |divider_n go| ((state |divider_s|)) Bool (|divider#38| state))
-(declare-fun |divider#39| (|divider_s|) (_ BitVec 5)) ; \num
+(define-fun |divider_n go| ((state |divider_s|)) Bool (|divider#45| state))
+(declare-fun |divider#46| (|divider_s|) (_ BitVec 5)) ; \num
 ; yosys-smt2-input num 5
 ; yosys-smt2-wire num 5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\num"], "smtname": "num", "smtoffset": 0, "type": "input", "width": 5}
-(define-fun |divider_n num| ((state |divider_s|)) (_ BitVec 5) (|divider#39| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\quo"], "smtname": 40, "smtoffset": 0, "type": "reg", "width": 5}
-(declare-fun |divider#40| (|divider_s|) (_ BitVec 5)) ; \quo
+(define-fun |divider_n num| ((state |divider_s|)) (_ BitVec 5) (|divider#46| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\quo"], "smtname": 47, "smtoffset": 0, "type": "reg", "width": 5}
+(declare-fun |divider#47| (|divider_s|) (_ BitVec 5)) ; \quo
 ; yosys-smt2-output quo 5
 ; yosys-smt2-register quo 5
 ; yosys-smt2-wire quo 5
-(define-fun |divider_n quo| ((state |divider_s|)) (_ BitVec 5) (|divider#40| state))
+(define-fun |divider_n quo| ((state |divider_s|)) (_ BitVec 5) (|divider#47| state))
 ; yosys-smt2-output rem 5
 ; yosys-smt2-wire rem 5
-(define-fun |divider_n rem| ((state |divider_s|)) (_ BitVec 5) ((_ extract 5 1) (|divider#30| state)))
-(declare-fun |divider#41| (|divider_s|) Bool) ; \rst
+(define-fun |divider_n rem| ((state |divider_s|)) (_ BitVec 5) ((_ extract 5 1) (|divider#37| state)))
+(declare-fun |divider#48| (|divider_s|) Bool) ; \rst
 ; yosys-smt2-input rst 1
 ; yosys-smt2-wire rst 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\rst"], "smtname": "rst", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |divider_n rst| ((state |divider_s|)) Bool (|divider#41| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\valid"], "smtname": 42, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |divider#42| (|divider_s|) (_ BitVec 1)) ; \valid
+(define-fun |divider_n rst| ((state |divider_s|)) Bool (|divider#48| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\valid"], "smtname": 49, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |divider#49| (|divider_s|) (_ BitVec 1)) ; \valid
 ; yosys-smt2-output valid 1
 ; yosys-smt2-register valid 1
 ; yosys-smt2-wire valid 1
-(define-fun |divider_n valid| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#42| state)) #b1))
-(define-fun |divider#43| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#32| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$595
-; yosys-smt2-assume 0 $auto$formalff.cc:987:execute$596
-(define-fun |divider_u 0| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#43| state)) #b1) (not true))) ; $auto$formalff.cc:987:execute$596
-(define-fun |divider#44| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#38| state) #b1 #b0))) ; $verific$n235$22
-(define-fun |divider#45| ((state |divider_s|)) (_ BitVec 1) (bvor (ite (|divider#41| state) #b1 #b0) (|divider#44| state))) ; $verific$n266$43
-(define-fun |divider#46| ((state |divider_s|)) Bool (not (or  (= ((_ extract 0 0) (|divider#35| state)) #b1) (= ((_ extract 1 1) (|divider#35| state)) #b1) (= ((_ extract 2 2) (|divider#35| state)) #b1) (= ((_ extract 3 3) (|divider#35| state)) #b1) (= ((_ extract 4 4) (|divider#35| state)) #b1)))) ; $verific$n36$5
-(define-fun |divider#47| ((state |divider_s|)) (_ BitVec 1) (bvor (|divider#45| state) (ite (|divider#46| state) #b1 #b0))) ; $verific$n268$44
-(define-fun |divider#48| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#0| state))) ; $auto$verificsva.cc:1835:import$300
-(define-fun |divider#49| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#4| state))) ; $auto$verificsva.cc:1836:import$301
-; yosys-smt2-assert 0 _witness_.assert_auto_verificsva_cc_1748_import_257 divider.sv:111.1-111.34
-(define-fun |divider_a 0| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#48| state)) #b1) (not (= ((_ extract 0 0) (|divider#49| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_257
-(define-fun |divider#50| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#1| state))) ; $auto$verificsva.cc:1835:import$347
-(define-fun |divider#51| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#5| state))) ; $auto$verificsva.cc:1836:import$348
-; yosys-smt2-assert 1 _witness_.assert_auto_verificsva_cc_1748_import_304 divider.sv:102.1-102.36
-(define-fun |divider_a 1| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#50| state)) #b1) (not (= ((_ extract 0 0) (|divider#51| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_304
-(define-fun |divider#52| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#2| state))) ; $auto$verificsva.cc:1835:import$406
-(define-fun |divider#53| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#6| state))) ; $auto$verificsva.cc:1836:import$407
-; yosys-smt2-assert 2 _witness_.assert_auto_verificsva_cc_1748_import_351 divider.sv:93.1-93.26
-(define-fun |divider_a 2| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#52| state)) #b1) (not (= ((_ extract 0 0) (|divider#53| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_351
-(define-fun |divider#54| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#3| state))) ; $auto$verificsva.cc:1835:import$439
-(define-fun |divider#55| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#7| state))) ; $auto$verificsva.cc:1836:import$440
-; yosys-smt2-assert 3 _witness_.assert_auto_verificsva_cc_1748_import_410 divider.sv:84.1-84.40
-(define-fun |divider_a 3| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#54| state)) #b1) (not (= ((_ extract 0 0) (|divider#55| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_410
-(define-fun |divider#56| ((state |divider_s|)) Bool (= (concat (|divider#31| state) (|divider#44| state)) #b10)) ; $auto$rtlil.cc:3188:Or$467
-(define-fun |divider#57| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#56| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$465
-; yosys-smt2-assume 1 _witness_.assume_auto_verificsva_cc_1748_import_443 divider.sv:75.1-75.32
-(define-fun |divider_u 1| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#57| state)) #b1) (not (|divider#56| state)))) ; _witness_.assume_auto_verificsva_cc_1748_import_443
-(define-fun |divider#58| ((state |divider_s|)) Bool (= (|divider#33| state) #b100)) ; $verific$n83$9
-(define-fun |divider#59| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#58| state) #b1 (|divider#42| state))) ; $verific$n107$12
-(define-fun |divider#60| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#38| state) #b0 (|divider#59| state))) ; $verific$n153$14
-(define-fun |divider#61| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#60| state))) ; $verific$n182$20
-(define-fun |divider#62| ((state |divider_s|)) Bool (bvule (concat #b0 (|divider#36| state)) (|divider#30| state))) ; $verific$n108$13
-(define-fun |divider#63| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#62| state) #b1 #b0)) ; $verific$n140$94 [0]
-(define-fun |divider#64| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#46| state) (|divider#40| state) (concat ((_ extract 3 0) (|divider#39| state)) #b0))) ; $verific$n70$85
-(define-fun |divider#65| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#38| state) (|divider#64| state) (concat ((_ extract 3 0) (|divider#40| state)) (|divider#63| state)))) ; $verific$n167$98
-(define-fun |divider#66| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#41| state) #b00000 (|divider#65| state))) ; $verific$n184$100
-(define-fun |divider#67| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#58| state) #b1 #b0)) ; $verific$n106$11
-(define-fun |divider#68| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#46| state) #b1 #b0)) ; $verific$n62$8
-(define-fun |divider#69| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#38| state) (|divider#68| state) (|divider#67| state))) ; $verific$n159$16
-(define-fun |divider#70| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#69| state))) ; $verific$n181$19
-(define-fun |divider#71| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#46| state) (|divider#36| state) (|divider#35| state))) ; $verific$n64$84
-(define-fun |divider#72| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#38| state) (|divider#71| state) (|divider#36| state))) ; $verific$n161$97
-(define-fun |divider#73| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#41| state) #b00000 (|divider#72| state))) ; $verific$n190$101
-(define-fun |divider#74| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#38| state) (|divider#68| state) (|divider#34| state))) ; $verific$n160$17
-(define-fun |divider#75| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#74| state))) ; $verific$n183$21
-(define-fun |divider#76| ((state |divider_s|)) (_ BitVec 3) (bvadd (|divider#33| state) #b001)) ; $verific$n93$88
-(define-fun |divider#77| ((state |divider_s|)) (_ BitVec 3) (ite (|divider#58| state) #b000 (|divider#76| state))) ; $verific$n101$90
-(define-fun |divider#78| ((state |divider_s|)) (_ BitVec 3) (ite (|divider#38| state) #b000 (|divider#77| state))) ; $verific$n154$96
-(define-fun |divider#79| ((state |divider_s|)) (_ BitVec 3) (ite (|divider#41| state) #b000 (|divider#78| state))) ; $verific$n196$102
-(define-fun |divider#80| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#58| state) #b0 (|divider#31| state))) ; $verific$n105$10
-(define-fun |divider#81| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#46| state) #b0 #b1)) ; $verific$n61$7
-(define-fun |divider#82| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#38| state) (|divider#81| state) (|divider#80| state))) ; $verific$n158$15
-(define-fun |divider#83| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#82| state))) ; $verific$n180$18
-(define-fun |divider#84| ((state |divider_s|)) (_ BitVec 5) (bvsub ((_ extract 4 0) (|divider#30| state)) (|divider#36| state))) ; $auto$wreduce.cc:514:run$484 [4:0]
-(define-fun |divider#85| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#62| state) (concat (|divider#84| state) ((_ extract 4 4) (|divider#40| state))) (concat ((_ extract 4 0) (|divider#30| state)) ((_ extract 4 4) (|divider#40| state))))) ; $verific$n146$95
-(define-fun |divider#86| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#46| state) (|divider#30| state) (concat #b00000 ((_ extract 4 4) (|divider#39| state))))) ; $verific$n76$86
-(define-fun |divider#87| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#38| state) (|divider#86| state) (|divider#85| state))) ; $verific$n173$99
-(define-fun |divider#88| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#41| state) (|divider#30| state) (|divider#87| state))) ; $verific$n200$103
-(define-fun |divider#89| ((state |divider_s|)) (_ BitVec 1) (bvnot (|divider#42| state))) ; $verific$n241$27
-(define-fun |divider#90| ((state |divider_s|)) (_ BitVec 1) (bvand (|divider#31| state) (|divider#89| state))) ; $verific$n242$28
-(define-fun |divider#91| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#22| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$376
-(define-fun |divider#92| ((state |divider_s|)) Bool (= (concat (|divider#91| state) (|divider#90| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$391
-(define-fun |divider#93| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (ite (|divider#92| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$581
-(define-fun |divider#94| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#21| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$375
-(define-fun |divider#95| ((state |divider_s|)) Bool (= (concat (|divider#94| state) (|divider#90| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$387
-(define-fun |divider#96| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (ite (|divider#95| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$579
-(define-fun |divider#97| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#20| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$374
-(define-fun |divider#98| ((state |divider_s|)) Bool (= (concat (|divider#97| state) (|divider#90| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$383
-(define-fun |divider#99| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (ite (|divider#98| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$577
-(define-fun |divider#100| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#8| state))) ; $auto$verificsva.cc:296:getAccept$359
-(define-fun |divider#101| ((state |divider_s|)) Bool (= (concat (|divider#100| state) (|divider#90| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$379
-(define-fun |divider#102| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (ite (|divider#101| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$575
-(define-fun |divider#103| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#18| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$327
-(define-fun |divider#104| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#103| state))) ; $auto$rtlil.cc:3275:Mux$573
-(define-fun |divider#105| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#17| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$326
-(define-fun |divider#106| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#105| state))) ; $auto$rtlil.cc:3275:Mux$571
-(define-fun |divider#107| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#16| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$325
-(define-fun |divider#108| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#107| state))) ; $auto$rtlil.cc:3275:Mux$569
-(define-fun |divider#109| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#15| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$324
-(define-fun |divider#110| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#109| state))) ; $auto$rtlil.cc:3275:Mux$567
-(define-fun |divider#111| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#100| state))) ; $auto$rtlil.cc:3275:Mux$565
-(define-fun |divider#112| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#13| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$280
-(define-fun |divider#113| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#112| state))) ; $auto$rtlil.cc:3275:Mux$563
-(define-fun |divider#114| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#12| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$279
-(define-fun |divider#115| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#114| state))) ; $auto$rtlil.cc:3275:Mux$561
-(define-fun |divider#116| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#11| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$278
-(define-fun |divider#117| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#116| state))) ; $auto$rtlil.cc:3275:Mux$559
-(define-fun |divider#118| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#10| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$277
-(define-fun |divider#119| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#118| state))) ; $auto$rtlil.cc:3275:Mux$557
-(define-fun |divider#120| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#9| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$276
-(define-fun |divider#121| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#120| state))) ; $auto$rtlil.cc:3275:Mux$555
-(define-fun |divider#122| ((state |divider_s|)) Bool (distinct (|divider#35| state) #b00000)) ; $verific$n239$25
-(define-fun |divider#123| ((state |divider_s|)) (_ BitVec 1) (bvand (ite (|divider#38| state) #b1 #b0) (ite (|divider#122| state) #b1 #b0))) ; $auto$rtlil.cc:3187:And$268
-(define-fun |divider#124| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#123| state))) ; $auto$rtlil.cc:3275:Mux$553
-(define-fun |divider#125| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#123| state))) ; $auto$rtlil.cc:3275:Mux$551
-(define-fun |divider#126| ((state |divider_s|)) Bool (= (concat (|divider#100| state) (|divider#90| state)) #b10)) ; $auto$rtlil.cc:3188:Or$438
-(define-fun |divider#127| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (ite (|divider#126| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$549
-(define-fun |divider#128| ((state |divider_s|)) Bool (= (concat (|divider#97| state) (|divider#90| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$385
-(define-fun |divider#129| ((state |divider_s|)) Bool (= (concat (|divider#94| state) (|divider#90| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$389
-(define-fun |divider#130| ((state |divider_s|)) Bool (= (concat (|divider#91| state) (|divider#90| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$393
-(define-fun |divider#131| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#23| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$377
-(define-fun |divider#132| ((state |divider_s|)) Bool (= (concat (|divider#131| state) (|divider#90| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$395
-(define-fun |divider#133| ((state |divider_s|)) Bool (or  (|divider#128| state) (|divider#129| state) (|divider#130| state) (|divider#132| state) (|divider#126| state))) ; $auto$rtlil.cc:3144:ReduceOr$401
-(define-fun |divider#134| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (ite (|divider#133| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$547
-(define-fun |divider#135| ((state |divider_s|)) (_ BitVec 1) (bvnot (|divider#31| state))) ; $verific$n258$36
-(define-fun |divider#136| ((state |divider_s|)) (_ BitVec 1) (bvand (|divider#135| state) (|divider#42| state))) ; $verific$n259$37
-(define-fun |divider#137| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#19| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$328
-(define-fun |divider#138| ((state |divider_s|)) Bool (= (concat (|divider#137| state) (|divider#136| state)) #b10)) ; $auto$rtlil.cc:3144:ReduceOr$342
-(define-fun |divider#139| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (ite (|divider#138| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$545
-(define-fun |divider#140| ((state |divider_s|)) (_ BitVec 5) (bvmul (|divider#29| state) (|divider#40| state))) ; $auto$wreduce.cc:514:run$485 [4:0]
-(define-fun |divider#141| ((state |divider_s|)) (_ BitVec 5) (bvadd (|divider#140| state) ((_ extract 5 1) (|divider#30| state)))) ; $verific$n313$105
-(define-fun |divider#142| ((state |divider_s|)) Bool (= (|divider#39| state) (|divider#141| state))) ; $verific$n319$75
-(define-fun |divider#143| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#14| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$281
-(define-fun |divider#144| ((state |divider_s|)) Bool (= (concat (|divider#143| state) (ite (|divider#142| state) #b1 #b0)) #b10)) ; $auto$rtlil.cc:3144:ReduceOr$295
-(define-fun |divider#145| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (ite (|divider#144| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$543
-(define-fun |divider#146| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#126| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$436
-(define-fun |divider#147| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#146| state))) ; $auto$rtlil.cc:3275:Mux$541
-(define-fun |divider#148| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#133| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$403
-(define-fun |divider#149| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#148| state))) ; $auto$rtlil.cc:3275:Mux$539
-(define-fun |divider#150| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#138| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$344
-(define-fun |divider#151| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#41| state) #b0 (|divider#150| state))) ; $auto$rtlil.cc:3275:Mux$537
-(define-fun |divider#152| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#144| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$297
-(define-fun |divider#153| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#47| state)) #b1) #b0 (|divider#152| state))) ; $auto$rtlil.cc:3275:Mux$535
+(define-fun |divider_n valid| ((state |divider_s|)) Bool (= ((_ extract 0 0) (|divider#49| state)) #b1))
+(define-fun |divider#50| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#39| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$716
+; yosys-smt2-assume 0 $auto$formalff.cc:987:execute$717
+(define-fun |divider_u 0| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#50| state)) #b1) (not true))) ; $auto$formalff.cc:987:execute$717
+(define-fun |divider#51| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#0| state))) ; $auto$verificsva.cc:1835:import$315
+(define-fun |divider#52| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#6| state))) ; $auto$verificsva.cc:1836:import$316
+; yosys-smt2-assert 0 _witness_.assert_auto_verificsva_cc_1748_import_286 divider.sv:129.1-129.28
+(define-fun |divider_a 0| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#51| state)) #b1) (not (= ((_ extract 0 0) (|divider#52| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_286
+(define-fun |divider#53| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#1| state))) ; $auto$verificsva.cc:1835:import$348
+(define-fun |divider#54| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#7| state))) ; $auto$verificsva.cc:1836:import$349
+; yosys-smt2-assert 1 _witness_.assert_auto_verificsva_cc_1748_import_319 divider.sv:120.1-120.29
+(define-fun |divider_a 1| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#53| state)) #b1) (not (= ((_ extract 0 0) (|divider#54| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_319
+(define-fun |divider#55| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#45| state) #b1 #b0))) ; $verific$n235$22
+(define-fun |divider#56| ((state |divider_s|)) (_ BitVec 1) (bvor (ite (|divider#48| state) #b1 #b0) (|divider#55| state))) ; $verific$n266$43
+(define-fun |divider#57| ((state |divider_s|)) Bool (not (or  (= ((_ extract 0 0) (|divider#42| state)) #b1) (= ((_ extract 1 1) (|divider#42| state)) #b1) (= ((_ extract 2 2) (|divider#42| state)) #b1) (= ((_ extract 3 3) (|divider#42| state)) #b1) (= ((_ extract 4 4) (|divider#42| state)) #b1)))) ; $verific$n36$5
+(define-fun |divider#58| ((state |divider_s|)) (_ BitVec 1) (bvor (|divider#56| state) (ite (|divider#57| state) #b1 #b0))) ; $verific$n268$44
+(define-fun |divider#59| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#2| state))) ; $auto$verificsva.cc:1835:import$395
+(define-fun |divider#60| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#8| state))) ; $auto$verificsva.cc:1836:import$396
+; yosys-smt2-assert 2 _witness_.assert_auto_verificsva_cc_1748_import_352 divider.sv:111.1-111.34
+(define-fun |divider_a 2| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#59| state)) #b1) (not (= ((_ extract 0 0) (|divider#60| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_352
+(define-fun |divider#61| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#3| state))) ; $auto$verificsva.cc:1835:import$442
+(define-fun |divider#62| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#9| state))) ; $auto$verificsva.cc:1836:import$443
+; yosys-smt2-assert 3 _witness_.assert_auto_verificsva_cc_1748_import_399 divider.sv:102.1-102.36
+(define-fun |divider_a 3| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#61| state)) #b1) (not (= ((_ extract 0 0) (|divider#62| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_399
+(define-fun |divider#63| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#4| state))) ; $auto$verificsva.cc:1835:import$501
+(define-fun |divider#64| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#10| state))) ; $auto$verificsva.cc:1836:import$502
+; yosys-smt2-assert 4 _witness_.assert_auto_verificsva_cc_1748_import_446 divider.sv:93.1-93.26
+(define-fun |divider_a 4| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#63| state)) #b1) (not (= ((_ extract 0 0) (|divider#64| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_446
+(define-fun |divider#65| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#5| state))) ; $auto$verificsva.cc:1835:import$534
+(define-fun |divider#66| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#11| state))) ; $auto$verificsva.cc:1836:import$535
+; yosys-smt2-assert 5 _witness_.assert_auto_verificsva_cc_1748_import_505 divider.sv:84.1-84.40
+(define-fun |divider_a 5| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#65| state)) #b1) (not (= ((_ extract 0 0) (|divider#66| state)) #b1)))) ; _witness_.assert_auto_verificsva_cc_1748_import_505
+(define-fun |divider#67| ((state |divider_s|)) Bool (= (concat (|divider#38| state) (|divider#55| state)) #b10)) ; $auto$rtlil.cc:3188:Or$562
+(define-fun |divider#68| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#67| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$560
+; yosys-smt2-assume 1 _witness_.assume_auto_verificsva_cc_1748_import_538 divider.sv:75.1-75.32
+(define-fun |divider_u 1| ((state |divider_s|)) Bool (or (= ((_ extract 0 0) (|divider#68| state)) #b1) (not (|divider#67| state)))) ; _witness_.assume_auto_verificsva_cc_1748_import_538
+(define-fun |divider#69| ((state |divider_s|)) Bool (= (|divider#40| state) #b100)) ; $verific$n83$9
+(define-fun |divider#70| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#69| state) #b1 (|divider#49| state))) ; $verific$n107$12
+(define-fun |divider#71| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#45| state) #b0 (|divider#70| state))) ; $verific$n153$14
+(define-fun |divider#72| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#71| state))) ; $verific$n182$20
+(define-fun |divider#73| ((state |divider_s|)) Bool (bvule (concat #b0 (|divider#43| state)) (|divider#37| state))) ; $verific$n108$13
+(define-fun |divider#74| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#73| state) #b1 #b0)) ; $verific$n140$105 [0]
+(define-fun |divider#75| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#57| state) (|divider#47| state) (concat ((_ extract 3 0) (|divider#46| state)) #b0))) ; $verific$n70$96
+(define-fun |divider#76| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#45| state) (|divider#75| state) (concat ((_ extract 3 0) (|divider#47| state)) (|divider#74| state)))) ; $verific$n167$109
+(define-fun |divider#77| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#48| state) #b00000 (|divider#76| state))) ; $verific$n184$111
+(define-fun |divider#78| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#69| state) #b1 #b0)) ; $verific$n106$11
+(define-fun |divider#79| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#57| state) #b1 #b0)) ; $verific$n62$8
+(define-fun |divider#80| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#45| state) (|divider#79| state) (|divider#78| state))) ; $verific$n159$16
+(define-fun |divider#81| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#80| state))) ; $verific$n181$19
+(define-fun |divider#82| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#57| state) (|divider#43| state) (|divider#42| state))) ; $verific$n64$95
+(define-fun |divider#83| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#45| state) (|divider#82| state) (|divider#43| state))) ; $verific$n161$108
+(define-fun |divider#84| ((state |divider_s|)) (_ BitVec 5) (ite (|divider#48| state) #b00000 (|divider#83| state))) ; $verific$n190$112
+(define-fun |divider#85| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#45| state) (|divider#79| state) (|divider#41| state))) ; $verific$n160$17
+(define-fun |divider#86| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#85| state))) ; $verific$n183$21
+(define-fun |divider#87| ((state |divider_s|)) (_ BitVec 3) (bvadd (|divider#40| state) #b001)) ; $verific$n93$99
+(define-fun |divider#88| ((state |divider_s|)) (_ BitVec 3) (ite (|divider#69| state) #b000 (|divider#87| state))) ; $verific$n101$101
+(define-fun |divider#89| ((state |divider_s|)) (_ BitVec 3) (ite (|divider#45| state) #b000 (|divider#88| state))) ; $verific$n154$107
+(define-fun |divider#90| ((state |divider_s|)) (_ BitVec 3) (ite (|divider#48| state) #b000 (|divider#89| state))) ; $verific$n196$113
+(define-fun |divider#91| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#69| state) #b0 (|divider#38| state))) ; $verific$n105$10
+(define-fun |divider#92| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#57| state) #b0 #b1)) ; $verific$n61$7
+(define-fun |divider#93| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#45| state) (|divider#92| state) (|divider#91| state))) ; $verific$n158$15
+(define-fun |divider#94| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#93| state))) ; $verific$n180$18
+(define-fun |divider#95| ((state |divider_s|)) (_ BitVec 5) (bvsub ((_ extract 4 0) (|divider#37| state)) (|divider#43| state))) ; $auto$wreduce.cc:514:run$579 [4:0]
+(define-fun |divider#96| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#73| state) (concat (|divider#95| state) ((_ extract 4 4) (|divider#47| state))) (concat ((_ extract 4 0) (|divider#37| state)) ((_ extract 4 4) (|divider#47| state))))) ; $verific$n146$106
+(define-fun |divider#97| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#57| state) (|divider#37| state) (concat #b00000 ((_ extract 4 4) (|divider#46| state))))) ; $verific$n76$97
+(define-fun |divider#98| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#45| state) (|divider#97| state) (|divider#96| state))) ; $verific$n173$110
+(define-fun |divider#99| ((state |divider_s|)) (_ BitVec 6) (ite (|divider#48| state) (|divider#37| state) (|divider#98| state))) ; $verific$n200$114
+(define-fun |divider#100| ((state |divider_s|)) Bool (= (ite (|divider#45| state) #b1 #b0) #b1)) ; $verific$i152$divider.sv:117$268
+(define-fun |divider#101| ((state |divider_s|)) (_ BitVec 1) (bvnot (|divider#49| state))) ; $verific$n241$27
+(define-fun |divider#102| ((state |divider_s|)) (_ BitVec 1) (bvand (|divider#38| state) (|divider#101| state))) ; $verific$n242$28
+(define-fun |divider#103| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#28| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$471
+(define-fun |divider#104| ((state |divider_s|)) Bool (= (concat (|divider#103| state) (|divider#102| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$486
+(define-fun |divider#105| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#104| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$700
+(define-fun |divider#106| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#27| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$470
+(define-fun |divider#107| ((state |divider_s|)) Bool (= (concat (|divider#106| state) (|divider#102| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$482
+(define-fun |divider#108| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#107| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$698
+(define-fun |divider#109| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#26| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$469
+(define-fun |divider#110| ((state |divider_s|)) Bool (= (concat (|divider#109| state) (|divider#102| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$478
+(define-fun |divider#111| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#110| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$696
+(define-fun |divider#112| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#14| state))) ; $auto$verificsva.cc:296:getAccept$454
+(define-fun |divider#113| ((state |divider_s|)) Bool (= (concat (|divider#112| state) (|divider#102| state)) #b11)) ; $auto$rtlil.cc:3194:Eq$474
+(define-fun |divider#114| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#113| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$694
+(define-fun |divider#115| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#24| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$422
+(define-fun |divider#116| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#115| state))) ; $auto$rtlil.cc:3275:Mux$692
+(define-fun |divider#117| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#23| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$421
+(define-fun |divider#118| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#117| state))) ; $auto$rtlil.cc:3275:Mux$690
+(define-fun |divider#119| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#22| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$420
+(define-fun |divider#120| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#119| state))) ; $auto$rtlil.cc:3275:Mux$688
+(define-fun |divider#121| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#21| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$419
+(define-fun |divider#122| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#121| state))) ; $auto$rtlil.cc:3275:Mux$686
+(define-fun |divider#123| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#112| state))) ; $auto$rtlil.cc:3275:Mux$684
+(define-fun |divider#124| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#19| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$375
+(define-fun |divider#125| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#124| state))) ; $auto$rtlil.cc:3275:Mux$682
+(define-fun |divider#126| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#18| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$374
+(define-fun |divider#127| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#126| state))) ; $auto$rtlil.cc:3275:Mux$680
+(define-fun |divider#128| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#17| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$373
+(define-fun |divider#129| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#128| state))) ; $auto$rtlil.cc:3275:Mux$678
+(define-fun |divider#130| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#16| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$372
+(define-fun |divider#131| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#130| state))) ; $auto$rtlil.cc:3275:Mux$676
+(define-fun |divider#132| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#15| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$371
+(define-fun |divider#133| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#132| state))) ; $auto$rtlil.cc:3275:Mux$674
+(define-fun |divider#134| ((state |divider_s|)) Bool (distinct (|divider#42| state) #b00000)) ; $verific$n239$25
+(define-fun |divider#135| ((state |divider_s|)) (_ BitVec 1) (bvand (ite (|divider#45| state) #b1 #b0) (ite (|divider#134| state) #b1 #b0))) ; $auto$rtlil.cc:3187:And$363
+(define-fun |divider#136| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#135| state))) ; $auto$rtlil.cc:3275:Mux$672
+(define-fun |divider#137| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#135| state))) ; $auto$rtlil.cc:3275:Mux$670
+(define-fun |divider#138| ((state |divider_s|)) Bool (= (concat (|divider#30| state) (ite (|divider#100| state) #b1 #b0)) #b01)) ; $verific$n325$80
+(define-fun |divider#139| ((state |divider_s|)) (_ BitVec 1) (bvand (ite (|divider#138| state) #b1 #b0) (ite (|divider#134| state) #b1 #b0))) ; $auto$rtlil.cc:3187:And$333
+(define-fun |divider#140| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#139| state))) ; $auto$rtlil.cc:3275:Mux$668
+(define-fun |divider#141| ((state |divider_s|)) (_ BitVec 1) (bvand (ite (|divider#138| state) #b1 #b0) (ite (|divider#57| state) #b1 #b0))) ; $auto$rtlil.cc:3187:And$300
+(define-fun |divider#142| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#141| state))) ; $auto$rtlil.cc:3275:Mux$666
+(define-fun |divider#143| ((state |divider_s|)) Bool (= (concat (|divider#112| state) (|divider#102| state)) #b10)) ; $auto$rtlil.cc:3188:Or$533
+(define-fun |divider#144| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#143| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$664
+(define-fun |divider#145| ((state |divider_s|)) Bool (= (concat (|divider#109| state) (|divider#102| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$480
+(define-fun |divider#146| ((state |divider_s|)) Bool (= (concat (|divider#106| state) (|divider#102| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$484
+(define-fun |divider#147| ((state |divider_s|)) Bool (= (concat (|divider#103| state) (|divider#102| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$488
+(define-fun |divider#148| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#29| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$472
+(define-fun |divider#149| ((state |divider_s|)) Bool (= (concat (|divider#148| state) (|divider#102| state)) #b10)) ; $auto$rtlil.cc:3194:Eq$490
+(define-fun |divider#150| ((state |divider_s|)) Bool (or  (|divider#145| state) (|divider#146| state) (|divider#147| state) (|divider#149| state) (|divider#143| state))) ; $auto$rtlil.cc:3144:ReduceOr$496
+(define-fun |divider#151| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#150| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$662
+(define-fun |divider#152| ((state |divider_s|)) (_ BitVec 1) (bvnot (|divider#38| state))) ; $verific$n258$36
+(define-fun |divider#153| ((state |divider_s|)) (_ BitVec 1) (bvand (|divider#152| state) (|divider#49| state))) ; $verific$n259$37
+(define-fun |divider#154| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#25| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$423
+(define-fun |divider#155| ((state |divider_s|)) Bool (= (concat (|divider#154| state) (|divider#153| state)) #b10)) ; $auto$rtlil.cc:3144:ReduceOr$437
+(define-fun |divider#156| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#155| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$660
+(define-fun |divider#157| ((state |divider_s|)) (_ BitVec 5) (bvmul (|divider#36| state) (|divider#47| state))) ; $auto$wreduce.cc:514:run$580 [4:0]
+(define-fun |divider#158| ((state |divider_s|)) (_ BitVec 5) (bvadd (|divider#157| state) ((_ extract 5 1) (|divider#37| state)))) ; $verific$n313$116
+(define-fun |divider#159| ((state |divider_s|)) Bool (= (|divider#46| state) (|divider#158| state))) ; $verific$n319$75
+(define-fun |divider#160| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#20| state))) ; $auto$verificsva.cc:670:getFirstAcceptReject$376
+(define-fun |divider#161| ((state |divider_s|)) Bool (= (concat (|divider#160| state) (ite (|divider#159| state) #b1 #b0)) #b10)) ; $auto$rtlil.cc:3144:ReduceOr$390
+(define-fun |divider#162| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (ite (|divider#161| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$658
+(define-fun |divider#163| ((state |divider_s|)) Bool (= (|divider#43| state) (|divider#31| state))) ; $verific$n333$82
+(define-fun |divider#164| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#13| state))) ; $auto$verificsva.cc:296:getAccept$327
+(define-fun |divider#165| ((state |divider_s|)) Bool (= (concat (|divider#164| state) (ite (|divider#163| state) #b1 #b0)) #b10)) ; $auto$rtlil.cc:3188:Or$347
+(define-fun |divider#166| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#165| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$656
+(define-fun |divider#167| ((state |divider_s|)) (_ BitVec 1) (bvand (|divider#44| state) (|divider#41| state))) ; $verific$n341$87
+(define-fun |divider#168| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#12| state))) ; $auto$verificsva.cc:296:getAccept$294
+(define-fun |divider#169| ((state |divider_s|)) Bool (= (concat (|divider#168| state) (|divider#167| state)) #b10)) ; $auto$rtlil.cc:3188:Or$314
+(define-fun |divider#170| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (ite (|divider#169| state) #b1 #b0))) ; $auto$rtlil.cc:3275:Mux$654
+(define-fun |divider#171| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#143| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$531
+(define-fun |divider#172| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#171| state))) ; $auto$rtlil.cc:3275:Mux$652
+(define-fun |divider#173| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#150| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$498
+(define-fun |divider#174| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#173| state))) ; $auto$rtlil.cc:3275:Mux$650
+(define-fun |divider#175| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#155| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$439
+(define-fun |divider#176| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#175| state))) ; $auto$rtlil.cc:3275:Mux$648
+(define-fun |divider#177| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#161| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$392
+(define-fun |divider#178| ((state |divider_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|divider#58| state)) #b1) #b0 (|divider#177| state))) ; $auto$rtlil.cc:3275:Mux$646
+(define-fun |divider#179| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#165| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$345
+(define-fun |divider#180| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#179| state))) ; $auto$rtlil.cc:3275:Mux$644
+(define-fun |divider#181| ((state |divider_s|)) (_ BitVec 1) (bvnot (ite (|divider#169| state) #b1 #b0))) ; $auto$rtlil.cc:3140:Not$312
+(define-fun |divider#182| ((state |divider_s|)) (_ BitVec 1) (ite (|divider#48| state) #b0 (|divider#181| state))) ; $auto$rtlil.cc:3275:Mux$642
 (define-fun |divider_a| ((state |divider_s|)) Bool (and
   (|divider_a 0| state)
   (|divider_a 1| state)
   (|divider_a 2| state)
   (|divider_a 3| state)
+  (|divider_a 4| state)
+  (|divider_a 5| state)
 ))
 (define-fun |divider_u| ((state |divider_s|)) Bool (and
   (|divider_u 0| state)
   (|divider_u 1| state)
 ))
 (define-fun |divider_i| ((state |divider_s|)) Bool (and
-  (= (= ((_ extract 0 0) (|divider#0| state)) #b1) false) ; $auto$async2sync.cc:234:execute$486
-  (= (= ((_ extract 0 0) (|divider#1| state)) #b1) false) ; $auto$async2sync.cc:234:execute$488
-  (= (= ((_ extract 0 0) (|divider#2| state)) #b1) false) ; $auto$async2sync.cc:234:execute$490
-  (= (= ((_ extract 0 0) (|divider#3| state)) #b1) false) ; $auto$async2sync.cc:234:execute$492
-  (= (= ((_ extract 0 0) (|divider#4| state)) #b1) false) ; $auto$async2sync.cc:234:execute$494
-  (= (= ((_ extract 0 0) (|divider#5| state)) #b1) false) ; $auto$async2sync.cc:234:execute$496
-  (= (= ((_ extract 0 0) (|divider#6| state)) #b1) false) ; $auto$async2sync.cc:234:execute$498
-  (= (= ((_ extract 0 0) (|divider#7| state)) #b1) false) ; $auto$async2sync.cc:234:execute$500
-  (= (= ((_ extract 0 0) (|divider#8| state)) #b1) false) ; $auto$async2sync.cc:234:execute$502
-  (= (= ((_ extract 0 0) (|divider#9| state)) #b1) false) ; $auto$async2sync.cc:234:execute$504
-  (= (= ((_ extract 0 0) (|divider#10| state)) #b1) false) ; $auto$async2sync.cc:234:execute$506
-  (= (= ((_ extract 0 0) (|divider#11| state)) #b1) false) ; $auto$async2sync.cc:234:execute$508
-  (= (= ((_ extract 0 0) (|divider#12| state)) #b1) false) ; $auto$async2sync.cc:234:execute$510
-  (= (= ((_ extract 0 0) (|divider#13| state)) #b1) false) ; $auto$async2sync.cc:234:execute$512
-  (= (= ((_ extract 0 0) (|divider#14| state)) #b1) false) ; $auto$async2sync.cc:234:execute$514
-  (= (= ((_ extract 0 0) (|divider#15| state)) #b1) false) ; $auto$async2sync.cc:234:execute$516
-  (= (= ((_ extract 0 0) (|divider#16| state)) #b1) false) ; $auto$async2sync.cc:234:execute$518
-  (= (= ((_ extract 0 0) (|divider#17| state)) #b1) false) ; $auto$async2sync.cc:234:execute$520
-  (= (= ((_ extract 0 0) (|divider#18| state)) #b1) false) ; $auto$async2sync.cc:234:execute$522
-  (= (= ((_ extract 0 0) (|divider#19| state)) #b1) false) ; $auto$async2sync.cc:234:execute$524
-  (= (= ((_ extract 0 0) (|divider#20| state)) #b1) false) ; $auto$async2sync.cc:234:execute$526
-  (= (= ((_ extract 0 0) (|divider#21| state)) #b1) false) ; $auto$async2sync.cc:234:execute$528
-  (= (= ((_ extract 0 0) (|divider#22| state)) #b1) false) ; $auto$async2sync.cc:234:execute$530
-  (= (= ((_ extract 0 0) (|divider#23| state)) #b1) false) ; $auto$async2sync.cc:234:execute$532
-  (= (= ((_ extract 0 0) (|divider#31| state)) #b1) false) ; busy
-  (= (|divider#33| state) #b000) ; ctr
-  (= (= ((_ extract 0 0) (|divider#34| state)) #b1) false) ; dbz
-  (= (|divider#36| state) #b00000) ; den_latched
-  (= (= ((_ extract 0 0) (|divider#37| state)) #b1) false) ; done
-  (= (|divider#40| state) #b00000) ; quo
-  (= (= ((_ extract 0 0) (|divider#42| state)) #b1) false) ; valid
+  (= (= ((_ extract 0 0) (|divider#0| state)) #b1) false) ; $auto$async2sync.cc:234:execute$581
+  (= (= ((_ extract 0 0) (|divider#1| state)) #b1) false) ; $auto$async2sync.cc:234:execute$583
+  (= (= ((_ extract 0 0) (|divider#2| state)) #b1) false) ; $auto$async2sync.cc:234:execute$585
+  (= (= ((_ extract 0 0) (|divider#3| state)) #b1) false) ; $auto$async2sync.cc:234:execute$587
+  (= (= ((_ extract 0 0) (|divider#4| state)) #b1) false) ; $auto$async2sync.cc:234:execute$589
+  (= (= ((_ extract 0 0) (|divider#5| state)) #b1) false) ; $auto$async2sync.cc:234:execute$591
+  (= (= ((_ extract 0 0) (|divider#6| state)) #b1) false) ; $auto$async2sync.cc:234:execute$593
+  (= (= ((_ extract 0 0) (|divider#7| state)) #b1) false) ; $auto$async2sync.cc:234:execute$595
+  (= (= ((_ extract 0 0) (|divider#8| state)) #b1) false) ; $auto$async2sync.cc:234:execute$597
+  (= (= ((_ extract 0 0) (|divider#9| state)) #b1) false) ; $auto$async2sync.cc:234:execute$599
+  (= (= ((_ extract 0 0) (|divider#10| state)) #b1) false) ; $auto$async2sync.cc:234:execute$601
+  (= (= ((_ extract 0 0) (|divider#11| state)) #b1) false) ; $auto$async2sync.cc:234:execute$603
+  (= (= ((_ extract 0 0) (|divider#12| state)) #b1) false) ; $auto$async2sync.cc:234:execute$605
+  (= (= ((_ extract 0 0) (|divider#13| state)) #b1) false) ; $auto$async2sync.cc:234:execute$607
+  (= (= ((_ extract 0 0) (|divider#14| state)) #b1) false) ; $auto$async2sync.cc:234:execute$609
+  (= (= ((_ extract 0 0) (|divider#15| state)) #b1) false) ; $auto$async2sync.cc:234:execute$611
+  (= (= ((_ extract 0 0) (|divider#16| state)) #b1) false) ; $auto$async2sync.cc:234:execute$613
+  (= (= ((_ extract 0 0) (|divider#17| state)) #b1) false) ; $auto$async2sync.cc:234:execute$615
+  (= (= ((_ extract 0 0) (|divider#18| state)) #b1) false) ; $auto$async2sync.cc:234:execute$617
+  (= (= ((_ extract 0 0) (|divider#19| state)) #b1) false) ; $auto$async2sync.cc:234:execute$619
+  (= (= ((_ extract 0 0) (|divider#20| state)) #b1) false) ; $auto$async2sync.cc:234:execute$621
+  (= (= ((_ extract 0 0) (|divider#21| state)) #b1) false) ; $auto$async2sync.cc:234:execute$623
+  (= (= ((_ extract 0 0) (|divider#22| state)) #b1) false) ; $auto$async2sync.cc:234:execute$625
+  (= (= ((_ extract 0 0) (|divider#23| state)) #b1) false) ; $auto$async2sync.cc:234:execute$627
+  (= (= ((_ extract 0 0) (|divider#24| state)) #b1) false) ; $auto$async2sync.cc:234:execute$629
+  (= (= ((_ extract 0 0) (|divider#25| state)) #b1) false) ; $auto$async2sync.cc:234:execute$631
+  (= (= ((_ extract 0 0) (|divider#26| state)) #b1) false) ; $auto$async2sync.cc:234:execute$633
+  (= (= ((_ extract 0 0) (|divider#27| state)) #b1) false) ; $auto$async2sync.cc:234:execute$635
+  (= (= ((_ extract 0 0) (|divider#28| state)) #b1) false) ; $auto$async2sync.cc:234:execute$637
+  (= (= ((_ extract 0 0) (|divider#29| state)) #b1) false) ; $auto$async2sync.cc:234:execute$639
+  (= (= ((_ extract 0 0) (|divider#30| state)) #b1) false) ; $verific$i152$divider.sv:117$267
+  (= (= ((_ extract 0 0) (|divider#38| state)) #b1) false) ; busy
+  (= (|divider#40| state) #b000) ; ctr
+  (= (= ((_ extract 0 0) (|divider#41| state)) #b1) false) ; dbz
+  (= (|divider#43| state) #b00000) ; den_latched
+  (= (= ((_ extract 0 0) (|divider#44| state)) #b1) false) ; done
+  (= (|divider#47| state) #b00000) ; quo
+  (= (= ((_ extract 0 0) (|divider#49| state)) #b1) false) ; valid
 ))
 (define-fun |divider_h| ((state |divider_s|)) Bool true)
 (define-fun |divider_t| ((state |divider_s|) (next_state |divider_s|)) Bool (and
-  (= (|divider#61| state) (|divider#42| next_state)) ; $verific$valid_reg$divider.sv:69$152 \valid
-  (= (|divider#66| state) (|divider#40| next_state)) ; $verific$quo_reg$divider.sv:69$154 \quo
-  (= (|divider#70| state) (|divider#37| next_state)) ; $verific$done_reg$divider.sv:69$151 \done
-  (= (|divider#73| state) (|divider#36| next_state)) ; $verific$den_latched_reg$divider.sv:69$155 \den_latched
-  (= (|divider#75| state) (|divider#34| next_state)) ; $verific$dbz_reg$divider.sv:69$153 \dbz
-  (= (|divider#79| state) (|divider#33| next_state)) ; $verific$ctr_reg$divider.sv:69$156 \ctr
-  (= (|divider#83| state) (|divider#31| next_state)) ; $verific$busy_reg$divider.sv:69$150 \busy
-  (= (|divider#88| state) (|divider#30| next_state)) ; $verific$acc_reg$divider.sv:69$157 \acc
-  (= (|divider#28| state) (|divider#29| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$483 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_483
-  (= (|divider#27| state) (|divider#28| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$481 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_481
-  (= (|divider#26| state) (|divider#27| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$479 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_479
-  (= (|divider#25| state) (|divider#26| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$477 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_477
-  (= (|divider#24| state) (|divider#25| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$475 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_475
-  (= (|divider#35| state) (|divider#24| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$473 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_473
-  (= (|divider#93| state) (|divider#23| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$399 $auto$async2sync.cc:234:execute$532
-  (= (|divider#96| state) (|divider#22| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$398 $auto$async2sync.cc:234:execute$530
-  (= (|divider#99| state) (|divider#21| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$397 $auto$async2sync.cc:234:execute$528
-  (= (|divider#102| state) (|divider#20| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$396 $auto$async2sync.cc:234:execute$526
-  (= (|divider#104| state) (|divider#19| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$340 $auto$async2sync.cc:234:execute$524
-  (= (|divider#106| state) (|divider#18| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$339 $auto$async2sync.cc:234:execute$522
-  (= (|divider#108| state) (|divider#17| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$338 $auto$async2sync.cc:234:execute$520
-  (= (|divider#110| state) (|divider#16| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$337 $auto$async2sync.cc:234:execute$518
-  (= (|divider#111| state) (|divider#15| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$336 $auto$async2sync.cc:234:execute$516
-  (= (|divider#113| state) (|divider#14| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$293 $auto$async2sync.cc:234:execute$514
-  (= (|divider#115| state) (|divider#13| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$292 $auto$async2sync.cc:234:execute$512
-  (= (|divider#117| state) (|divider#12| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$291 $auto$async2sync.cc:234:execute$510
-  (= (|divider#119| state) (|divider#11| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$290 $auto$async2sync.cc:234:execute$508
-  (= (|divider#121| state) (|divider#10| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$289 $auto$async2sync.cc:234:execute$506
-  (= (|divider#124| state) (|divider#9| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$288 $auto$async2sync.cc:234:execute$504
-  (= (|divider#125| state) (|divider#8| next_state)) ; $auto$verificsva.cc:365:getAccept$370 $auto$async2sync.cc:234:execute$502
-  (= (|divider#127| state) (|divider#7| next_state)) ; $auto$verificsva.cc:1838:import$442 $auto$async2sync.cc:234:execute$500
-  (= (|divider#134| state) (|divider#6| next_state)) ; $auto$verificsva.cc:1838:import$409 $auto$async2sync.cc:234:execute$498
-  (= (|divider#139| state) (|divider#5| next_state)) ; $auto$verificsva.cc:1838:import$350 $auto$async2sync.cc:234:execute$496
-  (= (|divider#145| state) (|divider#4| next_state)) ; $auto$verificsva.cc:1838:import$303 $auto$async2sync.cc:234:execute$494
-  (= (|divider#147| state) (|divider#3| next_state)) ; $auto$verificsva.cc:1837:import$441 $auto$async2sync.cc:234:execute$492
-  (= (|divider#149| state) (|divider#2| next_state)) ; $auto$verificsva.cc:1837:import$408 $auto$async2sync.cc:234:execute$490
-  (= (|divider#151| state) (|divider#1| next_state)) ; $auto$verificsva.cc:1837:import$349 $auto$async2sync.cc:234:execute$488
-  (= (|divider#153| state) (|divider#0| next_state)) ; $auto$verificsva.cc:1837:import$302 $auto$async2sync.cc:234:execute$486
+  (= (|divider#72| state) (|divider#49| next_state)) ; $verific$valid_reg$divider.sv:69$163 \valid
+  (= (|divider#77| state) (|divider#47| next_state)) ; $verific$quo_reg$divider.sv:69$165 \quo
+  (= (|divider#81| state) (|divider#44| next_state)) ; $verific$done_reg$divider.sv:69$162 \done
+  (= (|divider#84| state) (|divider#43| next_state)) ; $verific$den_latched_reg$divider.sv:69$166 \den_latched
+  (= (|divider#86| state) (|divider#41| next_state)) ; $verific$dbz_reg$divider.sv:69$164 \dbz
+  (= (|divider#90| state) (|divider#40| next_state)) ; $verific$ctr_reg$divider.sv:69$167 \ctr
+  (= (|divider#94| state) (|divider#38| next_state)) ; $verific$busy_reg$divider.sv:69$161 \busy
+  (= (|divider#99| state) (|divider#37| next_state)) ; $verific$acc_reg$divider.sv:69$168 \acc
+  (= (|divider#35| state) (|divider#36| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$578 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_578
+  (= (|divider#34| state) (|divider#35| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$576 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_576
+  (= (|divider#33| state) (|divider#34| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$574 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_574
+  (= (|divider#32| state) (|divider#33| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$572 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_572
+  (= (|divider#31| state) (|divider#32| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$570 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_570
+  (= (|divider#42| state) (|divider#31| next_state)) ; $auto$verific.cc:1392:merge_past_ffs_clock$568 \_witness_.anyinit_auto_verific_cc_1392_merge_past_ffs_clock_568
+  (= (ite (|divider#100| state) #b1 #b0) (|divider#30| next_state)) ; $verific$i152$divider.sv:117$270 $verific$i152$divider.sv:117$267
+  (= (|divider#105| state) (|divider#29| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$494 $auto$async2sync.cc:234:execute$639
+  (= (|divider#108| state) (|divider#28| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$493 $auto$async2sync.cc:234:execute$637
+  (= (|divider#111| state) (|divider#27| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$492 $auto$async2sync.cc:234:execute$635
+  (= (|divider#114| state) (|divider#26| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$491 $auto$async2sync.cc:234:execute$633
+  (= (|divider#116| state) (|divider#25| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$435 $auto$async2sync.cc:234:execute$631
+  (= (|divider#118| state) (|divider#24| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$434 $auto$async2sync.cc:234:execute$629
+  (= (|divider#120| state) (|divider#23| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$433 $auto$async2sync.cc:234:execute$627
+  (= (|divider#122| state) (|divider#22| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$432 $auto$async2sync.cc:234:execute$625
+  (= (|divider#123| state) (|divider#21| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$431 $auto$async2sync.cc:234:execute$623
+  (= (|divider#125| state) (|divider#20| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$388 $auto$async2sync.cc:234:execute$621
+  (= (|divider#127| state) (|divider#19| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$387 $auto$async2sync.cc:234:execute$619
+  (= (|divider#129| state) (|divider#18| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$386 $auto$async2sync.cc:234:execute$617
+  (= (|divider#131| state) (|divider#17| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$385 $auto$async2sync.cc:234:execute$615
+  (= (|divider#133| state) (|divider#16| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$384 $auto$async2sync.cc:234:execute$613
+  (= (|divider#136| state) (|divider#15| next_state)) ; $auto$verificsva.cc:713:getFirstAcceptReject$383 $auto$async2sync.cc:234:execute$611
+  (= (|divider#137| state) (|divider#14| next_state)) ; $auto$verificsva.cc:365:getAccept$465 $auto$async2sync.cc:234:execute$609
+  (= (|divider#140| state) (|divider#13| next_state)) ; $auto$verificsva.cc:365:getAccept$338 $auto$async2sync.cc:234:execute$607
+  (= (|divider#142| state) (|divider#12| next_state)) ; $auto$verificsva.cc:365:getAccept$305 $auto$async2sync.cc:234:execute$605
+  (= (|divider#144| state) (|divider#11| next_state)) ; $auto$verificsva.cc:1838:import$537 $auto$async2sync.cc:234:execute$603
+  (= (|divider#151| state) (|divider#10| next_state)) ; $auto$verificsva.cc:1838:import$504 $auto$async2sync.cc:234:execute$601
+  (= (|divider#156| state) (|divider#9| next_state)) ; $auto$verificsva.cc:1838:import$445 $auto$async2sync.cc:234:execute$599
+  (= (|divider#162| state) (|divider#8| next_state)) ; $auto$verificsva.cc:1838:import$398 $auto$async2sync.cc:234:execute$597
+  (= (|divider#166| state) (|divider#7| next_state)) ; $auto$verificsva.cc:1838:import$351 $auto$async2sync.cc:234:execute$595
+  (= (|divider#170| state) (|divider#6| next_state)) ; $auto$verificsva.cc:1838:import$318 $auto$async2sync.cc:234:execute$593
+  (= (|divider#172| state) (|divider#5| next_state)) ; $auto$verificsva.cc:1837:import$536 $auto$async2sync.cc:234:execute$591
+  (= (|divider#174| state) (|divider#4| next_state)) ; $auto$verificsva.cc:1837:import$503 $auto$async2sync.cc:234:execute$589
+  (= (|divider#176| state) (|divider#3| next_state)) ; $auto$verificsva.cc:1837:import$444 $auto$async2sync.cc:234:execute$587
+  (= (|divider#178| state) (|divider#2| next_state)) ; $auto$verificsva.cc:1837:import$397 $auto$async2sync.cc:234:execute$585
+  (= (|divider#180| state) (|divider#1| next_state)) ; $auto$verificsva.cc:1837:import$350 $auto$async2sync.cc:234:execute$583
+  (= (|divider#182| state) (|divider#0| next_state)) ; $auto$verificsva.cc:1837:import$317 $auto$async2sync.cc:234:execute$581
 )) ; end of module divider
 ; yosys-smt2-topmod divider
 ; end of yosys output

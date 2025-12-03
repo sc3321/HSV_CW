@@ -110,6 +110,39 @@ endproperty
 
 assert property (equation_check);
 
+// Task 5
+property den_latch;
+  @(posedge clk)
+  disable iff (rst)
+    ($rose(go) && den != 5'b00000)
+    |=> (den_latched == $past(den));
+endproperty
+assert property (den_latch);
+
+// Task 6
+property done_dbi;
+  @(posedge clk)
+  disable iff (rst)
+    ($rose(go) && den == 5'b00000)
+    |=> (done && dbz);
+endproperty
+assert property (done_dbi);
+
+// Task 7
+property done_stays_high_except;
+  @(posedge clk)
+  disable iff (rst)
+    (done && !dbz) |=> !done;
+endproperty
+
+// Task 8
+property rem_smaller_den;
+  @(posedge clk)
+  disable iff (rst)
+    (valid && !dbz)
+      |-> (rem < den_latched);
+endproperty
+
 `endif
 `endif
        
