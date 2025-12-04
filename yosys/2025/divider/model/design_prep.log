@@ -20,36 +20,158 @@ Found 0 SCCs.
 4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
 
 5. Executing ASYNC2SYNC pass.
-Replacing divider.$auto$verificsva.cc:1837:import$317 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$312, Q=$auto$verificsva.cc:1835:import$315
-Replacing divider.$auto$verificsva.cc:1837:import$350 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$345, Q=$auto$verificsva.cc:1835:import$348
-Replacing divider.$auto$verificsva.cc:1837:import$397 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3140:Not$392, Q=$auto$verificsva.cc:1835:import$395
-Replacing divider.$auto$verificsva.cc:1837:import$444 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$439, Q=$auto$verificsva.cc:1835:import$442
-Replacing divider.$auto$verificsva.cc:1837:import$503 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$498, Q=$auto$verificsva.cc:1835:import$501
-Replacing divider.$auto$verificsva.cc:1837:import$536 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$531, Q=$auto$verificsva.cc:1835:import$534
-Replacing divider.$auto$verificsva.cc:1838:import$318 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$314, Q=$auto$verificsva.cc:1836:import$316
-Replacing divider.$auto$verificsva.cc:1838:import$351 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$347, Q=$auto$verificsva.cc:1836:import$349
-Replacing divider.$auto$verificsva.cc:1838:import$398 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3144:ReduceOr$390, Q=$auto$verificsva.cc:1836:import$396
-Replacing divider.$auto$verificsva.cc:1838:import$445 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$437, Q=$auto$verificsva.cc:1836:import$443
-Replacing divider.$auto$verificsva.cc:1838:import$504 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$496, Q=$auto$verificsva.cc:1836:import$502
-Replacing divider.$auto$verificsva.cc:1838:import$537 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$533, Q=$auto$verificsva.cc:1836:import$535
-Replacing divider.$auto$verificsva.cc:365:getAccept$305 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$300, Q=$auto$verificsva.cc:296:getAccept$294
-Replacing divider.$auto$verificsva.cc:365:getAccept$338 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$333, Q=$auto$verificsva.cc:296:getAccept$327
-Replacing divider.$auto$verificsva.cc:365:getAccept$465 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$363, Q=$auto$verificsva.cc:296:getAccept$454
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$383 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3187:And$363, Q=$auto$verificsva.cc:670:getFirstAcceptReject$371
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$384 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$371, Q=$auto$verificsva.cc:670:getFirstAcceptReject$372
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$385 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$372, Q=$auto$verificsva.cc:670:getFirstAcceptReject$373
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$386 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$373, Q=$auto$verificsva.cc:670:getFirstAcceptReject$374
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$387 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$374, Q=$auto$verificsva.cc:670:getFirstAcceptReject$375
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$388 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$375, Q=$auto$verificsva.cc:670:getFirstAcceptReject$376
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$431 ($adff): ARST=\rst, D=$auto$verificsva.cc:296:getAccept$454, Q=$auto$verificsva.cc:670:getFirstAcceptReject$419
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$432 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$419, Q=$auto$verificsva.cc:670:getFirstAcceptReject$420
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$433 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$420, Q=$auto$verificsva.cc:670:getFirstAcceptReject$421
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$434 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$421, Q=$auto$verificsva.cc:670:getFirstAcceptReject$422
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$435 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$422, Q=$auto$verificsva.cc:670:getFirstAcceptReject$423
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$491 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$474, Q=$auto$verificsva.cc:670:getFirstAcceptReject$469
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$492 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$478, Q=$auto$verificsva.cc:670:getFirstAcceptReject$470
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$493 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$482, Q=$auto$verificsva.cc:670:getFirstAcceptReject$471
-Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$494 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$486, Q=$auto$verificsva.cc:670:getFirstAcceptReject$472
+Replacing divider.$auto$verificsva.cc:1837:import$1348 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$1343, Q=$auto$verificsva.cc:1835:import$1346
+Replacing divider.$auto$verificsva.cc:1837:import$1377 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$1372, Q=$auto$verificsva.cc:1835:import$1375
+Replacing divider.$auto$verificsva.cc:1837:import$1410 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$1405, Q=$auto$verificsva.cc:1835:import$1408
+Replacing divider.$auto$verificsva.cc:1837:import$1443 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$1438, Q=$auto$verificsva.cc:1835:import$1441
+Replacing divider.$auto$verificsva.cc:1837:import$1490 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3140:Not$1485, Q=$auto$verificsva.cc:1835:import$1488
+Replacing divider.$auto$verificsva.cc:1837:import$1537 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$1532, Q=$auto$verificsva.cc:1835:import$1535
+Replacing divider.$auto$verificsva.cc:1837:import$1596 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$1591, Q=$auto$verificsva.cc:1835:import$1594
+Replacing divider.$auto$verificsva.cc:1837:import$1629 ($adff): ARST=\rst, D=$auto$rtlil.cc:3140:Not$1624, Q=$auto$verificsva.cc:1835:import$1627
+Replacing divider.$auto$verificsva.cc:1837:import$1667 ($adff): ARST=\rst, D=1'1, Q=$auto$verificsva.cc:1835:import$1665
+Replacing divider.$auto$verificsva.cc:1838:import$1349 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1345, Q=$auto$verificsva.cc:1836:import$1347
+Replacing divider.$auto$verificsva.cc:1838:import$1378 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1374, Q=$auto$verificsva.cc:1836:import$1376
+Replacing divider.$auto$verificsva.cc:1838:import$1411 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1407, Q=$auto$verificsva.cc:1836:import$1409
+Replacing divider.$auto$verificsva.cc:1838:import$1444 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1440, Q=$auto$verificsva.cc:1836:import$1442
+Replacing divider.$auto$verificsva.cc:1838:import$1491 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3144:ReduceOr$1483, Q=$auto$verificsva.cc:1836:import$1489
+Replacing divider.$auto$verificsva.cc:1838:import$1538 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$1530, Q=$auto$verificsva.cc:1836:import$1536
+Replacing divider.$auto$verificsva.cc:1838:import$1597 ($adff): ARST=\rst, D=$auto$rtlil.cc:3144:ReduceOr$1589, Q=$auto$verificsva.cc:1836:import$1595
+Replacing divider.$auto$verificsva.cc:1838:import$1630 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1626, Q=$auto$verificsva.cc:1836:import$1628
+Replacing divider.$auto$verificsva.cc:1838:import$1668 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1664, Q=$auto$verificsva.cc:1836:import$1666
+Replacing divider.$auto$verificsva.cc:1838:import$1677 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1673, Q=$auto$verificsva.cc:1836:import$1675
+Replacing divider.$auto$verificsva.cc:1838:import$1686 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1682, Q=$auto$verificsva.cc:1836:import$1684
+Replacing divider.$auto$verificsva.cc:1838:import$1695 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1691, Q=$auto$verificsva.cc:1836:import$1693
+Replacing divider.$auto$verificsva.cc:1838:import$1704 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1700, Q=$auto$verificsva.cc:1836:import$1702
+Replacing divider.$auto$verificsva.cc:1838:import$1713 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1709, Q=$auto$verificsva.cc:1836:import$1711
+Replacing divider.$auto$verificsva.cc:1838:import$1722 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1718, Q=$auto$verificsva.cc:1836:import$1720
+Replacing divider.$auto$verificsva.cc:1838:import$1731 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1727, Q=$auto$verificsva.cc:1836:import$1729
+Replacing divider.$auto$verificsva.cc:1838:import$1740 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1736, Q=$auto$verificsva.cc:1836:import$1738
+Replacing divider.$auto$verificsva.cc:1838:import$1749 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1745, Q=$auto$verificsva.cc:1836:import$1747
+Replacing divider.$auto$verificsva.cc:1838:import$1758 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1754, Q=$auto$verificsva.cc:1836:import$1756
+Replacing divider.$auto$verificsva.cc:1838:import$1767 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1763, Q=$auto$verificsva.cc:1836:import$1765
+Replacing divider.$auto$verificsva.cc:1838:import$1776 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1772, Q=$auto$verificsva.cc:1836:import$1774
+Replacing divider.$auto$verificsva.cc:1838:import$1785 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1781, Q=$auto$verificsva.cc:1836:import$1783
+Replacing divider.$auto$verificsva.cc:1838:import$1794 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1790, Q=$auto$verificsva.cc:1836:import$1792
+Replacing divider.$auto$verificsva.cc:1838:import$1803 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1799, Q=$auto$verificsva.cc:1836:import$1801
+Replacing divider.$auto$verificsva.cc:1838:import$1812 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1808, Q=$auto$verificsva.cc:1836:import$1810
+Replacing divider.$auto$verificsva.cc:1838:import$1821 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1817, Q=$auto$verificsva.cc:1836:import$1819
+Replacing divider.$auto$verificsva.cc:1838:import$1830 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1826, Q=$auto$verificsva.cc:1836:import$1828
+Replacing divider.$auto$verificsva.cc:1838:import$1839 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1835, Q=$auto$verificsva.cc:1836:import$1837
+Replacing divider.$auto$verificsva.cc:1838:import$1848 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1844, Q=$auto$verificsva.cc:1836:import$1846
+Replacing divider.$auto$verificsva.cc:1838:import$1857 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1853, Q=$auto$verificsva.cc:1836:import$1855
+Replacing divider.$auto$verificsva.cc:1838:import$1866 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1862, Q=$auto$verificsva.cc:1836:import$1864
+Replacing divider.$auto$verificsva.cc:1838:import$1875 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1871, Q=$auto$verificsva.cc:1836:import$1873
+Replacing divider.$auto$verificsva.cc:1838:import$1884 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1880, Q=$auto$verificsva.cc:1836:import$1882
+Replacing divider.$auto$verificsva.cc:1838:import$1893 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1889, Q=$auto$verificsva.cc:1836:import$1891
+Replacing divider.$auto$verificsva.cc:1838:import$1902 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1898, Q=$auto$verificsva.cc:1836:import$1900
+Replacing divider.$auto$verificsva.cc:1838:import$1911 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1907, Q=$auto$verificsva.cc:1836:import$1909
+Replacing divider.$auto$verificsva.cc:1838:import$1920 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1916, Q=$auto$verificsva.cc:1836:import$1918
+Replacing divider.$auto$verificsva.cc:1838:import$1929 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1925, Q=$auto$verificsva.cc:1836:import$1927
+Replacing divider.$auto$verificsva.cc:1838:import$1938 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1934, Q=$auto$verificsva.cc:1836:import$1936
+Replacing divider.$auto$verificsva.cc:1838:import$1947 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1943, Q=$auto$verificsva.cc:1836:import$1945
+Replacing divider.$auto$verificsva.cc:1838:import$1956 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1952, Q=$auto$verificsva.cc:1836:import$1954
+Replacing divider.$auto$verificsva.cc:1838:import$1965 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1961, Q=$auto$verificsva.cc:1836:import$1963
+Replacing divider.$auto$verificsva.cc:1838:import$1974 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1970, Q=$auto$verificsva.cc:1836:import$1972
+Replacing divider.$auto$verificsva.cc:1838:import$1983 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1979, Q=$auto$verificsva.cc:1836:import$1981
+Replacing divider.$auto$verificsva.cc:1838:import$1992 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1988, Q=$auto$verificsva.cc:1836:import$1990
+Replacing divider.$auto$verificsva.cc:1838:import$2001 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$1997, Q=$auto$verificsva.cc:1836:import$1999
+Replacing divider.$auto$verificsva.cc:1838:import$2010 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2006, Q=$auto$verificsva.cc:1836:import$2008
+Replacing divider.$auto$verificsva.cc:1838:import$2019 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2015, Q=$auto$verificsva.cc:1836:import$2017
+Replacing divider.$auto$verificsva.cc:1838:import$2028 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2024, Q=$auto$verificsva.cc:1836:import$2026
+Replacing divider.$auto$verificsva.cc:1838:import$2037 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2033, Q=$auto$verificsva.cc:1836:import$2035
+Replacing divider.$auto$verificsva.cc:1838:import$2046 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2042, Q=$auto$verificsva.cc:1836:import$2044
+Replacing divider.$auto$verificsva.cc:1838:import$2055 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2051, Q=$auto$verificsva.cc:1836:import$2053
+Replacing divider.$auto$verificsva.cc:1838:import$2064 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2060, Q=$auto$verificsva.cc:1836:import$2062
+Replacing divider.$auto$verificsva.cc:1838:import$2073 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2069, Q=$auto$verificsva.cc:1836:import$2071
+Replacing divider.$auto$verificsva.cc:1838:import$2082 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2078, Q=$auto$verificsva.cc:1836:import$2080
+Replacing divider.$auto$verificsva.cc:1838:import$2091 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2087, Q=$auto$verificsva.cc:1836:import$2089
+Replacing divider.$auto$verificsva.cc:1838:import$2100 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2096, Q=$auto$verificsva.cc:1836:import$2098
+Replacing divider.$auto$verificsva.cc:1838:import$2109 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2105, Q=$auto$verificsva.cc:1836:import$2107
+Replacing divider.$auto$verificsva.cc:1838:import$2118 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2114, Q=$auto$verificsva.cc:1836:import$2116
+Replacing divider.$auto$verificsva.cc:1838:import$2127 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2123, Q=$auto$verificsva.cc:1836:import$2125
+Replacing divider.$auto$verificsva.cc:1838:import$2136 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2132, Q=$auto$verificsva.cc:1836:import$2134
+Replacing divider.$auto$verificsva.cc:1838:import$2145 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2141, Q=$auto$verificsva.cc:1836:import$2143
+Replacing divider.$auto$verificsva.cc:1838:import$2154 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2150, Q=$auto$verificsva.cc:1836:import$2152
+Replacing divider.$auto$verificsva.cc:1838:import$2163 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2159, Q=$auto$verificsva.cc:1836:import$2161
+Replacing divider.$auto$verificsva.cc:1838:import$2172 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2168, Q=$auto$verificsva.cc:1836:import$2170
+Replacing divider.$auto$verificsva.cc:1838:import$2181 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2177, Q=$auto$verificsva.cc:1836:import$2179
+Replacing divider.$auto$verificsva.cc:1838:import$2190 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2186, Q=$auto$verificsva.cc:1836:import$2188
+Replacing divider.$auto$verificsva.cc:1838:import$2199 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2195, Q=$auto$verificsva.cc:1836:import$2197
+Replacing divider.$auto$verificsva.cc:1838:import$2208 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2204, Q=$auto$verificsva.cc:1836:import$2206
+Replacing divider.$auto$verificsva.cc:1838:import$2217 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2213, Q=$auto$verificsva.cc:1836:import$2215
+Replacing divider.$auto$verificsva.cc:1838:import$2226 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2222, Q=$auto$verificsva.cc:1836:import$2224
+Replacing divider.$auto$verificsva.cc:1838:import$2235 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2231, Q=$auto$verificsva.cc:1836:import$2233
+Replacing divider.$auto$verificsva.cc:1838:import$2244 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2240, Q=$auto$verificsva.cc:1836:import$2242
+Replacing divider.$auto$verificsva.cc:1838:import$2253 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2249, Q=$auto$verificsva.cc:1836:import$2251
+Replacing divider.$auto$verificsva.cc:1838:import$2262 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2258, Q=$auto$verificsva.cc:1836:import$2260
+Replacing divider.$auto$verificsva.cc:1838:import$2271 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2267, Q=$auto$verificsva.cc:1836:import$2269
+Replacing divider.$auto$verificsva.cc:1838:import$2280 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2276, Q=$auto$verificsva.cc:1836:import$2278
+Replacing divider.$auto$verificsva.cc:1838:import$2289 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2285, Q=$auto$verificsva.cc:1836:import$2287
+Replacing divider.$auto$verificsva.cc:1838:import$2298 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2294, Q=$auto$verificsva.cc:1836:import$2296
+Replacing divider.$auto$verificsva.cc:1838:import$2307 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2303, Q=$auto$verificsva.cc:1836:import$2305
+Replacing divider.$auto$verificsva.cc:1838:import$2316 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2312, Q=$auto$verificsva.cc:1836:import$2314
+Replacing divider.$auto$verificsva.cc:1838:import$2325 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2321, Q=$auto$verificsva.cc:1836:import$2323
+Replacing divider.$auto$verificsva.cc:1838:import$2334 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2330, Q=$auto$verificsva.cc:1836:import$2332
+Replacing divider.$auto$verificsva.cc:1838:import$2343 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2339, Q=$auto$verificsva.cc:1836:import$2341
+Replacing divider.$auto$verificsva.cc:1838:import$2352 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2348, Q=$auto$verificsva.cc:1836:import$2350
+Replacing divider.$auto$verificsva.cc:1838:import$2361 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2357, Q=$auto$verificsva.cc:1836:import$2359
+Replacing divider.$auto$verificsva.cc:1838:import$2370 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2366, Q=$auto$verificsva.cc:1836:import$2368
+Replacing divider.$auto$verificsva.cc:1838:import$2379 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2375, Q=$auto$verificsva.cc:1836:import$2377
+Replacing divider.$auto$verificsva.cc:1838:import$2388 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2384, Q=$auto$verificsva.cc:1836:import$2386
+Replacing divider.$auto$verificsva.cc:1838:import$2397 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2393, Q=$auto$verificsva.cc:1836:import$2395
+Replacing divider.$auto$verificsva.cc:1838:import$2406 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2402, Q=$auto$verificsva.cc:1836:import$2404
+Replacing divider.$auto$verificsva.cc:1838:import$2415 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2411, Q=$auto$verificsva.cc:1836:import$2413
+Replacing divider.$auto$verificsva.cc:1838:import$2424 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2420, Q=$auto$verificsva.cc:1836:import$2422
+Replacing divider.$auto$verificsva.cc:1838:import$2433 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2429, Q=$auto$verificsva.cc:1836:import$2431
+Replacing divider.$auto$verificsva.cc:1838:import$2442 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2438, Q=$auto$verificsva.cc:1836:import$2440
+Replacing divider.$auto$verificsva.cc:1838:import$2451 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2447, Q=$auto$verificsva.cc:1836:import$2449
+Replacing divider.$auto$verificsva.cc:1838:import$2460 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2456, Q=$auto$verificsva.cc:1836:import$2458
+Replacing divider.$auto$verificsva.cc:1838:import$2469 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2465, Q=$auto$verificsva.cc:1836:import$2467
+Replacing divider.$auto$verificsva.cc:1838:import$2478 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2474, Q=$auto$verificsva.cc:1836:import$2476
+Replacing divider.$auto$verificsva.cc:1838:import$2487 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2483, Q=$auto$verificsva.cc:1836:import$2485
+Replacing divider.$auto$verificsva.cc:1838:import$2496 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2492, Q=$auto$verificsva.cc:1836:import$2494
+Replacing divider.$auto$verificsva.cc:1838:import$2505 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2501, Q=$auto$verificsva.cc:1836:import$2503
+Replacing divider.$auto$verificsva.cc:1838:import$2514 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2510, Q=$auto$verificsva.cc:1836:import$2512
+Replacing divider.$auto$verificsva.cc:1838:import$2523 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2519, Q=$auto$verificsva.cc:1836:import$2521
+Replacing divider.$auto$verificsva.cc:1838:import$2532 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2528, Q=$auto$verificsva.cc:1836:import$2530
+Replacing divider.$auto$verificsva.cc:1838:import$2541 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2537, Q=$auto$verificsva.cc:1836:import$2539
+Replacing divider.$auto$verificsva.cc:1838:import$2550 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2546, Q=$auto$verificsva.cc:1836:import$2548
+Replacing divider.$auto$verificsva.cc:1838:import$2559 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2555, Q=$auto$verificsva.cc:1836:import$2557
+Replacing divider.$auto$verificsva.cc:1838:import$2568 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2564, Q=$auto$verificsva.cc:1836:import$2566
+Replacing divider.$auto$verificsva.cc:1838:import$2577 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2573, Q=$auto$verificsva.cc:1836:import$2575
+Replacing divider.$auto$verificsva.cc:1838:import$2586 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2582, Q=$auto$verificsva.cc:1836:import$2584
+Replacing divider.$auto$verificsva.cc:1838:import$2595 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2591, Q=$auto$verificsva.cc:1836:import$2593
+Replacing divider.$auto$verificsva.cc:1838:import$2604 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2600, Q=$auto$verificsva.cc:1836:import$2602
+Replacing divider.$auto$verificsva.cc:1838:import$2613 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2609, Q=$auto$verificsva.cc:1836:import$2611
+Replacing divider.$auto$verificsva.cc:1838:import$2622 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2618, Q=$auto$verificsva.cc:1836:import$2620
+Replacing divider.$auto$verificsva.cc:1838:import$2631 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2627, Q=$auto$verificsva.cc:1836:import$2629
+Replacing divider.$auto$verificsva.cc:1838:import$2640 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2636, Q=$auto$verificsva.cc:1836:import$2638
+Replacing divider.$auto$verificsva.cc:1838:import$2649 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2645, Q=$auto$verificsva.cc:1836:import$2647
+Replacing divider.$auto$verificsva.cc:1838:import$2658 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2654, Q=$auto$verificsva.cc:1836:import$2656
+Replacing divider.$auto$verificsva.cc:1838:import$2667 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2663, Q=$auto$verificsva.cc:1836:import$2665
+Replacing divider.$auto$verificsva.cc:1838:import$2676 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2672, Q=$auto$verificsva.cc:1836:import$2674
+Replacing divider.$auto$verificsva.cc:1838:import$2685 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2681, Q=$auto$verificsva.cc:1836:import$2683
+Replacing divider.$auto$verificsva.cc:1838:import$2694 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2690, Q=$auto$verificsva.cc:1836:import$2692
+Replacing divider.$auto$verificsva.cc:1838:import$2703 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2699, Q=$auto$verificsva.cc:1836:import$2701
+Replacing divider.$auto$verificsva.cc:1838:import$2712 ($adff): ARST=\rst, D=$auto$rtlil.cc:3188:Or$2708, Q=$auto$verificsva.cc:1836:import$2710
+Replacing divider.$auto$verificsva.cc:365:getAccept$1398 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$1393, Q=$auto$verificsva.cc:296:getAccept$1387
+Replacing divider.$auto$verificsva.cc:365:getAccept$1431 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$1426, Q=$auto$verificsva.cc:296:getAccept$1420
+Replacing divider.$auto$verificsva.cc:365:getAccept$1558 ($adff): ARST=\rst, D=$auto$rtlil.cc:3187:And$1456, Q=$auto$verificsva.cc:296:getAccept$1547
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1476 ($adff): ARST=$verific$n268$44, D=$auto$rtlil.cc:3187:And$1456, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1464
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1477 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$1464, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1465
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1478 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$1465, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1466
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1479 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$1466, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1467
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1480 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$1467, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1468
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1481 ($adff): ARST=$verific$n268$44, D=$auto$verificsva.cc:670:getFirstAcceptReject$1468, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1469
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1524 ($adff): ARST=\rst, D=$auto$verificsva.cc:296:getAccept$1547, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1512
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1525 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$1512, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1513
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1526 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$1513, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1514
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1527 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$1514, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1515
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1528 ($adff): ARST=\rst, D=$auto$verificsva.cc:670:getFirstAcceptReject$1515, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1516
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1584 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$1567, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1562
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1585 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$1571, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1563
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1586 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$1575, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1564
+Replacing divider.$auto$verificsva.cc:713:getFirstAcceptReject$1587 ($adff): ARST=\rst, D=$auto$rtlil.cc:3194:Eq$1579, Q=$auto$verificsva.cc:670:getFirstAcceptReject$1565
 
 6. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
@@ -60,8 +182,8 @@ Removed 2 unused cells and 2 unused wires.
 
 8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
-Removed 1 unused cells and 1 unused wires.
-<suppressed ~2 debug messages>
+Removed 564 unused cells and 564 unused wires.
+<suppressed ~565 debug messages>
 
 9. Executing CHECK pass (checking for obvious problems).
 Checking module divider...
@@ -95,6 +217,6 @@ Removed 0 unused cells and 6 unused wires.
 13. Executing RTLIL backend.
 Output filename: ../model/design_prep.il
 
-End of script. Logfile hash: e29c3515f5, CPU: user 0.02s system 0.01s, MEM: 17.53 MB peak
+End of script. Logfile hash: 206d9eb5b9, CPU: user 0.03s system 0.01s, MEM: 19.64 MB peak
 Yosys 0.59 (git sha1 5df4c20be, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
-Time spent: 44% 4x opt_clean (0 sec), 9% 1x opt_expr (0 sec), ...
+Time spent: 44% 4x opt_clean (0 sec), 15% 1x formalff (0 sec), ...

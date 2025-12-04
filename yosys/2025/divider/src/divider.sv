@@ -120,13 +120,13 @@ endproperty
 assert property (den_latch);
 
 // Task 6
-property done_dbi;
+property done_dbz;
   @(posedge clk)
   disable iff (rst)
     ($rose(go) && den == 5'b00000)
     |=> (done && dbz);
 endproperty
-assert property (done_dbi);
+assert property (done_dbz);
 
 // Task 7
 property done_stays_high_except;
@@ -139,9 +139,56 @@ endproperty
 property rem_smaller_den;
   @(posedge clk)
   disable iff (rst)
-    (valid && !dbz)
+    (valid)
       |-> (rem < den_latched);
 endproperty
+
+// Task 9
+property quo_and_rem;
+  @(posedge clk)
+  disable iff (rst)
+    (valid && !dbz)
+    |-> (
+      // Case quo = 0: rem must be at most 30
+      (quo == 5'd0 && rem <= 5'd30)
+      ||
+      // Case quo > 0: rem*(quo+1) + quo <= 31
+      (quo != 5'd0 &&
+       (rem * (quo + 5'd1) + quo <= 5'd31))
+    );
+endproperty
+
+assert property (quo_and_rem);
+
+// Task 10
+genvar q, r;
+generate
+  for (q = 0; q < 31; q = q + 1) begin : GEN_Q
+    for (r = 0; r < 31 ; r = r + 1) begin : GEN_R
+
+      if ( (q == 0 && r <= 30) ||
+           (q > 0  && (r * (q + 1) + q <= 31)) ) begin : GEN_QR
+
+        cover property (@(posedge clk)
+          disable iff (rst)
+          valid && !dbz &&
+          quo == q[4:0] &&
+          rem == r[4:0]);
+      end
+    end
+  end
+endgenerate
+
+// Task 11
+property loop_invariant_acc_lt_2den;
+  @(posedge clk)
+  disable iff (rst)
+    (busy && !dbz)
+      |-> (acc < (den_latched << 1));
+      // i.e. acc < 2 * den_latched
+endproperty
+
+assert property (loop_invariant_acc_lt_2den);
 
 `endif
 `endif

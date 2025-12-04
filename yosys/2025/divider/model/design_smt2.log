@@ -32,28 +32,29 @@ Module divider directly or indirectly contains formal properties -> setting "kee
 
         +----------Local Count, excluding submodules.
         | 
-      184 wires
-      309 wire bits
+      209 wires
+      334 wire bits
        20 public wires
        71 public wire bits
        11 ports
        27 port bits
-      186 cells
+      213 cells
         2   $add
-        6   $and
+        9   $and
         7   $anyinit
-        6   $assert
+        8   $assert
         2   $assume
-       18   $eq
+       20   $eq
         1   $eqx
-       38   $ff
-        1   $le
-        1   $logic_not
+       42   $ff
+        2   $le
+        2   $logic_not
+        1   $lt
         1   $mul
-       87   $mux
-       11   $not
-        2   $or
-        1   $reduce_bool
+       95   $mux
+       14   $not
+        3   $or
+        2   $reduce_bool
         1   $reduce_or
         1   $sub
 
@@ -64,6 +65,6 @@ Module divider directly or indirectly contains formal properties -> setting "kee
 6.2. Executing DEMUXMAP pass.
 Creating SMT-LIBv2 representation of module divider.
 
-End of script. Logfile hash: b32efc2104, CPU: user 0.01s system 0.01s, MEM: 16.77 MB peak
+End of script. Logfile hash: 9b21459466, CPU: user 0.01s system 0.01s, MEM: 16.30 MB peak
 Yosys 0.59 (git sha1 5df4c20be, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
-Time spent: 60% 2x write_smt2 (0 sec), 31% 2x read_rtlil (0 sec), ...
+Time spent: 71% 2x write_smt2 (0 sec), 17% 2x read_rtlil (0 sec), ...

@@ -66,7 +66,7 @@ Cleaned up 0 empty switches.
 
 2.2.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module divider.
-<suppressed ~57 debug messages>
+<suppressed ~308 debug messages>
 
 2.3. Executing FUTURE pass.
 
@@ -75,7 +75,7 @@ Optimizing module divider.
 
 2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
-Removed 0 unused cells and 163 unused wires.
+Removed 0 unused cells and 663 unused wires.
 <suppressed ~10 debug messages>
 
 2.6. Executing CHECK pass (checking for obvious problems).
@@ -90,8 +90,8 @@ Optimizing module divider.
 
 2.7.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\divider'.
-<suppressed ~9 debug messages>
-Removed a total of 3 cells.
+<suppressed ~357 debug messages>
+Removed a total of 119 cells.
 
 2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \divider..
@@ -111,7 +111,7 @@ Removed a total of 0 cells.
 
 2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
-Removed 0 unused cells and 9 unused wires.
+Removed 0 unused cells and 125 unused wires.
 <suppressed ~1 debug messages>
 
 2.7.7. Executing OPT_EXPR pass (perform const folding).
@@ -144,16 +144,46 @@ Optimizing module divider.
 2.7.14. Finished fast OPT passes. (There is nothing left to do.)
 
 2.8. Executing WREDUCE pass (reducing word size of cells).
-Removed top 2 bits (of 3) from port B of cell divider.$verific$add_35$divider.sv:62$134 ($add).
-Removed top 1 bits (of 6) from port A of cell divider.$verific$LessThan_41$divider.sv:64$139 ($le).
-Removed top 1 bits (of 6) from port B of cell divider.$verific$sub_42$divider.sv:65$140 ($sub).
-Removed top 1 bits (of 6) from port Y of cell divider.$verific$sub_42$divider.sv:65$140 ($sub).
-Removed top 1 bits (of 6) from port A of cell divider.$verific$sub_42$divider.sv:65$140 ($sub).
-Removed top 4 bits (of 5) from mux cell divider.$verific$mux_45$divider.sv:67$143 ($mux).
-Removed top 5 bits (of 10) from port Y of cell divider.$verific$mult_142$divider.sv:108$257 ($mul).
-Removed top 1 bits (of 2) from port B of cell divider.$verific$i152$divider.sv:117$271 ($eq).
-Removed top 1 bits (of 6) from wire divider.$verific$n109$102.
-Removed top 5 bits (of 10) from wire divider.$verific$n301$115.
+Removed top 2 bits (of 3) from port B of cell divider.$verific$add_35$divider.sv:62$592 ($add).
+Removed top 1 bits (of 6) from port A of cell divider.$verific$LessThan_41$divider.sv:64$597 ($le).
+Removed top 1 bits (of 6) from port B of cell divider.$verific$sub_42$divider.sv:65$598 ($sub).
+Removed top 1 bits (of 6) from port Y of cell divider.$verific$sub_42$divider.sv:65$598 ($sub).
+Removed top 1 bits (of 6) from port A of cell divider.$verific$sub_42$divider.sv:65$598 ($sub).
+Removed top 4 bits (of 5) from mux cell divider.$verific$mux_45$divider.sv:67$601 ($mux).
+Removed top 5 bits (of 10) from port Y of cell divider.$verific$mult_142$divider.sv:108$715 ($mul).
+Removed top 1 bits (of 2) from port B of cell divider.$verific$i152$divider.sv:117$729 ($eq).
+Removed top 4 bits (of 5) from port B of cell divider.$verific$equal_203$divider.sv:176$759 ($eq).
+Removed top 3 bits (of 5) from port B of cell divider.$verific$equal_213$divider.sv:176$764 ($eq).
+Removed top 3 bits (of 5) from port B of cell divider.$verific$equal_223$divider.sv:176$769 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_233$divider.sv:176$774 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_243$divider.sv:176$779 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_253$divider.sv:176$784 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_263$divider.sv:176$789 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_273$divider.sv:176$794 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_283$divider.sv:176$799 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_293$divider.sv:176$804 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_303$divider.sv:176$809 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_313$divider.sv:176$814 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_323$divider.sv:176$819 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_333$divider.sv:176$824 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_343$divider.sv:176$829 ($eq).
+Removed top 4 bits (of 5) from port B of cell divider.$verific$equal_501$divider.sv:175$909 ($eq).
+Removed top 3 bits (of 5) from port B of cell divider.$verific$equal_661$divider.sv:175$975 ($eq).
+Removed top 3 bits (of 5) from port B of cell divider.$verific$equal_761$divider.sv:175$1017 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_841$divider.sv:175$1051 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_901$divider.sv:175$1077 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_951$divider.sv:175$1099 ($eq).
+Removed top 2 bits (of 5) from port B of cell divider.$verific$equal_991$divider.sv:175$1117 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1031$divider.sv:175$1135 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1061$divider.sv:175$1149 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1091$divider.sv:175$1163 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1111$divider.sv:175$1173 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1131$divider.sv:175$1183 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1151$divider.sv:175$1193 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1171$divider.sv:175$1203 ($eq).
+Removed top 1 bits (of 5) from port B of cell divider.$verific$equal_1191$divider.sv:175$1213 ($eq).
+Removed top 1 bits (of 6) from wire divider.$verific$n109$560.
+Removed top 5 bits (of 10) from wire divider.$verific$n301$573.
 
 2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \divider..
@@ -182,28 +212,30 @@ Finding unused cells or wires in module \divider..
 
         +----------Local Count, excluding submodules.
         | 
-      125 wires
-      250 wire bits
+      469 wires
+      594 wire bits
        14 public wires
        41 public wire bits
        11 ports
        27 port bits
-      126 cells
+      589 cells
         2   $add
-       30   $adff
-        6   $and
-        6   $assert
+      152   $adff
+      157   $and
+        8   $assert
         1   $assume
+      117   $cover
        17   $dff
-       18   $eq
+       80   $eq
         1   $eqx
-        1   $le
-        1   $logic_not
+        2   $le
+        3   $logic_not
+        1   $lt
         1   $mul
        27   $mux
-       10   $not
-        2   $or
-        1   $reduce_bool
+       13   $not
+        3   $or
+        2   $reduce_bool
         1   $reduce_or
         1   $sub
 
@@ -227,6 +259,6 @@ Module divider directly or indirectly contains formal properties -> setting "kee
 5. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: 9708aad3a7, CPU: user 0.02s system 0.02s, MEM: 24.31 MB peak
+End of script. Logfile hash: 91dcb08f91, CPU: user 0.07s system 0.02s, MEM: 28.70 MB peak
 Yosys 0.59 (git sha1 5df4c20be, aarch64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
-Time spent: 28% 2x hierarchy (0 sec), 19% 1x verific (0 sec), ...
+Time spent: 52% 2x hierarchy (0 sec), 13% 5x opt_clean (0 sec), ...
