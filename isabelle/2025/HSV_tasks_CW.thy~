@@ -543,58 +543,17 @@ theorem sat_reduce1:
 qed
 
 
-text \<open> If a valuation satisfies a clause and all symbols are below x, 
-  then we can modify it to satisfy the reduced clause while preserving symbols below x. \<close>
-lemma reduce_clause_sat_extend:
-  assumes "reduce_clause x c = (x', cs)"
-      and "evaluate_clause \<rho> c"
-      and "\<forall>y\<in>symbols_clause c. y < x"
-  shows "\<exists>\<rho>'. (\<forall>y. y < x \<longrightarrow> \<rho>' y = \<rho> y) \<and> (\<forall>d\<in>set cs. evaluate_clause \<rho>' d)"
-  sorry
-
-text \<open> The reduction preserves satisfiability when all symbols are below the starting index. \<close>
-lemma reduce_preserves_sat:
-  assumes "x \<triangleright> q" "evaluate q \<rho>"
-  shows "\<exists>\<rho>'. evaluate (reduce x q) \<rho>'"
-  sorry
-
-
-text \<open> Fresh symbols introduced by reduction don't affect satisfaction of original clauses. \<close>
-lemma fresh_symbols_preserve_satisfaction:
-  assumes "\<forall>y\<in>symbols_clause c. y < x"
-      and "\<forall>y. y < x \<longrightarrow> \<rho> y = \<rho>' y"
-  shows "evaluate_clause \<rho> c = evaluate_clause \<rho>' c"
-  unfolding evaluate_clause_def
-  using assms
-  by (metis (full_types) evaluate_literal.elims(2) evaluate_literal.simps in_set_conv_nth length_map nth_map symbol_of_literal.simps
-      symbols_clause_def) 
-
-text \<open> Reduction only introduces symbols greater than or equal to the starting index. \<close>
-lemma reduction_symbols_bound:
-  "reduce_clause x c = (x', cs) \<Longrightarrow> x \<le> x'"
-  by (induction x c arbitrary: x' cs rule: reduce_clause.induct)
-     (auto split: prod.splits)
-
-text \<open> All symbols in reduced clauses are below the returned bound. \<close>
-lemma reduced_clauses_symbols_bound:
-  assumes "reduce_clause x c = (x', cs)"
-      and "\<forall>y\<in>symbols_clause c. y < x"
-  shows "\<forall>d\<in>set cs. \<forall>y\<in>symbols_clause d. y < x'"
-  using assms
-  apply (induction x c arbitrary: x' cs rule: reduce_clause.induct)
-  apply (auto simp: Let_def symbols_clause_def split: prod.splits dest: reduction_symbols_bound)
-  apply (meson Suc_le_eq reduction_symbols_bound)
-    apply (meson le_trans less_or_eq_imp_le linorder_le_less_linear not_less_eq_eq reduction_symbols_bound)
-   apply (meson less_Suc_eq order_less_le_trans reduction_symbols_bound)
-  by fastforce
-
-
 text \<open> If q is satisfiable, and all the symbols in q are below x, 
   then reduce x q is also satisfiable. \<close>
 theorem sat_reduce2:
-  assumes "satisfiable q" and "x \<triangleright> q"
+  assumes "satisfiable q" "x \<triangleright> q"
   shows "satisfiable (reduce x q)"
-  sorry
+proof -
+  obtain \<rho> where "evaluate q \<rho>" using assms(1) unfolding satisfiable_def by auto
+  then obtain \<rho>' where "evaluate (reduce x q) \<rho>'"
+    by (metis assms(2) all_below_def evaluate_def evaluate_reduce_implies satisfiable_def)
+  then show ?thesis unfolding satisfiable_def by blast
+qed
 
 text \<open> If all symbols in q are below x, then q and its reduction at x are equisatisfiable. \<close>
 corollary sat_reduce:
