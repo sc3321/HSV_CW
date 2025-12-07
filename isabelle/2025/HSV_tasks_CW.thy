@@ -191,8 +191,6 @@ proof -
 
   let ?f = "\<lambda>i. int (ds ! i) * ((-1::int) ^ i)"
 
-  (* Split the sum over {0..<2k} into two halves and reindex the second half
-     via i \<mapsto> 2k - 1 - i to pair terms i and (2k-1-i). *)
     have pair_sum:
     "(\<Sum>i<2*k. ?f i) = (\<Sum>i<k. (?f i + ?f (2*k - 1 - i)))"
   proof -
@@ -205,7 +203,6 @@ proof -
     finally show ?thesis by (simp add: sum.distrib)
   qed
 
-    (* For palindromes: ds!i = ds!(n-1-i). Use the standard lemma rev_nth. *)
   have pal_index:
     "i < k \<Longrightarrow> ds ! i = ds ! (2*k - 1 - i)" for i
   proof -
@@ -234,13 +231,11 @@ proof -
 
 
 
-  (* For even n>0 we have (-1)^(n-1) = -1; n=0 is trivial anyway *)
   have pow_n1: "?n > 0 \<Longrightarrow> (-1::int) ^ (?n - 1) = -1"
     using n_eq by (cases "k") simp_all
 
   let ?f = "\<lambda>i. int (ds ! i) * ((-1::int) ^ i)"
 
-  (* Palindrome \<rightarrow> digits match; pow_pair \<rightarrow> mirrored term equals (-1)^(n-1)*f i = - f i *)
   have flip_sign: "i < ?n \<Longrightarrow> ?f (?n - 1 - i) = - ?f i" for i
   proof -
     assume Hi: "i < ?n"
@@ -262,7 +257,6 @@ proof -
 
 
 
-  (* Reindex by i \<mapsto> n-1-i (an involution) to get S = -S *)
   have sum_reindex:
       "(\<Sum>i<?n. ?f i) = (\<Sum>i<?n. ?f (?n - 1 - i))"
   by (metis (no_types, lifting) diff_Suc_eq_diff_pred sum.cong sum.nat_diff_reindex) 
@@ -441,7 +435,6 @@ next
   have len: "length (reduce x (c # q)) = length cs + length (reduce x' q)"
     by simp
 
-  (* Suc(length q) \<le> length cs + length (reduce x' q) *)
   have step1: "Suc (length q) \<le> Suc (length (reduce x' q))"
     using IH by simp
   have step2: "Suc (length (reduce x' q)) \<le> length cs + length (reduce x' q)"
@@ -489,7 +482,6 @@ proof (induction x c arbitrary: x' cs rule: reduce_clause.induct)
     and X': "x' = x1"
     by (simp add: Let_def split: prod.splits)
 
-  (* Extract the IH from the current case without naming it as 1.IH *)
   have IH:
     "\<And>x' cs \<rho>. reduce_clause (x + 1) ((x, False) # l3 # l4 # c) = (x', cs) \<Longrightarrow>
                (\<forall>d\<in>set cs. evaluate_clause \<rho> d) \<Longrightarrow>
@@ -542,6 +534,220 @@ theorem sat_reduce1:
     thus ?thesis unfolding satisfiable_def by blast
 qed
 
+lemma literal_agree:
+  assumes "\<rho> y = \<rho>' y"
+  shows "evaluate_literal \<rho> (y, b) = evaluate_literal \<rho>' (y, b)"
+  using assms by simp
+
+lemma clause_agree:
+  assumes "\<forall>(y,_) \<in> set c. \<rho> y = \<rho>' y"
+  shows "evaluate_clause \<rho> c = evaluate_clause \<rho>' c"
+  unfolding evaluate_clause_def
+  using assms
+  by force
+
+lemma query_agree:
+  assumes "\<forall>c \<in> set q. \<forall>(y,_) \<in> set c. \<rho> y = \<rho>' y"
+  shows "evaluate q \<rho> = evaluate q \<rho>' "
+  unfolding evaluate_def
+  using assms clause_agree
+  by fastforce
+
+lemma reduce_clause_symbol_ge:
+  "let (x', cs) = reduce_clause x c in x \<le> x'"
+proof (induction x c rule: reduce_clause.induct)
+  case (1 x l1 l2 l3 l4 c)
+  then show ?case by (auto simp: Let_def split: prod.splits)
+qed auto
+
+lemma reduce_clause_preserves_bound:
+  assumes "reduce_clause x c = (x', cs)"
+  assumes "\<forall>(y,_) \<in> set c. y < x"
+  shows "\<forall>d \<in> set cs. \<forall>(y,_) \<in> set d. y < x'"
+using assms
+proof (induction x c arbitrary: x' cs rule: reduce_clause.induct)
+  case (1 x l1 l2 l3 l4 c)
+  obtain x1 cs1 where STEP:
+    "reduce_clause (x + 1) ((x, False) # l3 # l4 # c) = (x1, cs1)"
+    by (metis prod.exhaust)
+  
+  from 1(2) have CS: "cs = [[(x, True), l1, l2]] @ cs1" and X': "x' = x1"
+    using STEP by (auto simp: Let_def split: prod.splits)
+  
+  from 1(3) have bounds: "\<forall>(y,_) \<in> set (l1 # l2 # l3 # l4 # c). y < x" by simp
+  hence rec_bounds: "\<forall>(y,_) \<in> set ((x, False) # l3 # l4 # c). y < x + 1" by auto
+  
+  have IH: "\<forall>d \<in> set cs1. \<forall>(y,_) \<in> set d. y < x1"
+    using 1(1)[of x1 cs1] STEP rec_bounds by simp
+  
+  from bounds have hd_bound: "\<forall>(y,_) \<in> set [(x, True), l1, l2]. y < x + 1" by auto
+  from reduce_clause_symbol_ge[of x "((x, False) # l3 # l4 # c)"]
+  have "x + 1 \<le> x1" using STEP
+    by (metis case_prod_conv reduce_clause_symbol_ge) 
+  
+  hence "\<forall>(y,_) \<in> set [(x, True), l1, l2]. y < x1" using hd_bound by auto
+  
+  with IH CS X' show ?case by auto
+qed auto
+
+lemma bound_trans:
+  assumes "x' \<triangleright> q'"
+  assumes "\<forall>c \<in> set q'. \<forall>(y,_) \<in> set c. y < x''"
+  shows "x'' \<triangleright> q'"
+  using assms by simp
+
+lemma reduce_clause_sat:
+  assumes "reduce_clause x c = (x', cs)"
+  assumes "evaluate_clause \<rho> c"
+  assumes "\<forall>(y,_) \<in> set c. y < x"
+  shows "\<exists>\<rho>'. (\<forall>d \<in> set cs. evaluate_clause \<rho>' d) \<and> (\<forall>y < x. \<rho>' y = \<rho> y)"
+using assms
+proof (induction x c arbitrary: x' cs \<rho> rule: reduce_clause.induct)
+  case (1 x l1 l2 l3 l4 c)
+  obtain x1 cs1 where STEP:
+    "reduce_clause (x + 1) ((x, False) # l3 # l4 # c) = (x1, cs1)"
+    by (metis prod.exhaust)
+  
+  from 1(2) have CS: "cs = [[(x, True), l1, l2]] @ cs1" and X': "x' = x1"
+    using STEP by (auto simp: Let_def split: prod.splits)
+  
+  from 1(3) have "evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2 \<or> 
+                  (\<exists>l \<in> set (l3 # l4 # c). evaluate_literal \<rho> l)"
+    unfolding evaluate_clause_def by auto
+  
+  define \<rho>' where "\<rho>' = (\<lambda>y. if y = x then 
+                              \<not>(evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2)
+                            else \<rho> y)"
+  
+  from 1(4) have bounds: "\<forall>(y,_) \<in> set (l1 # l2 # l3 # l4 # c). y < x" by simp
+  
+  have agree_below_x: "\<forall>y < x. \<rho>' y = \<rho> y"
+    unfolding \<rho>'_def by auto
+  
+  have hd_sat: "evaluate_clause \<rho>' [(x, True), l1, l2]"
+  proof (cases "evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2")
+    case True
+    hence "\<rho>' x = False" unfolding \<rho>'_def by simp
+    moreover from bounds have "fst l1 < x" "fst l2 < x" by auto
+    ultimately have "evaluate_literal \<rho>' l1 = evaluate_literal \<rho> l1"
+                    "evaluate_literal \<rho>' l2 = evaluate_literal \<rho> l2"
+      using agree_below_x
+       apply (metis evaluate_literal.elims(2,3) fst_conv prod.inject) 
+    
+      by (metis \<open>fst l2 < x\<close> agree_below_x evaluate_literal.simps fst_eqD symbol_of_literal.cases)
+    with True show ?thesis unfolding evaluate_clause_def by auto
+  next
+    case False
+    hence "\<rho>' x = True" unfolding \<rho>'_def by simp
+    thus ?thesis unfolding evaluate_clause_def by auto
+  qed
+  
+  have rec_clause_sat: "evaluate_clause \<rho>' ((x, False) # l3 # l4 # c)"
+  proof (cases "evaluate_literal \<rho> l1 \<or> evaluate_literal \<rho> l2")
+    case True
+    hence "\<rho>' x = False" unfolding \<rho>'_def by simp
+    thus ?thesis unfolding evaluate_clause_def by auto
+  next
+    case False
+    with 1(3) have "\<exists>l \<in> set (l3 # l4 # c). evaluate_literal \<rho> l"
+      unfolding evaluate_clause_def by auto
+    moreover from bounds have "\<forall>(y,_) \<in> set (l3 # l4 # c). y < x" by auto
+    ultimately have "\<exists>l \<in> set (l3 # l4 # c). evaluate_literal \<rho>' l"
+      using agree_below_x
+      by fastforce
+    thus ?thesis unfolding evaluate_clause_def by auto
+  qed
+  
+  from bounds have rec_bounds': "\<forall>(y,_) \<in> set ((x, False) # l3 # l4 # c). y < x + 1" by auto
+  obtain \<rho>'' where IH: "\<forall>d \<in> set cs1. evaluate_clause \<rho>'' d" 
+                       "\<forall>y < x + 1. \<rho>'' y = \<rho>' y"
+    using 1(1)[of x1 cs1 \<rho>'] STEP rec_clause_sat rec_bounds' by blast
+  
+  have "\<forall>d \<in> set cs. evaluate_clause \<rho>'' d"
+  proof -
+    from IH(1) have tail: "\<forall>d \<in> set cs1. evaluate_clause \<rho>'' d" by simp
+    from bounds have "\<forall>(y,_) \<in> set [(x, True), l1, l2]. y < x + 1" by auto
+    hence "evaluate_clause \<rho>'' [(x, True), l1, l2] = evaluate_clause \<rho>' [(x, True), l1, l2]"
+      using IH(2) evaluate_clause_def by auto
+    with hd_sat have "evaluate_clause \<rho>'' [(x, True), l1, l2]" by simp
+    with tail CS show ?thesis by auto
+  qed
+  
+  moreover have "\<forall>y < x. \<rho>'' y = \<rho> y"
+    using IH(2) agree_below_x by auto
+  
+  ultimately show ?case by blast
+qed (auto intro: exI[of _ \<rho>])
+
+lemma reduce_sat:
+  assumes "evaluate q \<rho>"
+  assumes "x \<triangleright> q"
+  shows "\<exists>\<rho>'. evaluate (reduce x q) \<rho>' \<and> (\<forall>y < x. \<rho>' y = \<rho> y)"
+using assms
+proof (induction q arbitrary: x \<rho>)
+  case Nil
+  then show ?case by (auto intro: exI[of _ \<rho>])
+next
+  case (Cons c q)
+  obtain x' cs where RC: "reduce_clause x c = (x', cs)"
+    by (metis prod.exhaust)
+  
+  from Cons(2) have "evaluate_clause \<rho> c" "\<forall>d \<in> set q. evaluate_clause \<rho> d"
+    unfolding evaluate_def by auto
+  
+  from Cons(3) have "\<forall>(y,_) \<in> set c. y < x" "\<forall>d \<in> set q. \<forall>(y,_) \<in> set d. y < x" by auto
+  
+  from reduce_clause_sat[OF RC `evaluate_clause \<rho> c` `\<forall>(y,_) \<in> set c. y < x`]
+  obtain \<rho>' where cs_sat: "\<forall>d \<in> set cs. evaluate_clause \<rho>' d"
+                  and agree: "\<forall>y < x. \<rho>' y = \<rho> y"
+    by blast
+  
+  from reduce_clause_preserves_bound[OF RC `\<forall>(y,_) \<in> set c. y < x`]
+  have cs_bound: "\<forall>d \<in> set cs. \<forall>(y,_) \<in> set d. y < x'" by simp
+  
+  from reduce_clause_symbol_ge[of x c] RC have "x \<le> x'" by (simp add: Let_def)
+  hence "\<forall>d \<in> set q. \<forall>(y,_) \<in> set d. y < x'" using `\<forall>d \<in> set q. \<forall>(y,_) \<in> set d. y < x`
+    by fastforce
+  hence "x' \<triangleright> q" by simp
+  
+  have "\<forall>d \<in> set q. evaluate_clause \<rho>' d"
+  proof
+    fix d assume "d \<in> set q"
+    hence "\<forall>(y,_) \<in> set d. y < x" using Cons(3) by auto
+    hence "evaluate_clause \<rho>' d = evaluate_clause \<rho> d"
+      using agree clause_agree 
+      by (smt (verit, ccfv_SIG) old.prod.case split_cong)
+    with `\<forall>d \<in> set q. evaluate_clause \<rho> d` `d \<in> set q` show "evaluate_clause \<rho>' d" by simp
+  qed
+  
+  hence "evaluate q \<rho>'" unfolding evaluate_def by simp
+  
+  from Cons(1)[OF this `x' \<triangleright> q`]
+  obtain \<rho>'' where tail_sat: "evaluate (reduce x' q) \<rho>''" 
+                   and agree': "\<forall>y < x'. \<rho>'' y = \<rho>' y"
+    by blast
+  
+  have "\<forall>d \<in> set cs. evaluate_clause \<rho>'' d"
+  proof
+    fix d assume "d \<in> set cs"
+    with cs_bound have "\<forall>(y,_) \<in> set d. y < x'" by auto
+    hence "evaluate_clause \<rho>'' d = evaluate_clause \<rho>' d"
+      using agree' clause_agree 
+      by (smt (verit, ccfv_threshold) evaluate_clause_def evaluate_literal.elims(2) evaluate_literal.simps old.prod.case)
+    with cs_sat `d \<in> set cs` show "evaluate_clause \<rho>'' d" by simp
+  qed
+  
+  hence "evaluate (cs @ reduce x' q) \<rho>''"
+    using tail_sat unfolding evaluate_def by auto
+  moreover have "reduce x (c # q) = cs @ reduce x' q"
+    using RC by (simp add: Let_def)
+  ultimately have "evaluate (reduce x (c # q)) \<rho>''" by simp
+  
+  moreover have "\<forall>y < x. \<rho>'' y = \<rho> y"
+    using agree agree' `x \<le> x'` by auto
+  
+  ultimately show ?case by blast
+qed
 
 text \<open> If q is satisfiable, and all the symbols in q are below x, 
   then reduce x q is also satisfiable. \<close>
@@ -549,59 +755,12 @@ theorem sat_reduce2:
   assumes "satisfiable q" "x \<triangleright> q"
   shows "satisfiable (reduce x q)"
 proof -
-  from assms(1) obtain \<rho> where Eval: "evaluate q \<rho>"
+  from assms(1) obtain \<rho> where "evaluate q \<rho>"
     unfolding satisfiable_def by auto
-
-  define \<rho>' where "\<rho>' y = (if y < x then \<rho> y else False)" for y
-
-  have step: "\<forall>c \<in> set q. evaluate_clause \<rho>' c"
-  proof
-    fix c assume "c \<in> set q"
-    with Eval have "evaluate_clause \<rho> c"
-      unfolding evaluate_def by auto
-    moreover from assms(2) \<open>c \<in> set q\<close> have "\<forall>(y,_)\<in>set c. y < x"
-      unfolding all_below_def by auto
-    ultimately show "evaluate_clause \<rho>' c"
-      unfolding evaluate_clause_def \<rho>'_def
-      by force
-  qed
-
-  from step have "evaluate (reduce x q) \<rho>'"
-  proof (induction q arbitrary: x)
-    case Nil
-    then show ?case
-      by (simp add: evaluate_def)
-  next
-    case (Cons c q)
-    obtain x' cs where RC: "reduce_clause x c = (x', cs)"
-      by (cases "reduce_clause x c") auto
-
-    have eval_c: "evaluate_clause \<rho>' c"
-      using Cons.prems by auto
-
-    have eval_q: "evaluate q \<rho>'"
-      using Cons.prems
-      unfolding evaluate_def by auto
-
-    from Cons.IH[of x'] eval_q
-    have eval_red_q: "evaluate (reduce x' q) \<rho>'"
-      using evaluate_def by blast 
-
-   have eval_cs: "\<forall>d \<in> set cs. evaluate_clause \<rho>' d"
-  using RC eval_c
-  by (induction x c arbitrary: x' cs rule: reduce_clause.induct)
-     (auto simp: Let_def evaluate_clause_def evaluate_literal.simps
-           split: prod.splits prod.split)
-
-    from RC eval_red_q eval_cs
-    show ?case
-      by (auto simp: evaluate_def)
-  qed
-
-  thus ?thesis
-    unfolding satisfiable_def by blast
+  from reduce_sat[OF this assms(2)]
+  obtain \<rho>' where "evaluate (reduce x q) \<rho>'" by blast
+  thus ?thesis unfolding satisfiable_def by blast
 qed
-
 
 
 text \<open> If all symbols in q are below x, then q and its reduction at x are equisatisfiable. \<close>
