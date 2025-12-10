@@ -292,7 +292,6 @@ method reverse_doublesort(A: array<int>)
   modifies A
   ensures sorted(A)
 {
-  // Simply use the regular doublesort since it already sorts the array
   doublesort(A);
 }
 
