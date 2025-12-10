@@ -87,7 +87,7 @@ assert property (start_sets_busy_next);
 property t2_alt;
   @(posedge clk)
   disable iff (rst)
-    (go && den != 5'b00000) |=> (busy && !valid)[*5];  // cycles n+1, n+2, n+3, n+4, n+5
+    (go && den != 5'b00000) |=> (busy && !valid)[*5];
 endproperty
 
 assert property (t2_alt);
@@ -104,7 +104,7 @@ assert property (six_cycles_later);
 // Task 4
 property equation_check;
   @(posedge clk)
-  disable iff (rst || !go || (den == 5'b00000))  // Ensure go is high and den is non-zero
+  disable iff (rst || !go || (den == 5'b00000))
     (go && den != 5'b00000) |-> ##6 ((num == ($past(den, 6) * quo) + rem));
 endproperty
 
@@ -149,10 +149,8 @@ property quo_and_rem;
   disable iff (rst)
     (valid && !dbz)
     |-> (
-      // Case quo = 0: rem must be at most 30
       (quo == 5'd0 && rem <= 5'd30)
       ||
-      // Case quo > 0: rem*(quo+1) + quo <= 31
       (quo != 5'd0 &&
        (rem * (quo + 5'd1) + quo <= 5'd31))
     );
