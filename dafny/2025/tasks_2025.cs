@@ -9,7 +9,7 @@ using System;
 using System.Numerics;
 using System.Collections;
 [assembly: DafnyAssembly.DafnySourceAttribute(@"// dafny 4.11.0.0
-// Command Line Options: tasks_2025.dfy
+// Command-line arguments: run tasks_2025.dfy
 // tasks_2025.dfy
 
 predicate sorted(A: array<int>)
@@ -53,17 +53,6 @@ function minimum_in_range(arr: array<int>, start: int, end: int): int
     minimum(arr[start], minimum_in_range(arr, start + 1, end))
 }
 
-lemma /*{:_inductionTrigger minimum_in_range(arr, start, end)}*/ /*{:_inductionTrigger is_sorted_in_range(arr, start, end)}*/ /*{:_induction arr, start, end}*/ first_element_is_minimum_when_sorted(arr: array<int>, start: int, end: int)
-  requires 0 <= start < end <= arr.Length
-  requires is_sorted_in_range(arr, start, end)
-  ensures arr[start] == minimum_in_range(arr, start, end)
-  decreases end - start
-{
-  if start < end - 1 {
-    first_element_is_minimum_when_sorted(arr, start + 1, end);
-  }
-}
-
 method sort_from_position(arr: array<int>, position: int)
   requires 0 <= position <= arr.Length
   modifies arr
@@ -81,7 +70,6 @@ method sort_from_position(arr: array<int>, position: int)
     assert arr[position] == original_value;
     assert is_sorted_in_range(arr, position + 1, arr.Length);
     assert minimum_in_range(arr, position + 1, arr.Length) == original_tail_min;
-    first_element_is_minimum_when_sorted(arr, position + 1, arr.Length);
     assert arr[position + 1] == original_tail_min;
     if arr[position + 1] < arr[position] {
       arr[position], arr[position + 1] := arr[position + 1], arr[position];
@@ -99,7 +87,6 @@ method sort_from_position(arr: array<int>, position: int)
     assert arr[position] == original_min;
     assert is_sorted_in_range(arr, position + 1, arr.Length);
     assert minimum_in_range(arr, position + 1, arr.Length) == updated_tail_min;
-    first_element_is_minimum_when_sorted(arr, position + 1, arr.Length);
     assert arr[position + 1] == updated_tail_min;
     assert arr[position] <= arr[position + 1];
     assert is_sorted_in_range(arr, position, arr.Length);
@@ -140,17 +127,6 @@ function maximum_in_prefix(A: array<int>, hi: int): int
     maximum_in_prefix(A, hi - 1)
 }
 
-lemma /*{:_inductionTrigger maximum_in_prefix(A, hi)}*/ /*{:_inductionTrigger sorted_prefix(A, hi)}*/ /*{:_induction A, hi}*/ last_is_maximum_when_sorted(A: array<int>, hi: int)
-  requires 0 < hi <= A.Length
-  requires sorted_prefix(A, hi)
-  ensures A[hi - 1] == maximum_in_prefix(A, hi)
-  decreases hi
-{
-  if hi > 1 {
-    last_is_maximum_when_sorted(A, hi - 1);
-  }
-}
-
 method doublesort_to(A: array<int>, hi: int)
   requires 0 <= hi <= A.Length
   modifies A
@@ -168,7 +144,6 @@ method doublesort_to(A: array<int>, hi: int)
     assert sorted_prefix(A, hi - 1);
     assert A[hi - 1] == old_last;
     assert maximum_in_prefix(A, hi - 1) == old_prefix_max;
-    last_is_maximum_when_sorted(A, hi - 1);
     assert A[hi - 2] == old_prefix_max;
     if A[hi - 1] < A[hi - 2] {
       A[hi - 2], A[hi - 1] := A[hi - 1], A[hi - 2];
@@ -180,7 +155,6 @@ method doublesort_to(A: array<int>, hi: int)
     doublesort_to(A, hi - 1);
     assert sorted_prefix(A, hi - 1);
     assert maximum_in_prefix(A, hi - 1) == new_prefix_max;
-    last_is_maximum_when_sorted(A, hi - 1);
     assert A[hi - 2] == new_prefix_max;
     assert A[hi - 2] <= A[hi - 1];
     assert sorted_prefix(A, hi);
@@ -219,18 +193,18 @@ method doublesort_both(A: array<int>, lo: int, hi: int)
   if lo + 1 <= hi - 1 {
     doublesort_both(A, lo + 1, hi - 1);
   }
-  var changed := false;
+  var flag := false;
   if A[hi] < A[lo] {
     A[lo], A[hi] := A[hi], A[lo];
-    changed := true;
+    flag := true;
   }
   if lo + 1 <= hi && A[lo + 1] < A[lo] {
     A[lo], A[lo + 1] := A[lo + 1], A[lo];
-    changed := true;
+    flag := true;
   }
   if hi - 1 >= lo && A[hi - 1] > A[hi] {
     A[hi - 1], A[hi] := A[hi], A[hi - 1];
-    changed := true;
+    flag := true;
   }
   if lo + 1 <= hi {
     assert A[lo] <= A[lo + 1];
@@ -239,6 +213,15 @@ method doublesort_both(A: array<int>, lo: int, hi: int)
   if lo + 1 <= hi - 1 {
     doublesort_both(A, lo + 1, hi - 1);
   }
+}
+
+method doublesort_preserve(A: array<int>)
+  requires A.Length > 0
+  modifies A
+  ensures sorted(A)
+  decreases A
+{
+  doublesort_both(A, 0, A.Length - 1);
 }
 
 method sort_pair(A: array<int>, i: int, j: int)
@@ -269,7 +252,7 @@ method Main(_noArgsParameter: seq<seq<char>>)
 {
   var A: array<int> := new int[7] [4, 0, 1, 9, 7, 1, 2];
   print ""Before: "", A[0], A[1], A[2], A[3], A[4], A[5], A[6], ""\n"";
-  doublesort(A);
+  doublesort_preserve(A);
   print ""After:  "", A[0], A[1], A[2], A[3], A[4], A[5], A[6], ""\n"";
 }
 ")]
@@ -6071,8 +6054,8 @@ namespace _module {
       if (((lo) + (BigInteger.One)) <= ((hi) - (BigInteger.One))) {
         __default.doublesort__both(A, (lo) + (BigInteger.One), (hi) - (BigInteger.One));
       }
-      bool _0_changed;
-      _0_changed = false;
+      bool _0_flag;
+      _0_flag = false;
       if (((A)[(int)(hi)]) < ((A)[(int)(lo)])) {
         BigInteger _rhs0 = (A)[(int)(hi)];
         BigInteger _rhs1 = (A)[(int)(lo)];
@@ -6082,7 +6065,7 @@ namespace _module {
         BigInteger _lhs3 = hi;
         _lhs0[(int)(_lhs1)] = _rhs0;
         _lhs2[(int)(_lhs3)] = _rhs1;
-        _0_changed = true;
+        _0_flag = true;
       }
       if ((((lo) + (BigInteger.One)) <= (hi)) && (((A)[(int)((lo) + (BigInteger.One))]) < ((A)[(int)(lo)]))) {
         BigInteger _index0 = (lo) + (BigInteger.One);
@@ -6094,7 +6077,7 @@ namespace _module {
         BigInteger _lhs7 = (lo) + (BigInteger.One);
         _lhs4[(int)(_lhs5)] = _rhs2;
         _lhs6[(int)(_lhs7)] = _rhs3;
-        _0_changed = true;
+        _0_flag = true;
       }
       if ((((hi) - (BigInteger.One)) >= (lo)) && (((A)[(int)((hi) - (BigInteger.One))]) > ((A)[(int)(hi)]))) {
         BigInteger _index1 = (hi) - (BigInteger.One);
@@ -6106,11 +6089,15 @@ namespace _module {
         BigInteger _lhs11 = hi;
         _lhs8[(int)(_lhs9)] = _rhs4;
         _lhs10[(int)(_lhs11)] = _rhs5;
-        _0_changed = true;
+        _0_flag = true;
       }
       if (((lo) + (BigInteger.One)) <= ((hi) - (BigInteger.One))) {
         __default.doublesort__both(A, (lo) + (BigInteger.One), (hi) - (BigInteger.One));
       }
+    }
+    public static void doublesort__preserve(BigInteger[] A)
+    {
+      __default.doublesort__both(A, BigInteger.Zero, (new BigInteger((A).Length)) - (BigInteger.One));
     }
     public static void sort__pair(BigInteger[] A, BigInteger i, BigInteger j)
     {
@@ -6150,7 +6137,7 @@ namespace _module {
       Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(5))]));
       Dafny.Helpers.Print(((_0_A)[(int)(new BigInteger(6))]));
       Dafny.Helpers.Print((Dafny.Sequence<Dafny.Rune>.UnicodeFromString("\n")).ToVerbatimString(false));
-      __default.doublesort(_0_A);
+      __default.doublesort__preserve(_0_A);
       Dafny.Helpers.Print((Dafny.Sequence<Dafny.Rune>.UnicodeFromString("After:  ")).ToVerbatimString(false));
       Dafny.Helpers.Print(((_0_A)[(int)(BigInteger.Zero)]));
       Dafny.Helpers.Print(((_0_A)[(int)(BigInteger.One)]));
